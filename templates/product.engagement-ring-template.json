@@ -13,6 +13,11 @@
           "settings": {
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -27,18 +32,23 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
+        "collapsible_tab_aexemE": {
+          "type": "collapsible_tab",
           "settings": {
+            "heading": "Ring Details",
+            "icon": "none",
+            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}</li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}</li></ul>",
+            "page": ""
           }
         }
       },
       "block_order": [
         "title",
         "price",
+        "description",
         "variant_picker",
         "buy_buttons",
-        "description"
+        "collapsible_tab_aexemE"
       ],
       "settings": {
         "enable_sticky_info": false,
