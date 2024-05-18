@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+assets
+config
+node_modules
+layout
+locales
+sections
+snippets
