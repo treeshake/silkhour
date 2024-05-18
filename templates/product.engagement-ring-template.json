@@ -21,8 +21,13 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "swatch_shape": "circle"
+          }
+        },
+        "engagement_ring_builder_select_ring_size_MbiLkD": {
+          "type": "shopify:\/\/apps\/engagement-ring-builder\/blocks\/select-ring-size\/a600dcc9-4ab9-42ce-8766-2eaa0c75837a",
+          "settings": {
           }
         },
         "buy_buttons": {
@@ -37,7 +42,7 @@
           "settings": {
             "heading": "Ring Details",
             "icon": "none",
-            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}</li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}</li></ul>",
+            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}<\/li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}<\/li><\/ul>",
             "page": ""
           }
         }
@@ -47,6 +52,7 @@
         "price",
         "description",
         "variant_picker",
+        "engagement_ring_builder_select_ring_size_MbiLkD",
         "buy_buttons",
         "collapsible_tab_aexemE"
       ],
@@ -63,7 +69,7 @@
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 16,
-        "padding_bottom": 0
+        "padding_bottom": 16
       }
     },
     "related-products": {

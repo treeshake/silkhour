@@ -16,9 +16,10 @@
       "block_order": [
         "announcement_dfwpB7"
       ],
+      "disabled": true,
       "settings": {
-        "color_scheme": "",
-        "show_line_separator": true,
+        "color_scheme": "scheme-2",
+        "show_line_separator": false,
         "show_social": false,
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -29,24 +30,54 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "top-center",
         "menu": "header-menu",
         "menu_type_desktop": "mega",
-        "sticky_header_type": "none",
+        "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "17148891621d7b048e": {
+      "type": "apps",
+      "blocks": {
+        "calpal_calendly_integration_app_block_tq6GJX": {
+          "type": "shopify:\/\/apps\/calpal-calendly-integration\/blocks\/app-block\/a8aa0544-ffd7-4753-8830-931780ec2b8e",
+          "disabled": true,
+          "settings": {
+            "meeting_link": "",
+            "button_text": "Book An Appointment",
+            "color": "#ffffff",
+            "bg_color": "#121212",
+            "button_width": "18%",
+            "border_radius": "0",
+            "button_alignment": "flex-end",
+            "text_align": "center",
+            "hover_color_change": "off",
+            "hover_background_color": "rgba(0,0,0,0)",
+            "hover_text_color": "rgba(0,0,0,0)",
+            "button_font_family": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "calpal_calendly_integration_app_block_tq6GJX"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
   "order": [
     "announcement_bar_PTEWNC",
-    "header"
+    "header",
+    "17148891621d7b048e"
   ]
 }
