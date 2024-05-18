@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "## General commands > shopify theme list > shopify theme info",
   "scripts": {
+    "dev": "npm run build:js -- --watch",
     "build:tailwind": "tailwindcss -i ./src/tailwind/input.css -o ./assets/tailwind.css",
     "build:js": "webpack --config ./webpack.config.js",
     "build:prod": "npm run build:tailwind && npm run build:js"

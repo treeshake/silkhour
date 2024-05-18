@@ -12,7 +12,6 @@ export class ProductInfo extends HTMLElement {
     this.input = this.querySelector('.quantity__input');
     this.currentVariant = this.querySelector('.product-variant-id');
     this.submitButton = this.querySelector('[type="submit"]');
-    console.log(this);
   }
 
   cartUpdateUnsubscriber?: () => void = undefined;
