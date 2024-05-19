@@ -2017,6 +2017,9 @@
             }
           }
         },
+        "ring_size_selector": {
+          "name": "Ring size selector"
+        },
         "buy_buttons": {
           "name": "Buy buttons",
           "settings": {

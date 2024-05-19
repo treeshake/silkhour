@@ -50,7 +50,7 @@
         <div class="product-form__buttons">
           <a
             id="ProductSubmitButton-{{ section_id }}"
-            href="/collections/lab-diamonds?setting={{ product.handle }}"
+            href="/collections/lab-diamonds?setting={{ product.handle }}&sort_by=price-ascending"
             class="product-form__submit button button--full-width button--primary"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
