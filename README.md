@@ -4,9 +4,9 @@ Please follow this README.MD to get started with Shopify Theme Development for o
 
 ## Tech stack
 
-Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is maintained by the Shopify team using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and plain CSS.<br>
+Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is an official Shopify theme build using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and plain CSS.<br>
 
-In addition, we use the following to develop the Store:
+In addition, we use the following to develop:
 
 - [Shopify CLI](https://shopify.dev/themes/tools/cli)
 - [Node](https://nodejs.org/en/) / [NPM](https://www.npmjs.com/)
@@ -14,7 +14,7 @@ In addition, we use the following to develop the Store:
 - [Typescript](https://www.typescriptlang.org/)
 - [Webpack](https://webpack.js.org/)
 
-Collectively, these tools allow us to develop and maintain the store with an improved developer experience, add new frameworks, libraries and utilities as needed while still ensuring that we can upgrade the underlying Spotlight theme in the future.
+Collectively, these additional tools allow us to develop and maintain the store with an improved Developer experience, add new frameworks, libraries and utilities as needed and ensure that we can upgrade the underlying official theme in the future.
 
 ## Shopify Store
 
@@ -36,6 +36,8 @@ Please send your Github username, and your email address to the store owner to o
 4. Pull down the theme using the Shopify CLI, using your `theme_access_token` and the `theme_id`
 
 ```zsh
+git clone https://github.com/treeshake/silkhour.git
+git branch feature/<github-username>-<theme_id>
 shopify theme pull --store vfinejewels.myshopify.com --password <theme_access_token> --theme <theme_id>
 ```
 
@@ -44,10 +46,16 @@ shopify theme pull --store vfinejewels.myshopify.com --password <theme_access_to
 ```zsh
 shopify theme dev <theme_id>
 ```
+6. Push the branch
+
+```zsh
+git push origin feature/<github-username>-<theme_id>
+```
 
 ## Working with the Shopify Theme
 
-**NEVER** modify the base theme's files directly e.g. `main-*.liquid`, `*.liquid`, `component-*-.css`, `component-*.css` `*.js` and many other files. This will prevent updating the base theme when new versions of Spotlight get released by the Shopify team.
+**NEVER** modify the base theme's files directly e.g. `main-*.liquid`, `*.liquid`, `component-*-.css`, `component-*.css` `*.js` and many other files. <br>
+This will prevent updating the base theme as new versions of Spotlight get released by the Shopify Team.
 
 Instead, you **MUST** always create or update custom files labelled with the keyword `custom` and reference them in `template` jsons and other `custom` files as required. If you need to build upon the base functionality provided by the theme, simply copy them over to a new file ensuring the keyword `custom` is in the filename so it can be identified as a custom development file.
 
@@ -59,9 +67,9 @@ There are some exceptions:
 
 1. You can modify `theme.liquid` to include new assets (javascript/css).
 
-## Modern Tooling Environment (MTE)
+## Modern Tooling Environment
 
-As mentioned in the [tech stack section](#tech-stack), we use additional tooling to develop the store. This allows us to include frameworks, libraries and utilities as required to extend the store.
+As mentioned in the [tech stack section](#tech-stack), we use additional tooling to develop new functionality. Collectively, we refer to these as the Modern Tooling Environment or MTE for short.
 
 ### Installation
 
@@ -100,7 +108,7 @@ We recommend development using VSCode IDE, with the following extensions:
 
 ## Coding Challenge
 
-To demonstrate your understand of the above, please complete a code challenge. The code challenge is timed and must be completed 1 hour. It does not require setting up the MTE, although if you can demonstrate this in your coding challenge, then this is a huge advantage.<br>
+To demonstrate your understand of the above, please complete a simple code challenge. The code challenge is timed and must be completed 1 hour. It does not require setting up the [MTE](modern-tooling-environment), although if you can demonstrate this in your coding challenge, then this is a huge advantage.<br>
 
 ### Task
 
