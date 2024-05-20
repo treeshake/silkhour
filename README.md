@@ -4,7 +4,7 @@ Please follow this README.MD to get started with Shopify Theme Development for o
 
 ## Tech stack
 
-Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is an official Shopify theme build using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and plain CSS.<br>
+Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is an official theme supplied by Shopify and built using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and plain CSS.<br>
 
 In addition, we use the following to develop:
 
