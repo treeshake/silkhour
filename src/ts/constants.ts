@@ -1,3 +1,7 @@
+/**
+ * Copied and adapted from Spotlight
+ * @see constants.js
+ */
 export const ON_CHANGE_DEBOUNCE_TIMER = 300;
 
 export const PUB_SUB_EVENTS = {

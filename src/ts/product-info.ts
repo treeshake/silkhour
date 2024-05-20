@@ -1,11 +1,15 @@
 import { PUB_SUB_EVENTS } from './constants';
 import { publish, subscribe } from './pubsub';
 
+/**
+ * Copied and adapted from Spotlight 
+ * @see product-info.js
+**/ 
 export class ProductInfo extends HTMLElement {
   input: HTMLFormElement | null;
   currentVariant: HTMLFormElement | null;
   submitButton: HTMLFormElement | null;
-  quantityForm: HTMLFormElement | null;
+  quantityForm: HTMLFormElement | null = null;
 
   constructor() {
     super();

@@ -1,3 +1,8 @@
+/**
+ * Copied and adapted from Spotlight 
+ * @see pubsub.js
+**/ 
+
 let subscribers: any = {};
 
 export function subscribe(
