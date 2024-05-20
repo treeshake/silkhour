@@ -108,7 +108,7 @@ We recommend development using VSCode IDE, with the following extensions:
 
 ## Coding Challenge
 
-To demonstrate your understand of the above, please complete a simple code challenge. The code challenge is timed and must be completed 1 hour. It does not require setting up the [MTE](modern-tooling-environment), although if you can demonstrate this in your coding challenge, then this is a huge advantage.<br>
+To demonstrate your understand of the above, please complete a simple code challenge. The code challenge is timed and must be completed in about 30-60 minutes. It does not require setting up the [MTE](modern-tooling-environment), although if you can demonstrate this in your coding challenge, then this is a huge advantage.<br>
 
 ### Task
 
