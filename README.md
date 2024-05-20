@@ -24,7 +24,7 @@ https://admin.shopify.com/store/vfinejewels
 
 1. Obtain Read/write access to this Github Repository
 2. From your Partner account, request collaborator access to the Shopify Store
-3. Obtain the Theme Access token
+3. Obtain the Theme Access (password) token, for using the Shopify CLI
 
 Please send your Github username, and your email address to the store owner to obtain these access permissions.
 
