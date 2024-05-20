@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-custom-engagement-setting",
+      "type": "custom-main-product",
       "blocks": {
         "title": {
           "type": "title",
@@ -10,11 +10,6 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
-        },
-        "description": {
-          "type": "description",
           "settings": {
           }
         },
@@ -28,27 +23,22 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         },
-        "collapsible_tab_aexemE": {
-          "type": "collapsible_tab",
+        "description": {
+          "type": "description",
           "settings": {
-            "heading": "Ring Details",
-            "icon": "none",
-            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}<\/li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}<\/li><\/ul>",
-            "page": ""
           }
         }
       },
       "block_order": [
         "title",
         "price",
-        "description",
         "variant_picker",
         "buy_buttons",
-        "collapsible_tab_aexemE"
+        "description"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -56,14 +46,14 @@
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "show",
+        "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 16,
-        "padding_bottom": 16
+        "padding_bottom": 0
       }
     },
     "related-products": {
