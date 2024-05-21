@@ -89,8 +89,24 @@
         </div>
       {%- endif -%}
     {%- endfor -%}
+
+ {%- for tag in product.tags -%}
+{% if tag == 'Engraving' %}
+    <div class="product-form__engraving">
+        <label for="engraving">Engraving</label>
+        <select id="engraving" name="properties[Engraving]" form="{{ product_form_id }}">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+    </div>
+{% endif %}
+ {%- endfor -%}   
+
     <script type="application/json">
       {{ product.variants | json }}
     </script>
   </variant-selects>
+
+
+
 {%- endunless -%}
