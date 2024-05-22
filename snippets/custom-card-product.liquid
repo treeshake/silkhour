@@ -27,6 +27,68 @@
 {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 
+<div class="product_list_main">
+<div class="product_list">
+  <div class="product_info">{{ card_product.metafields.custom.diamond_shape.value.value.value }}</div>
+  <div class="product_info">{{ card_product.metafields.custom.diamond_weight.value.value.value }}</div>
+  <div class="product_info">{{ card_product.metafields.custom.diamond_color.value.value.value }}</div>
+  <div class="product_info">{{ card_product.metafields.custom.diamond_clarity.value.value.value }}</div>
+  <div class="product_info">{{ card_product.metafields.custom.diamond_cut.value.name.value }}</div>
+  <div class="product_info">{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div>
+  <div class="product_info" id="view_{{ card_product.id }}">View</div>
+  {% comment %} <div class="product_info"><a href="{{ card_product.url }}">Add</a></div> {% endcomment %}
+</div>
+
+<div class="product_list_content view_{{ card_product.id }}">
+    <div class="list_product_wrap">
+      <div class="left_content">
+        <div class="left_content_inner">
+        <ul>
+        {% if card_product.metafields.custom.diamond_shape.value.value.value != blank %}
+        <li><strong>Shape: </strong>{{ card_product.metafields.custom.diamond_shape.value.value.value }}</li>
+        {% endif %}
+        {% if card_product.metafields.custom.diamond_weight.value.value.value != blank %}
+          <li><strong>Carat: </strong>{{ card_product.metafields.custom.diamond_weight.value.value.value }}</li>
+          {% endif %}
+        {% if card_product.metafields.custom.diamond_color.value.value.value != blank %}
+          <li><strong>Colour: </strong>{{ card_product.metafields.custom.diamond_color.value.value.value }}</li>
+        {% endif %}
+        {% if card_product.metafields.custom.diamond_clarity.value.value.value != blank %}
+          <li> <strong>Clarity: </strong>{{ card_product.metafields.custom.diamond_clarity.value.value.value }}</li>
+        {% endif %}
+        {% if card_product.metafields.custom.diamond_cut.value.name.value != blank %}
+          <li><strong>Cut:</strong> {{ card_product.metafields.custom.diamond_cut.value.name.value }}</li>
+        {% endif %}
+        <li><div class="list_price"><strong>Price:</strong> {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></li>
+        {% if card_product.metafields.custom.diamond_fluorescent.value.text_options.value != blank %}
+          <li><strong>Flurouence: </strong> {{ card_product.metafields.custom.diamond_fluorescent.value.text_options.value }}</li>
+        {% endif %}
+      </ul>
+        <div class="list_add_btn">
+        <a href="{{ card_product.url }}" class="button">Add</a>
+        </div>
+        </div>
+      </div>
+      <div class="right_content">
+        <div class="global-media-settings media" style="padding-bottom: {{ 1 | divided_by: card_product.featured_media.aspect_ratio | times: 100 }}%;">
+          {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+          {%- capture sizes -%}
+        (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+        {%- endcapture -%}
+        
+          {{
+            card_product.featured_media
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, fetchpriority: 'auto'
+          }}
+                    </div>
+      </div>
+    </div>
+</div>
+</div>
+
+{% comment %}
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -39,6 +101,7 @@
       assign ratio = 1
     endif
   -%}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -586,3 +649,4 @@
     </div>
   </div>
 {%- endif -%}
+{% endcomment %}
