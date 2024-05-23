@@ -2,6 +2,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'custom-template-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-product-list.js' | asset_url }}" defer="defer"></script>
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -129,7 +130,7 @@
           <div class="header_col">Colour</div>
           <div class="header_col">Clarity</div>
           <div class="header_col">Cut</div>
-          <div class="header_col">Price</div>
+          <div class="header_col small-hide">Price</div>
           <div class="header_col">View</div>
           {% comment %} <div class="header_col">Add</div> {% endcomment %}
         </div>

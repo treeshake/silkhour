@@ -29,13 +29,15 @@
 
 <div class="product_list_main">
 <div class="product_list">
-  <div class="product_info">{{ card_product.metafields.custom.diamond_shape.value.value.value }}</div>
-  <div class="product_info">{{ card_product.metafields.custom.diamond_weight.value.value.value }}</div>
-  <div class="product_info">{{ card_product.metafields.custom.diamond_color.value.value.value }}</div>
-  <div class="product_info">{{ card_product.metafields.custom.diamond_clarity.value.value.value }}</div>
-  <div class="product_info">{{ card_product.metafields.custom.diamond_cut.value.name.value }}</div>
-  <div class="product_info">{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div>
-  <div class="product_info" id="view_{{ card_product.id }}">View</div>
+  <div class="product_info">
+    <div class="product_list_inner">{{ card_product.metafields.custom.diamond_shape.value.value.value }}</div>
+  </div>
+  <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_weight.value.value.value }}</div></div>
+  <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_color.value.value.value }}</div></div>
+  <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_clarity.value.value.value }}</div></div>
+  <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_cut.value.name.value }}</div></div>
+  <div class="product_info small-hide"><div class="product_list_inner">{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></div>
+  <div class="product_info"><div class="product_list_inner product_list_view" id="view_{{ card_product.id }}">View</div></div>
   {% comment %} <div class="product_info"><a href="{{ card_product.url }}">Add</a></div> {% endcomment %}
 </div>
 
