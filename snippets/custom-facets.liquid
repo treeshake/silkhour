@@ -311,6 +311,7 @@
                       {%- endif %}
                     </div>
                   </details>
+
                 {% when 'price_range' %}
                   <details
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
@@ -330,6 +331,7 @@
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
+                      {%- if filter_type != 'vertical' -%}
                       <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
                         {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
                         <span class="facets__selected">
@@ -343,7 +345,35 @@
                           </facet-remove>
                         {%- endif -%}
                       </div>
-                      <price-range class="facets__price">
+                    {% endif %} 
+                    {%- if filter_type == 'vertical' -%}
+                      <div class="price_slider_text">
+                        <div class="price_min_text">{{ filter.min_value.value | default: 0 | money }}</div>
+                        <div class="price_max_text">{{ filter.max_value.value | default: filter.range_max | money }}</div>
+                      </div>
+                      {% assign filterMaxValue = filter.range_max | money_without_trailing_zeros | remove: '$' | replace: ',', '' %}
+                      <div id="slider-distance" class="price_rang_slider">
+                        <input type="range" 
+                        class="range_price from_slider"
+                        id="fromSlider"
+                        tabindex="0" 
+                        value="{{ filter.min_value.value | money_without_trailing_zeros | remove: '$' | replace: ',', '' | default: 0 }}" 
+                        max="{{ filter.range_max | money_without_trailing_zeros | remove: '$' | replace: ',', '' }}"
+                        min="0" 
+                        step="10" />
+                        
+                        <input type="range"
+                        class="range_price to_slider"
+                        id="toSlider"
+                        tabindex="0" 
+                        value="{{ filter.max_value.value | money_without_trailing_zeros | remove: '$' | replace: ',', '' | default: filterMaxValue }}" 
+                        placeholder="{{ filter.range_max | money_without_trailing_zeros | remove: '$' | replace: ',', '' }}"
+                        max="{{ filter.range_max | money_without_trailing_zeros | remove: '$' | replace: ',', '' }}"
+                        min="0" 
+                        step="10" />
+                      </div>
+                       {% endif %} 
+                      <price-range class="facets__price{% if filter_type == 'vertical' %} hidden{% endif %}">
                         {% render 'price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
                       </price-range>
                     </div>
