@@ -9,7 +9,8 @@
     "build:many": "npm run build:tailwind && npm run build:js",
     "watch:tailwind": "npm run build:tailwind -- --watch",
     "watch:webpack": "npm run build:webpack -- --watch",
-    "watch:many": "concurrently \"npm run watch:tailwind\" \"npm run watch:webpack\""
+    "watch:many": "concurrently \"npm run watch:tailwind\" \"npm run watch:webpack\"",
+    "shopify:auth": "shopify auth logout && shoplify theme list"
   },
   "repository": {
     "type": "git",
