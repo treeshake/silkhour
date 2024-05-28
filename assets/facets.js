@@ -90,6 +90,18 @@ class FacetFiltersForm extends HTMLElement {
       .forEach((element) => {
         element.classList.add('scroll-trigger--cancel');
       });
+
+      document.querySelectorAll('.custom_cllection_main .product_list .product_list_view').forEach((item) => {
+        item.addEventListener("click", function() {
+            if(item.classList.contains('opened')){
+                this.closest('.product_list_main').querySelector('.product_list_content').style.display = 'none';
+                item.classList.remove('opened');
+            }else{
+                this.closest('.product_list_main').querySelector('.product_list_content').style.display = 'block';
+                item.classList.add('opened');
+            }
+        });
+    });
   }
 
   static renderProductCount(html) {
@@ -302,6 +314,35 @@ FacetFiltersForm.setListeners();
 class PriceRange extends HTMLElement {
   constructor() {
     super();
+
+    const rangeInputs = document.querySelectorAll('.price_rang_slider input[type="range"]');
+    const range1 = rangeInputs[0];
+    const range2 = rangeInputs[1];
+
+    function formatMoney(amount, currencySymbol = '$') {
+      const formattedAmount = (amount / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      return `${currencySymbol}${formattedAmount}`;
+  }
+      
+    range1.addEventListener('input', function() {
+      this.value = Math.min(this.value, range2.value - 10);
+      this.closest('.facets__display-vertical').querySelector('.price_min_text').innerHTML = formatMoney(this.value * 100);
+      updateSlider();
+    });
+  
+    range2.addEventListener('input', function() {
+      this.value = Math.max(this.value, range1.value - (-10));
+      this.closest('.facets__display-vertical').querySelector('.price_max_text').innerHTML = formatMoney(this.value * 100);
+      updateSlider();
+    });
+  
+    function updateSlider() {  
+      document.querySelector('.facets__price .input_min').setAttribute("value", range1.value);
+      document.querySelector('.facets__price .input_max').setAttribute("value", range2.value);
+    }
+  
+    updateSlider();
+
     this.querySelectorAll('input').forEach((element) => {
       element.addEventListener('change', this.onRangeChange.bind(this));
       element.addEventListener('keydown', this.onKeyDown.bind(this));

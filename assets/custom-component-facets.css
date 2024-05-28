@@ -1,0 +1,54 @@
+.price_rang_slider {
+    position: relative;
+    min-height: 50px;
+  }
+  .price_rang_slider input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+  }
+  .price_rang_slider input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+  }
+  .price_rang_slider input[type=range]::-webkit-slider-thumb:hover {
+    background: #f7f7f7;
+  }
+  .price_rang_slider input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: #000;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+        transform: translateY(-50%);
+  }
+  .price_rang_slider .from_slider {
+    height: 0!important;
+    z-index: 1;
+  }
+  .price_rang_slider .to_slider {
+  padding-left: 6px;
+  }
+
+  /**/
+  .facets .price_slider_text{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }

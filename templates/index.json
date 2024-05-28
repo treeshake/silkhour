@@ -143,7 +143,7 @@
         "button_i8VGQa": {
           "type": "button",
           "settings": {
-            "button_label": "CREATE MY RING",
+            "button_label": "Start Here",
             "button_link": "shopify:\/\/collections\/earrings",
             "button_style_secondary": true
           }
@@ -269,7 +269,7 @@
         "button_ErGgG3": {
           "type": "button",
           "settings": {
-            "button_label": "START WITH A DIAMOND",
+            "button_label": "Shop Now",
             "button_link": "shopify:\/\/collections\/earrings",
             "button_style_secondary": true
           }
