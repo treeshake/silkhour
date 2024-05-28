@@ -28,23 +28,21 @@
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 
 <div class="product_list_main">
-<div class="product_list">
+<div class="product_list" id="view_{{ card_product.id }}">
   <div class="product_info">
     <div class="product_list_inner">{{ card_product.metafields.custom.diamond_shape.value.value.value }}</div>
   </div>
   <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_weight.value.value.value }}</div></div>
   <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_color.value.value.value }}</div></div>
   <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_clarity.value.value.value }}</div></div>
-  <div class="product_info"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_cut.value.name.value }}</div></div>
-  <div class="product_info small-hide"><div class="product_list_inner">{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></div>
-  <div class="product_info"><div class="product_list_inner product_list_view" id="view_{{ card_product.id }}">View</div></div>
-  {% comment %} <div class="product_info"><a href="{{ card_product.url }}">Add</a></div> {% endcomment %}
+  <div class="product_info col_cut"><div class="product_list_inner">{{ card_product.metafields.custom.diamond_cut.value.name.value }}</div></div>
+  <div class="product_info col_price"><div class="product_list_inner">{% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></div>
 </div>
 
 <div class="product_list_content view_{{ card_product.id }}">
     <div class="list_product_wrap">
       <div class="left_content">
-        <div class="left_content_inner">
+        <div class="left_content_inner"> 
         <ul>
         {% if card_product.metafields.custom.diamond_shape.value.value.value != blank %}
         <li><strong>Shape: </strong>{{ card_product.metafields.custom.diamond_shape.value.value.value }}</li>

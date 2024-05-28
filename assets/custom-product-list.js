@@ -1,4 +1,4 @@
-document.querySelectorAll('.custom_cllection_main .product_list .product_list_view').forEach((item) => {
+document.querySelectorAll('.custom_cllection_main .product_list').forEach((item) => {
     item.addEventListener("click", function() {
         if(item.classList.contains('opened')){
             this.closest('.product_list_main').querySelector('.product_list_content').style.display = 'none';

@@ -130,10 +130,8 @@
           <div class="header_col">Carat</div>
           <div class="header_col">Colour</div>
           <div class="header_col">Clarity</div>
-          <div class="header_col">Cut</div>
-          <div class="header_col small-hide">Price</div>
-          <div class="header_col">View</div>
-          {% comment %} <div class="header_col">Add</div> {% endcomment %}
+          <div class="header_col col_cut">Cut</div>
+          <div class="header_col col_price">Price</div>
         </div>
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">

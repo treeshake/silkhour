@@ -7,17 +7,13 @@
   .custom_cllection_main .collection_header .header_col,
   .custom_cllection_main .product_list .product_info{
         padding: 8px 5px;
-      width: 14.28%;
+        width: 16.66%;
       text-align: center;
         border-right: 1px solid rgba(var(--color-foreground),.1);
         font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-  }
-  .custom_cllection_main .collection_header .header_col:last-child{
-      opacity: 0;
-      visibility: hidden;
   }
   .custom_cllection_main .collection_header .header_col:last-child,
   .custom_cllection_main .product_list .product_info:last-child{
@@ -28,9 +24,7 @@
   }
   .custom_cllection_main .product_list{
       display: flex;
-  }
-  .custom_cllection_main .product_list_main{
-        border-bottom: 1px solid rgba(var(--color-foreground), .1);
+      cursor: pointer;
   }
   .custom_cllection_main .product_list .price {
       font-size: 14px;
@@ -61,10 +55,13 @@
   .custom_cllection_main .product_list_content{
     display: none;
   }
-  .custom_cllection_main .product_list .product_list_view{
-    cursor: pointer;
+  .custom_cllection_main .product-grid .grid__item:nth-child(2n) .product_list_main{
+    background-color: rgba(var(--color-foreground), .04);
   }
-  
+  .custom_cllection_main .product_list_main:hover{
+    background-color: rgba(var(--color-shadow))!important;
+  }
+
   @media (min-width: 990px) {
       .custom_cllection_main .facets-vertical .facets__form-vertical {
           width: 100%;
@@ -94,10 +91,10 @@
       padding-bottom: 1rem;
     }
     .custom_cllection_main .collection_header .header_col, .custom_cllection_main .product_list .product_info{
-      padding: 8px 5px;
-      width: 16.66%;
+      padding: 8px 4px;
       font-size: 12px;
       word-break: break-all;
+      width: 15%;
     }
     .custom_cllection_main .product_list_content .left_content_inner,
     .custom_cllection_main .product_list_content .left_content_inner .price{
@@ -105,5 +102,16 @@
     }
     .custom_cllection_main .product_list_content .list_add_btn {
       margin-top: 15px;
-  }
+    }
+    .custom_cllection_main .product_list .price {
+      font-size: 12px;
+    }
+    .custom_cllection_main .collection_header .header_col.col_cut, 
+    .custom_cllection_main .product_list .product_info.col_cut{
+      width: 18%;
+    }
+    .custom_cllection_main .collection_header .header_col.col_price, 
+    .custom_cllection_main .product_list .product_info.col_price{
+      width: 22%;
+    }
   }
