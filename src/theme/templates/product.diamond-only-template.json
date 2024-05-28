@@ -30,7 +30,7 @@
           "settings": {
             "heading": "Diamond Specifications",
             "icon": "none",
-            "content": "<p><strong>Shape: </strong>{{ product.metafields.custom.diamond_shape.value.value.value }}<strong><br/>Cut:</strong> {{ product.metafields.custom.diamond_cut.value.name.value }}<br/><strong>Carat: </strong>{{ product.metafields.custom.diamond_weight.value.value.value }}<br/><strong>Colour: </strong>{{ product.metafields.custom.diamond_color.value.value.value }}<br/><strong>Clarity: </strong>{{ product.metafields.custom.diamond_clarity.value.value.value }}<br/><strong>Flurouence: </strong> {{ product.metafields.custom.diamond_fluorescent.value.text_options.value }}</p>",
+            "content": "<p><strong>Shape: <\/strong>{{ product.metafields.custom.diamond_shape.value.value.value }}<strong><br\/>Cut:<\/strong> {{ product.metafields.custom.diamond_cut.value.name.value }}<br\/><strong>Carat: <\/strong>{{ product.metafields.custom.diamond_weight.value.value.value }}<br\/><strong>Colour: <\/strong>{{ product.metafields.custom.diamond_color.value.value.value }}<br\/><strong>Clarity: <\/strong>{{ product.metafields.custom.diamond_clarity.value.value.value }}<br\/><strong>Flurouence: <\/strong> {{ product.metafields.custom.diamond_fluorescent.value.text_options.value }}<\/p>",
             "page": ""
           }
         }
