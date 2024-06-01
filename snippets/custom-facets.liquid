@@ -374,7 +374,7 @@
                       </div>
                        {% endif %} 
                       <custom-price-range class="facets__price{% if filter_type == 'vertical' %} hidden{% endif %}">
-                        {% render 'price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
+                        {% render 'custom-price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
                       </custom-price-range>
                     </div>
                   </details>
@@ -744,7 +744,7 @@
                           </p>
 
                           <price-range class="facets__price">
-                            {% render 'price-facet', filter: filter, id_prefix: 'Mobile-Filter-' %}
+                            {% render 'custom-price-facet', filter: filter, id_prefix: 'Mobile-Filter-' %}
                           </price-range>
                           <div class="mobile-facets__footer">
                             <custom-facet-remove class="mobile-facets__clear-wrapper">
