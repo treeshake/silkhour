@@ -10,9 +10,10 @@
     "watch:tailwind": "npm run build:tailwind -- --watch",
     "watch:webpack": "npm run build:webpack -- --watch",
     "watch:many": "concurrently \"npm run watch:tailwind\" \"npm run watch:webpack\"",
-    "theme:auth": "shopify auth logout && shoplify theme list",
-    "theme:pull": "shopify theme pull --nodelete",
-    "theme:push": "shopify theme push --nodelete"
+    "theme:auth": "shopify auth logout && npm run theme:list",
+    "theme:list": "shopify theme list --store vfinejewels.myshopify.com",
+    "theme:pull": "shopify theme pull --store vfinejewels.myshopify.com --nodelete",
+    "theme:push": "shopify theme push --store vfinejewels.myshopify.com --nodelete"
   },
   "repository": {
     "type": "git",
@@ -27,11 +28,12 @@
   "homepage": "https://github.com/treeshake/silkhour#readme",
   "devDependencies": {
     "@eslint/js": "^9.3.0",
+    "@shopify/prettier-plugin-liquid": "^1.5.0",
     "@types/eslint__js": "^8.42.3",
     "@typescript/lib-dom": "npm:@types/web@^0.0.145",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
-    "prettier": "3.2.5",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
