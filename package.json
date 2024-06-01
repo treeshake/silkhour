@@ -1,7 +1,7 @@
 {
   "name": "lab-concierge",
   "version": "1.0.0",
-  "description": "## General commands > shopify theme list > shopify theme info",
+  "description": "Silkhour / V FINE Jewels / Lab Concierge Shopify Theme Development",
   "scripts": {
     "start:dev": "npm run watch:many",
     "build:tailwind": "tailwindcss -i ./src/tailwind/input.css -o ./assets/tailwind.css",
