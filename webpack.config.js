@@ -4,7 +4,7 @@ module.exports = {
   entry: {
     index: './src/ts/index.ts',
     facets: './src/ts/facets/facets.ts',
-    "product-list": './src/ts/product-list.ts',
+    "product-list": './src/ts/ProductList.ts',
   },
   devtool: 'inline-source-map',
   mode: 'production',
