@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     index: './src/ts/index.ts',
+    facets: './src/ts/facets/facets.ts',
     "product-list": './src/ts/product-list.ts',
   },
   devtool: 'inline-source-map',
