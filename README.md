@@ -84,7 +84,7 @@ This will:
 <br>
 
 1. Watch for changes to files and recompile any tailwind css to `assets/tailwind.css`
-2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom.js`
+2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom-[name].js`
 
 ### Others
 
