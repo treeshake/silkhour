@@ -20,11 +20,6 @@
             "swatch_shape": "circle"
           }
         },
-        "engagement_ring_builder_select_ring_size_irpYWC": {
-          "type": "shopify:\/\/apps\/engagement-ring-builder\/blocks\/select-ring-size\/a600dcc9-4ab9-42ce-8766-2eaa0c75837a",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -42,7 +37,6 @@
         "title",
         "price",
         "variant_picker",
-        "engagement_ring_builder_select_ring_size_irpYWC",
         "buy_buttons",
         "description"
       ],

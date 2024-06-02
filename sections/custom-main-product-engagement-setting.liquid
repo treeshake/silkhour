@@ -32,8 +32,9 @@
     }
   {%- endstyle -%}
 
-  <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom-product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -453,9 +454,9 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'ring_size_selector' -%}
-                {%- render 'ring-size-custom-input' -%}
+                {%- render 'custom-input-ring-size' -%}
               {%- when 'buy_buttons' -%}
-                {%- render 'buy-buttons-custom-choose-your-diamond',
+                {%- render 'custom-buy-buttons-choose-your-diamond',
                   block: block,
                   product: product,
                   product_form_id: product_form_id,

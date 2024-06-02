@@ -140,3 +140,7 @@ export class ProductInfo extends HTMLElement {
     }
   }
 }
+
+if (!customElements.get('custom-product-info')) {
+  customElements.define('custom-product-info', ProductInfo);
+}
