@@ -1,0 +1,343 @@
+{
+  "sections": {
+    "image_banner_eLkf73": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_gWnmqR": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_XRfJBX": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_FnjJLA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Best Sellers",
+            "button_link_1": "shopify:\/\/collections\/earrings",
+            "button_style_secondary_1": false,
+            "button_label_2": "Shop Under $500",
+            "button_link_2": "shopify:\/\/collections\/fine-jewellery",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gWnmqR",
+        "text_XRfJBX",
+        "buttons_FnjJLA"
+      ],
+      "custom_css": [
+        ".banner__content {align-items: end;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC_0540_20copy.jpg",
+        "image_2": "shopify:\/\/shop_images\/DSC_0044_20copy_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "collection_list_zdQ6RT": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_whXwXV": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "fine-jewellery"
+          }
+        },
+        "featured_collection_MxNw4x": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_c3Jfyk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "necklaces"
+          }
+        },
+        "featured_collection_fFPtwP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "featured_collection_Yxi6C4": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "tennis-bracelets"
+          }
+        },
+        "featured_collection_W4Nitn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "engagement-ring-setting"
+          }
+        },
+        "featured_collection_bQ9m98": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "wedding"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_whXwXV",
+        "featured_collection_MxNw4x",
+        "featured_collection_c3Jfyk",
+        "featured_collection_fFPtwP",
+        "featured_collection_Yxi6C4",
+        "featured_collection_W4Nitn",
+        "featured_collection_bQ9m98"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-3",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "image_with_text_H7CdHK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Q9Tfep": {
+          "type": "heading",
+          "settings": {
+            "heading": "Engagement Rings",
+            "heading_size": "h1"
+          }
+        },
+        "text_Qcjq47": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every detail selected with your<br\/>preferences and style in mind for<br\/>a ring that is perfect and true to you. <\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_i8VGQa": {
+          "type": "button",
+          "settings": {
+            "button_label": "CREATE MY RING",
+            "button_link": "shopify:\/\/collections\/earrings",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_Q9Tfep",
+        "text_Qcjq47",
+        "button_i8VGQa"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC_0771_20copy_2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-5",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "featured_collection_YTMHLV": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "engagement-ring-setting",
+        "products_to_show": 12,
+        "columns_desktop": 3,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 12
+      }
+    },
+    "image_banner_pXdiYJ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_xdxKat": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_Gwxtkf": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "buttons_mUMLkA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Best Sellers",
+            "button_link_1": "shopify:\/\/collections\/earrings",
+            "button_style_secondary_1": false,
+            "button_label_2": "Shop Under $500",
+            "button_link_2": "shopify:\/\/collections\/fine-jewellery",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_xdxKat",
+        "text_Gwxtkf",
+        "buttons_mUMLkA"
+      ],
+      "custom_css": [
+        ".banner__content {align-items: end;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Banner1.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_fbRkjy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Yp9KX7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lab Grown Diamond",
+            "heading_size": "h1"
+          }
+        },
+        "text_rqBHqN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend natural diamonds and 14k solid gold to round out the sentiment.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_ErGgG3": {
+          "type": "button",
+          "settings": {
+            "button_label": "START WITH A DIAMOND",
+            "button_link": "shopify:\/\/collections\/earrings",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_Yp9KX7",
+        "text_rqBHqN",
+        "button_ErGgG3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Snapinsta.app_176208309_2856537817927067_2749204993904897759_n_1080_20_281_29.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "newsletter_U7RyNG": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_VbjkYp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get 15% Off your First Order!",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_n3xyzW": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Stay in the know and get first access to sales, new drops, and events<\/p>"
+          }
+        },
+        "email_form_7BHHdB": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_VbjkYp",
+        "paragraph_n3xyzW",
+        "email_form_7BHHdB"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner_eLkf73",
+    "collection_list_zdQ6RT",
+    "image_with_text_H7CdHK",
+    "featured_collection_YTMHLV",
+    "image_banner_pXdiYJ",
+    "image_with_text_fbRkjy",
+    "newsletter_U7RyNG"
+  ]
+}

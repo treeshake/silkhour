@@ -4,16 +4,17 @@
   "description": "Silkhour / V FINE Jewels / Lab Concierge Shopify Theme Development",
   "scripts": {
     "start:dev": "npm run watch:many",
-    "build:tailwind": "tailwindcss -i ./src/tailwind/input.css -o ./assets/tailwind.css",
+    "build:tailwind": "tailwindcss -i ./src/tailwind/input.css -o ./src/theme/assets/tailwind.css",
     "build:webpack": "webpack --config ./webpack.config.js",
     "build:many": "npm run build:tailwind && npm run build:js",
     "watch:tailwind": "npm run build:tailwind -- --watch",
     "watch:webpack": "npm run build:webpack -- --watch",
     "watch:many": "concurrently \"npm run watch:tailwind\" \"npm run watch:webpack\"",
-    "theme:auth": "shopify auth logout && npm run theme:list",
-    "theme:list": "shopify theme list --store vfinejewels.myshopify.com",
-    "theme:pull": "shopify theme pull --store vfinejewels.myshopify.com --nodelete",
-    "theme:push": "shopify theme push --store vfinejewels.myshopify.com --nodelete"
+    "theme:auth": "shopify auth logout && shopify theme list --store vfinejewels.myshopify.com",
+    "theme:pull": "shopify theme pull --nodelete --path src/theme --store vfinejewels.myshopify.com",
+    "theme:dev": "shopify theme dev --path src/theme --store vfinejewels.myshopify.com",
+    "theme:push": "shopify theme push --nodelete --path src/theme --store vfinejewels.myshopify.com",
+    "theme:publish": "shopify theme publish --store vfinejewels.myshopify.com"
   },
   "repository": {
     "type": "git",

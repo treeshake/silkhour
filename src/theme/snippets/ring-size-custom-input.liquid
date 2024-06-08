@@ -1,0 +1,66 @@
+<script type="text/javascript">
+  console.log({{ product.metafields.ring.sizes }});
+</script>
+
+<div class='product-form__input product-form__input--dropdown'>
+  <label class='form__label'>Ring Size</label>
+  <div class='select'>
+    <select
+      class='select__select'
+    >
+      {% for ring_size in shop.metaobjects.ring_size %}
+        <option value='{{ ring_size.value }}'>
+          {{ ring_size.value }}
+        </option>
+      {% endfor %}
+      <option value='{{ shop.metaobjects.ring_size.i-4.value }}'>
+        {{ shop.metaobjects.ring_size.i-4.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.j-4.value }}'>
+        {{ shop.metaobjects.ring_size.j-4.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.k-5.value }}'>
+        {{ shop.metaobjects.ring_size.k-5.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.m-6.value }}'>
+        {{ shop.metaobjects.ring_size.m-6.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.n-6.value }}'>
+        {{ shop.metaobjects.ring_size.n-6.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.o-7.value }}'>
+        {{ shop.metaobjects.ring_size.o-7.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.p-7.value }}'>
+        {{ shop.metaobjects.ring_size.p-7.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.q-8.value }}'>
+        {{ shop.metaobjects.ring_size.q-8.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.r-8.value }}'>
+        {{ shop.metaobjects.ring_size.r-8.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.s-9.value }}'>
+        {{ shop.metaobjects.ring_size.s-9.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.t-9.value }}'>
+        {{ shop.metaobjects.ring_size.t-9.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.u-10.value }}'>
+        {{ shop.metaobjects.ring_size.u-10.value }}
+      </option>
+      <option value='{{ shop.metaobjects.ring_size.v-10.value }}'>
+        {{ shop.metaobjects.ring_size.v-10.value }}
+      </option>
+    </select>
+    {% render 'icon-caret' %}
+  </div>
+</div>
+{% comment %} 
+{% schema %}
+{
+  "name": "Select Ring Size",
+  "target": "section",
+  "settings": []
+}
+{% endschema %} {% endcomment %}
