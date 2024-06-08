@@ -1,10 +1,18 @@
-# Silkhour / V FINE Jewels / Lab Concierge Shopify Theme Development
+# Shopify Store
 
-Please follow this README.MD to get started with Shopify Theme Development for our Store.
+https://admin.shopify.com/store/vfinejewels
 
-## Tech stack
+# Access, Permission and Apps
 
-Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is an official theme supplied by Shopify and built using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and plain CSS.<br>
+1. Obtain Read/write access to this GitHub Repository
+2. From your Partner account, request collaborator access to the Shopify Store
+3. Obtain the Theme Access (Shopify App) password token to development, pull, push and publish themes.
+
+Please send your GitHub username, and your email address to the store owner to obtain these access permissions.
+
+# Tech stack
+
+Our store is built based on Shopify's official [Spotlight Theme](https://themes.shopify.com/themes/spotlight/styles/default). This theme is an official theme supplied and supported by Shopify and built using [Liquid](https://shopify.dev/themes/liquid/reference), [JavaScript](https://shopify.dev/themes/javascript-api) and CSS.<br>
 
 In addition, we use the following to develop:
 
@@ -14,122 +22,101 @@ In addition, we use the following to develop:
 - [Typescript](https://www.typescriptlang.org/)
 - [Webpack](https://webpack.js.org/)
 
-Collectively, these additional tools allow us to develop and maintain the store with an improved Developer experience, add new frameworks, libraries and utilities as needed and ensure that we can upgrade the underlying official theme in the future.
+# Development
 
-## Shopify Store
+The following are **mandatory** for all developers working on the Store's theme:
 
-https://admin.shopify.com/store/vfinejewels
-
-## Access, Permission and Apps
-
-1. Obtain Read/write access to this Github Repository
-2. From your Partner account, request collaborator access to the Shopify Store
-3. Obtain the Theme Access (Shopify App) password token. So you can use the Shopify CLI to pull, push and publish themes.
-
-Please send your Github username, and your email address to the store owner to obtain these access permissions.
+1. Use the [Shopify CLI](https://shopify.dev/themes/tools/cli) for working with themes. <br />
+2. Use GitHub for version control and code review. <br />
 
 ## Setup
 
-1. From the Shopify Admin, duplicate the current live Spotlight Theme, then rename it to include your `github-username` and the `theme_id`.
-2. From Github, clone the `main` branch
-3. Create a new branch and switch to it with the `theme_id` for example, `feature/<github-username>-<theme_id>`
-4. Pull down the theme using the Shopify CLI, using your `theme_access_token` and the `theme_id`
+1. Log out of any existing sessions: `shopify auth logout`
+2. Log into Shopify CLI: `shopify theme list --store vfinejewels.myshopify.com`
+
+or using `npm`:
 
 ```zsh
-git clone https://github.com/treeshake/silkhour.git
-git branch feature/<github-username>-<theme_id>
-shopify theme pull --store vfinejewels.myshopify.com --password <theme_access_token> --theme <theme_id>
+npm run theme:auth
 ```
 
-5. Start the development server
+Start a development theme: `shopify theme dev --path src/theme`
 
-```zsh
-shopify theme dev <theme_id>
+or using `npm`:
+
 ```
-6. Push the branch
-
-```zsh
-git push origin feature/<github-username>-<theme_id>
+npm run theme:dev
 ```
 
-## Working with the Shopify Theme
+## **\*\*IMPORTANT\*\*** Working with the Shopify Theme
 
-**NEVER** modify the base theme's files directly e.g. `main-*.liquid`, `*.liquid`, `component-*-.css`, `component-*.css` `*.js` and many other files. <br>
-This will prevent updating the base theme as new versions of Spotlight get released by the Shopify Team.
+**\*\*DO NOT\*\*** modify **any** of the base theme's files e.g. `main-*.liquid`, `*.liquid`, `component-*-.css`, `component-*.css` `*.js` and many others. <br>
+This will prevent updating the base theme as new versions of `Spotlight` get released by the Shopify Team.
 
-Instead, you **MUST** always create or update custom files labelled with the keyword `custom` and reference them in `template` jsons and other `custom` files as required. If you need to build upon the base functionality provided by the theme, simply copy them over to a new file ensuring the keyword `custom` is in the filename so it can be identified as a custom development file.
+**\*\*ALWAYS\*\*** create or update custom files labelled with the keyword `custom` and reference them in product|collection `template` jsons and other `custom` files as required. To extend/customize base functionality provided by the theme, simply clone (copy) them over to a new file ensuring the keyword `custom` is in the filename so it can be identified as a custom development file.
 
-For example, if you're wanting to extend the `main-product.liquid` file, copy it to a new file e.g. `main-product-custom-something.liquid` and make the changes there.
+For example, if you're wanting to extend the `main-product.liquid` file, copy it to a new file e.g. `custom-main-product-something.liquid` and make the changes there.
 
-### Exceptions to this rule
+## Changes to Javascript (.js) files
 
-There are some exceptions:
+Changes to the theme's `.js` files, must be done through the [Modern Tooling Environment](#modern-tooling-environment), MTE. Use either Typescript (preferred) or Javascript. <br /><br />
+Please see `src/ts` folder for existing examples. If adding new files, then also remember to update the `webpack.config.js` file so it is included and uploaded to the theme's `assets` folder and can be included in any liquid files.
 
-1. You can modify `theme.liquid` to include new assets (javascript/css).
+Example:
 
-## Modern Tooling Environment
+```javascript
 
-As mentioned in the [tech stack section](#tech-stack), we use additional tooling to develop new functionality. Collectively, we refer to these as the Modern Tooling Environment or MTE for short.
+```
 
-### Installation
+```html
+<script src="{{ 'custom-product-list.js' | asset_url }}" defer="defer"></script>
+```
 
-Install `node` and `npm` from the [Node.js website](https://nodejs.org/en/). We also recommend using `nvm` to manage your node versions. You can install nvm from [here](https://github.com/nvm-sh/nvm). The version of `node` is within the `.nvmrc` file.
+# Modern Tooling Environment
 
-### Setup
+The MTE is required when making changes to javascript and for working with css frameworks like `tailwind`.
 
-We use `webpack` to bundle our compiled sources before deploying them to the `asset` folder. At the moment, we have included `tailwind` and `typescript` with plans to add `react` in the near future.<br>
-Start a new terminal console, and, run `npm run start:dev`. <br>
+## Prerequisites
+
+Install `node` and `npm` from the [Node.js website](https://nodejs.org/en/).<br />
+
+We also recommend using `nvm` to manage the node versions.
+
+Install it from [here](https://github.com/nvm-sh/nvm). The version of `node` is within the `.nvmrc` file.
+
+Run command: `nvm use` to switch to the correct version of node.
+
+## Setup and Running
+
+We use `webpack` to bundle Typescript / Javascript files before deploying them to the theme's `asset` folder.<br>
+
+Run `npm run start:dev`. <br>
 <br>
 This will:
 <br>
 
 1. Watch for changes to files and recompile any tailwind css to `assets/tailwind.css`
-2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom.js`
+2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom-.*.js`
 
-### Others
+## Publishing the theme
 
-We recommend development using VSCode IDE, with the following extensions:
-- ESLint
-- Code Spell Checker
-- GitHub Copilot (Account required)
-- Github Copilot Chat
-- Prettier - Code formatter
-- Shopify Liquid
-- Tailwind CSS IntelliSense
-- Headwind
+Once completed, publish your theme for review to the Shopify store using the Shopify CLI.
 
-## Submitting code changes
+## Submitting changes through GitHub
 
-1. All features must be developed in a `feature` branch as outlined in the [setup](setup) instructions.
-2. Commit changes into your feature branch and push the changes to Github
-3. Once you have completed your feature, it must be merged into `main` through submitting a Github pull request. Once approved, the branch is then merged.
-4. You must NOT edit the `live` theme directly.
-5. You must NOT push to `main` directly.
+1. All features must be developed in a `feature` branch.
+2. Commit changes into your `feature` branch and push the changes to GitHub
+3. Once the feature is completed, it must be merged into `main` through submitting a GitHub Pull Request. Once approved, the branch is then merged.
+4. __\*\*NEVER\*\*__ edit the `live` theme directly
+5. __\*\*NEVER\*\*__ push to `main` directly.
 
-## Coding Challenge
+## GitHub instructions
 
-To demonstrate your understand of the above, please complete a simple code challenge. The code challenge is timed and must be completed in about 30-60 minutes. It does not require setting up the [MTE](modern-tooling-environment), although if you can demonstrate this in your coding challenge, then this is a huge advantage.<br>
-
-### Task
-
-Your task is to extend the product form, and add new a new form field called `Engraving`. This field should be a dropdown. It should be the last field in the product form with options "Yes" and "No". Create a new collection and product to showcase this new field.
-
-### Requirements
-
-You must:
-
-1. Use Github and submit your code as a pull request, following the instructions in this README.
-2. Clone the existing theme, following the instructions in this README. 
-2. Create a new custom product template, you may base it on the default product template
-3. Create custom data for the new field and use it in your product.
-
-### Bonus
-
-4. Using the MTE, validate that the Engraving option is set before adding to cart. If it is not selected, show an error message.
-
-### Helpful articles
-
-Some references to help get you started in the right direction:
-
-1. [Shopify templates](https://help.shopify.com/en/manual/online-store/themes/theme-structure/templates)
-2. [Shopify custom data](https://help.shopify.com/en/manual/custom-data)
+1. From GitHub, clone the `main` branch
+2. Create a new branch and switch to it with the `theme_id` for example, `feature/<github-username>-<theme_id>`
+3. Push the branch to GitHub
+````zsh
+git clone https://github.com/treeshake/silkhour.git
+git branch feature/<github-username>-<theme_id>
+git push origin feature/<github-username>-<theme_id>
+```

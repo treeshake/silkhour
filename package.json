@@ -10,10 +10,11 @@
     "watch:tailwind": "npm run build:tailwind -- --watch",
     "watch:webpack": "npm run build:webpack -- --watch",
     "watch:many": "concurrently \"npm run watch:tailwind\" \"npm run watch:webpack\"",
-    "theme:auth": "shopify auth logout && shoplify theme list",
-    "theme:pull": "shopify theme pull --nodelete --path src/theme",
-    "theme:push": "shopify theme push --nodelete --path src/theme",
-    "theme:publish": "shopify theme publish --nodelete --path src/theme"
+    "theme:auth": "shopify auth logout && shopify theme list --store vfinejewels.myshopify.com",
+    "theme:pull": "shopify theme pull --nodelete --path src/theme --store vfinejewels.myshopify.com",
+    "theme:dev": "shopify theme dev --path src/theme --store vfinejewels.myshopify.com",
+    "theme:push": "shopify theme push --nodelete --path src/theme --store vfinejewels.myshopify.com",
+    "theme:publish": "shopify theme publish --store vfinejewels.myshopify.com"
   },
   "repository": {
     "type": "git",
