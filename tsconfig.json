@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./assets/custom",
+    "outDir": "./src/assets/custom",
     "noImplicitAny": true,
     "esModuleInterop" : true,
     "module": "es6",
