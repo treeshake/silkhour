@@ -10,7 +10,7 @@
       }
     },
     "product-grid": {
-      "type": "custom-main-collection-diamond-only",
+      "type": "custom-main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 1,
