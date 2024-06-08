@@ -1,7 +1,7 @@
 {
   "name": "lab-concierge",
   "version": "1.0.0",
-  "description": "## General commands > shopify theme list > shopify theme info",
+  "description": "Silkhour / V FINE Jewels / Lab Concierge Shopify Theme Development",
   "scripts": {
     "start:dev": "npm run watch:many",
     "build:tailwind": "tailwindcss -i ./src/tailwind/input.css -o ./src/theme/assets/tailwind.css",
@@ -29,11 +29,12 @@
   "homepage": "https://github.com/treeshake/silkhour#readme",
   "devDependencies": {
     "@eslint/js": "^9.3.0",
+    "@shopify/prettier-plugin-liquid": "^1.5.0",
     "@types/eslint__js": "^8.42.3",
     "@typescript/lib-dom": "npm:@types/web@^0.0.145",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
-    "prettier": "3.2.5",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",

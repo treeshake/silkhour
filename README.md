@@ -96,7 +96,7 @@ This will:
 <br>
 
 1. Watch for changes to files and recompile any tailwind css to `assets/tailwind.css`
-2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom-.*.js`
+2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom-[name].js`
 
 ## Publishing the theme
 
@@ -110,7 +110,9 @@ Once completed, publish your theme for review to the Shopify store using the Sho
 4. __\*\*NEVER\*\*__ edit the `live` theme directly
 5. __\*\*NEVER\*\*__ push to `main` directly.
 
-## GitHub instructions
+## GitHub Instructions
+
+It is assumed that a basic understanding of Git and GitHub is known. If not, please refer to the [GitHub Documentation](https://docs.github.com/en).
 
 1. From GitHub, clone the `main` branch
 2. Create a new branch and switch to it with the `theme_id` for example, `feature/<github-username>-<theme_id>`

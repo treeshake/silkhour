@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/ts/index.ts',
+  entry: {
+    facets: './src/ts/facets/facets.ts',
+    'product-list': './src/ts/ProductList.ts',
+    'product-info': './src/ts/ProductInfo.ts',
+  },
   devtool: 'inline-source-map',
   mode: 'production',
   module: {
@@ -17,7 +21,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'custom.js',
+    filename: 'custom-[name].js',
     path: path.resolve(__dirname, 'assets'),
   },
 };

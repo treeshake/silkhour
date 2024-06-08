@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-custom-engagement-setting",
+      "type": "custom-main-product-engagement-setting",
       "blocks": {
         "title": {
           "type": "title",
