@@ -1,0 +1,87 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_PTEWNC": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_dfwpB7": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_dfwpB7"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "desktop-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "reduce-logo-size",
+        "show_line_separator": false,
+        "button_label": "Book Appointment",
+        "button_link": "shopify:\/\/pages\/contact",
+        "btn_text_color": "#ffffff",
+        "btn_back_color": "#000000",
+        "color_scheme": "scheme-4",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "17148891621d7b048e": {
+      "type": "apps",
+      "blocks": {
+        "calpal_calendly_integration_app_block_tq6GJX": {
+          "type": "shopify:\/\/apps\/calpal-calendly-integration\/blocks\/app-block\/a8aa0544-ffd7-4753-8830-931780ec2b8e",
+          "disabled": true,
+          "settings": {
+            "meeting_link": "",
+            "button_text": "Book An Appointment",
+            "color": "#ffffff",
+            "bg_color": "#121212",
+            "button_width": "18%",
+            "border_radius": "0",
+            "button_alignment": "flex-end",
+            "text_align": "center",
+            "hover_color_change": "off",
+            "hover_background_color": "rgba(0,0,0,0)",
+            "hover_text_color": "rgba(0,0,0,0)",
+            "button_font_family": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "calpal_calendly_integration_app_block_tq6GJX"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_PTEWNC",
+    "header",
+    "17148891621d7b048e"
+  ]
+}
