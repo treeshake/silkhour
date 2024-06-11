@@ -31,10 +31,10 @@
       "type": "header",
       "settings": {
         "logo_position": "middle-center",
-        "menu": "header-menu",
+        "menu": "desktop-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
