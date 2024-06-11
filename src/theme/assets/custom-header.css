@@ -1,0 +1,15 @@
+.header .header__icons {
+    padding-right: 0;
+}
+.header details[open] > .header__menu-item {
+    text-decoration: none;
+}
+.header .header__icons .header_right_btn{
+    margin-left: 16px;
+}
+  
+@media (min-width: 990px){
+.header .header__icon--cart {
+    margin-right: 0;
+}
+}
