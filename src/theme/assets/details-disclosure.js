@@ -36,6 +36,21 @@ class HeaderMenu extends DetailsDisclosure {
   constructor() {
     super();
     this.header = document.querySelector('.header-wrapper');
+
+    this.menu_list = this.querySelectorAll(".mega-menu");
+    this.menu_list.forEach(function(item) {
+        item.addEventListener("mouseenter", function() {
+            this.setAttribute("open", "");
+        });
+        item.addEventListener("mouseleave", function() {
+            this.removeAttribute("open");
+        });
+    });
+    this.querySelectorAll(".mega-menu summary").forEach(function(item) {
+        item.addEventListener("click", function(e) {
+            e.preventDefault();
+        });
+    });
   }
 
   onToggle() {

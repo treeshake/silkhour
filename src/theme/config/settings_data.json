@@ -118,6 +118,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "engagement-ring-setting",
     "cart_color_scheme": "scheme-1",
+    "mobile-menu": "desktop-menu",
     "checkout_heading_font": "Open Sans",
     "checkout_body_font": "Open Sans",
     "sections": {

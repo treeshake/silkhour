@@ -30,19 +30,23 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "menu": "desktop-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": false,
+        "button_label": "Book An Appointment",
+        "button_link": "shopify:\/\/pages\/contact",
+        "btn_text_color": "#ffffff",
+        "btn_back_color": "#000000",
         "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 8,
-        "padding_bottom": 8
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "17148891621d7b048e": {

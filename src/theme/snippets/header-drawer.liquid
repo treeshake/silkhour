@@ -21,7 +21,7 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
+              {%- for link in settings.mobile-menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -121,6 +121,23 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+                {%- if section.settings.button_label != blank -%}
+                  <li class="large-up-hide">
+                  <div class="menu-drawer__menu-item list-menu__item">
+                  <a
+                    {% if section.settings.button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ section.settings.button_link }}"
+                    {% endif %}
+                    class="button button--primary button--full-width"
+                    style="--color-button:{{ section.settings.btn_back_color }};color: {{ section.settings.btn_text_color }};background-color: {{ section.settings.btn_back_color }};"
+                  >
+                    {{- section.settings.button_label | escape -}}
+                  </a>
+                  </div>
+                </li>
+                {%- endif -%}
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">

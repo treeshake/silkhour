@@ -53,9 +53,9 @@
     flex-wrap: wrap;
   }
 
-  summary.list-menu__item {
+  {% comment %} summary.list-menu__item {
     padding-right: 2.7rem;
-  }
+  } {% endcomment %}
 
   .list-menu__item {
     display: flex;
@@ -300,6 +300,21 @@
           </div>
         {%- endif -%}
       </a>
+
+      {%- if section.settings.button_label != blank -%}
+        <a
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+          class="button button--primary header_right_btn small-hide medium-hide"
+          style="--color-button:{{ section.settings.btn_back_color }};color: {{ section.settings.btn_text_color }};background-color: {{ section.settings.btn_back_color }};"
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      {%- endif -%}
+
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -547,6 +562,34 @@
       "id": "show_line_separator",
       "default": true,
       "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "header",
+      "content": "Right button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Button label",
+      "label": "Label",
+      "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_back_color",
+      "label": "Background color",
+      "default": "#000000"
     },
     {
       "type": "header",
