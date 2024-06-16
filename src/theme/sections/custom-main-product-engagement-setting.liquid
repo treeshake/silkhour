@@ -205,7 +205,7 @@
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}">
+                  <details id="Details-{{ block.id }}-{{ section.id }}" open>
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
@@ -452,7 +452,7 @@
                 %}
 
               {%- when 'variant_picker' -%}
-                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+                {% render 'custom-product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'ring_size_selector' -%}
                 {%- render 'custom-input-ring-size' -%}
               {%- when 'buy_buttons' -%}
@@ -539,7 +539,7 @@
                           -%}
                           <div
                             id="Slider-{{ block.id }}"
-                            class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
+                            class="grid contains-card contains-card--product complementary-slider grid--1-col slider slider--everywhere"
                             role="list"
                             {% if number_of_slides > 1 %}
                               aria-label="{{ 'general.slider.name' | t }}"
