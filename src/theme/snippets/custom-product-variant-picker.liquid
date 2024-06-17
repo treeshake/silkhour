@@ -56,6 +56,9 @@
               block: block,
               picker_type: picker_type
             %}
+            {% if option.name == 'Centrestone' %}
+              <a class="choose_diamond_link link" href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true">Choose a diamond</a>
+            {% endif %}
           </fieldset>
         {%- else -%}
           <div class="product-form__input product-form__input--dropdown">

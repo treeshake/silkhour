@@ -981,6 +981,13 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
     }
+    if(this.options[1] == 'Select'){
+      this.closest('.product__info-container').querySelector('.engagement-form_submit').classList.add('hidden');
+      this.closest('.product__info-container').querySelector('.choose_diamond').classList.remove('hidden');
+    }else{
+      this.closest('.product__info-container').querySelector('.engagement-form_submit').classList.remove('hidden');
+      this.closest('.product__info-container').querySelector('.choose_diamond').classList.add('hidden');
+    }
   }
 
   updateOptions() {

@@ -69,7 +69,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}{% if is_select == true %} hidden{% endif %}"
+            class="product-form__submit button button--full-width engagement-form_submit {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}{% if is_select == true %} hidden{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
@@ -85,8 +85,8 @@
           </button>
           <a
             id="ProductSubmitButton-{{ section_id }}"
-            href="/collections/lab-diamonds?setting={{ product.handle }}&sort_by=price-ascending"
-            class="product-form__submit button button--full-width button--primary"
+            href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true"
+            class="product-form__submit button button--full-width button--primary choose_diamond{% if is_select == false %} hidden{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
