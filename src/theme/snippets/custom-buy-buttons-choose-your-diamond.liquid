@@ -85,8 +85,9 @@
           </button>
           <a
             id="ProductSubmitButton-{{ section_id }}"
-            href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true"
-            class="product-form__submit button button--full-width button--primary choose_diamond{% if is_select == false %} hidden{% endif %}"
+            href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true&ring-variant-id={{ product.selected_or_first_available_variant.id }}"
+            data-href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true"
+            class="product-form__submit button button--full-width button--primary choose_diamond choose_diamond_btn{% if is_select == false %} hidden{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}

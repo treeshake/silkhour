@@ -988,6 +988,16 @@ class VariantSelects extends HTMLElement {
       this.closest('.product__info-container').querySelector('.engagement-form_submit').classList.remove('hidden');
       this.closest('.product__info-container').querySelector('.choose_diamond').classList.add('hidden');
     }
+    
+  let chooseDiamond = document.querySelectorAll('.choose_diamond_btn');
+  let currentVariantId = this.currentVariant.id;
+  if(chooseDiamond.length > 0){
+      chooseDiamond.forEach(function (item) {
+        let collectionUrl = item.dataset.href;
+        item.setAttribute('href', collectionUrl + '&ring-variant-id=' + currentVariantId);     
+      });
+  }
+
   }
 
   updateOptions() {
