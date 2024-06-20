@@ -59,13 +59,13 @@
         {% if card_product.metafields.custom.diamond_cut.value.name.value != blank %}
           <li><strong>Cut:</strong> {{ card_product.metafields.custom.diamond_cut.value.name.value }}</li>
         {% endif %}
-        <li><div class="list_price"><strong>Price:</strong> {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></li>
         {% if card_product.metafields.custom.diamond_fluorescent.value.text_options.value != blank %}
           <li><strong>Flurouence: </strong> {{ card_product.metafields.custom.diamond_fluorescent.value.text_options.value }}</li>
         {% endif %}
+        <li><div class="list_price"><strong>Price:</strong> {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</div></li>
       </ul>
         <div class="list_add_btn">
-        <a href="{{ card_product.url }}" class="button">Add</a>
+        <a href="{{ card_product.url }}" class="button center">Select this diamond</a>
         </div>
         </div>
       </div>

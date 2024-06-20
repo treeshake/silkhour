@@ -36,6 +36,15 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- capture header_content -%}{{ content_for_header }}{%- endcapture -%}
+  {%- assign page_url = header_content | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' -%}
+  {% if page_url contains 'from-engagement-ring' %}
+    .custom_cllection_main .facets-container .filter_shape,
+    .custom_cllection_main .facets-container .active-facets{
+      display: none;
+    }
+  {% endif %}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} custom_cllection_main">
