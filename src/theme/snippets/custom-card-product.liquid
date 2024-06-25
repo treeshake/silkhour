@@ -67,7 +67,7 @@
       {%- capture header_content -%}{{ content_for_header }}{%- endcapture -%}
       {%- assign page_url = header_content | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' -%}
         <div class="list_add_btn">
-        <a href="/pages/ring-design-summary?from-engagement-ring=true&ring-variant-id={{ page_url | split: 'ring-variant-id=' | last }}&stone-product-id={{ card_product.selected_or_first_available_variant.id }}" class="button center">Select this diamond</a>
+        <a href="/pages/ring-design-summary?from-engagement-ring=true&ring-variant-id={{ page_url | split: 'ring-variant-id=' | last }}&stone-product-id={{ card_product.handle }}" class="button center">Select this diamond</a>
         </div>
         </div>
       </div>
