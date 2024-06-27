@@ -19,7 +19,7 @@
 {% assign ring_variant_id = page_url | split: 'ring-variant-id=' | last | split: '&' | first | plus: 0 %}     
 {% assign stone_product_id = page_url | split: 'stone-product-id=' | last %}
 {% assign engagement_product_img = '' %}
-{% assign engagement_stone_img = all_products[stone_product_id].featured_image %}
+{% assign engagement_stone_img = all_products[stone_product_id].featured_media %}
 
 {% for product in collections['engagement-ring-setting'].products %}
     {% for variant in product.variants %}
@@ -33,7 +33,10 @@
 
 <div class="ring-design-summary color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
+    <div class="ring-design_inner">
     <div class="ring-design_images">
+      {% if engagement_product_img != blank %}
+        <div class="ring-design-featured_image">
         <div class="media media--transparent" style="padding-bottom: {{ 1 | divided_by: engagement_product_img.aspect_ratio | times: 100 }}%;">
             {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
             {%- capture sizes -%}
@@ -46,20 +49,16 @@
               | image_tag: sizes: sizes, widths: widths, fetchpriority: 'auto'
             }}
           </div>
-          <div class="media media--transparent" style="padding-bottom: {{ 1 | divided_by: engagement_stone_img.aspect_ratio | times: 100 }}%;">
-            {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
-            {%- capture sizes -%}
-            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-            (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-            {%- endcapture -%}
-            {{
-                engagement_stone_img
-              | image_url: width: 1500
-              | image_tag: sizes: sizes, widths: widths, fetchpriority: 'auto'
-            }}
           </div>
+        {% endif %}
+        {% if engagement_stone_img != blank %}
+          <div class="ring-design_video">
+          {{ engagement_stone_img | media_tag: image_size: '2048x', autoplay: true, loop: true, controls: false, preload: 'none' }}
+          </div>
+        {% endif %}
     </div>
     <div class="ring-design_information">
+    </div>
     </div>
   </div>
 </div>

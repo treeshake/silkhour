@@ -1,3 +1,17 @@
-.ring-design-summary{
-
+.ring-design-summary  .ring-design_inner{
+    display: flex;
+}
+.ring-design-summary .ring-design_images{
+    display: flex;
+    column-gap: 10px;
+}
+.ring-design-summary .ring-design_images .ring-design-featured_image,
+.ring-design-summary .ring-design_images .ring-design_video{
+    width: 50%;
+}
+.ring-design-summary .ring-design_images{
+    width: 60%;
+}
+.ring-design-summary .ring-design_information{
+    width: 40%;
 }
