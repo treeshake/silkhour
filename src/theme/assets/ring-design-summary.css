@@ -1,5 +1,6 @@
-.ring-design-summary  .ring-design_inner{
+.ring-design-summary .ring-design_inner{
     display: flex;
+    gap: 40px;
 }
 .ring-design-summary .ring-design_images{
     display: flex;
@@ -14,4 +15,20 @@
 }
 .ring-design-summary .ring-design_information{
     width: 40%;
+}
+.ring-design-summary .ring-design_information .product_content{
+    margin-top: 20px;
+}
+.ring-design-summary .ring-design_information .product_content li + li{
+    margin-top: 10px;
+}
+.ring-design-summary .ring-design_information .product_content li:first-child{
+display: flex;
+align-items: center;
+justify-content: space-between;
+column-gap: 10px;
+}
+.ring-design-summary .ring-design_information  .modify_link{
+    text-decoration: underline;
+text-underline-offset: 2px;
 }

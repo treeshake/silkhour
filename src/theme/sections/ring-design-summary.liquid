@@ -17,47 +17,67 @@
 {%- capture header_content -%}{{ content_for_header }}{%- endcapture -%}
 {%- assign page_url = header_content | split: '"pageurl":"' | last | split: '"' | first | split: '.myshopify.com' | last | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&' -%}
 {% assign ring_variant_id = page_url | split: 'ring-variant-id=' | last | split: '&' | first | plus: 0 %}     
-{% assign stone_product_id = page_url | split: 'stone-product-id=' | last %}
-{% assign engagement_product_img = '' %}
-{% assign engagement_stone_img = all_products[stone_product_id].featured_media %}
+{% assign stone_handle = page_url | split: 'stone-handle=' | last %}
+{% assign e_stone = all_products[stone_handle] %}
 
 {% for product in collections['engagement-ring-setting'].products %}
     {% for variant in product.variants %}
        {% if variant.id == ring_variant_id %}
-            {% assign engagement_product_img = product.media[1] %}
+            {% assign e_product = product %}
+            {% assign e_variant = variant %}
             {% break %}
         {% endif %}
     {% endfor %}
 {% endfor %}
-  
 
 <div class="ring-design-summary color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
     <div class="ring-design_inner">
     <div class="ring-design_images">
-      {% if engagement_product_img != blank %}
+      {% if e_product.media[1] != blank %}
         <div class="ring-design-featured_image">
-        <div class="media media--transparent" style="padding-bottom: {{ 1 | divided_by: engagement_product_img.aspect_ratio | times: 100 }}%;">
+        <div class="media media--transparent" style="padding-bottom: {{ 1 | divided_by: e_product.media[1].aspect_ratio | times: 100 }}%;">
             {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
             {%- capture sizes -%}
             (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
             (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
             {%- endcapture -%}
             {{
-                engagement_product_img
+              e_product.media[1]
               | image_url: width: 1500
               | image_tag: sizes: sizes, widths: widths, fetchpriority: 'auto'
             }}
           </div>
           </div>
         {% endif %}
-        {% if engagement_stone_img != blank %}
+        {% if e_stone.featured_media != blank %}
           <div class="ring-design_video">
-          {{ engagement_stone_img | media_tag: image_size: '2048x', autoplay: true, loop: true, controls: false, preload: 'none' }}
+          {{ e_stone.featured_media | media_tag: image_size: '2048x', autoplay: true, loop: true, controls: false, preload: 'none' }}
           </div>
         {% endif %}
     </div>
     <div class="ring-design_information">
+      <h1>{{ e_product.title | escape }}</h1>
+
+      <ul class="product_content">
+      <li>
+        <div class="modify_content">
+          <strong>Centerstone: </strong>
+        {{ e_stone.metafields.custom.diamond_weight.value.value.value }}, 
+        {{ e_stone.metafields.custom.diamond_color.value.value.value }}, 
+        {{ e_stone.metafields.custom.diamond_clarity.value.value.value }}, 
+        {{ e_stone.metafields.custom.diamond_cut.value.name.value }}
+        </div>
+        <a href="" class="modify_link">Modify</a>
+      </li>
+      {% if e_product.metafields.custom.diamond_shape.value.value.value != blank %}
+        <li><strong>Shape: </strong>{{ e_product.metafields.custom.diamond_shape.value.value.value }}</li>
+        {% endif %}
+      {% if e_product.metafields.custom.engagement_ring_setting_style.value.value.value != blank %}
+      <li><strong>Setting: </strong>{{ e_product.metafields.custom.engagement_ring_setting_style.value.value.value }}</li>
+      {% endif %}
+      <li><strong>Metal: </strong>{{ e_variant.option1 }}</li>
+        </ul>
     </div>
     </div>
   </div>
