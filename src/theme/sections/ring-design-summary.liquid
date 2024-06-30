@@ -1,5 +1,7 @@
 {{ 'ring-design-summary.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'custom-product-form.js' | asset_url }}" defer="defer"></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -30,6 +32,7 @@
     {% endfor %}
 {% endfor %}
 
+{% if e_product != blank %}
 <div class="ring-design-summary color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
     <div class="ring-design_inner">
@@ -57,10 +60,14 @@
         {% endif %}
     </div>
     <div class="ring-design_information">
+      <div class="product_title">
       <h1>{{ e_product.title | escape }}</h1>
+      <a href="/collections/engagement-ring-setting" class="modify_link">Change</a>
+      </div>
 
       <ul class="product_content">
       <li>
+        {% if e_stone.metafields.custom.diamond_weight.value.value.value != blank or e_stone.metafields.custom.diamond_color.value.value.value != blank or e_stone.metafields.custom.diamond_clarity.value.value.value != blank or e_stone.metafields.custom.diamond_cut.value.name.value != blank %}
         <div class="modify_content">
           <strong>Centerstone: </strong>
         {{ e_stone.metafields.custom.diamond_weight.value.value.value }}, 
@@ -68,7 +75,8 @@
         {{ e_stone.metafields.custom.diamond_clarity.value.value.value }}, 
         {{ e_stone.metafields.custom.diamond_cut.value.name.value }}
         </div>
-        <a href="" class="modify_link">Modify</a>
+        <a href="/collections/lab-diamonds?filter.p.m.custom.diamond_shape={{ e_product.metafields.custom.diamond_shape | url_param_escape }}&sort_by=price-ascending&from-engagement-ring=true&ring-variant-id={{ e_variant.id }}" class="modify_link">Change</a>
+      {% endif %}
       </li>
       {% if e_product.metafields.custom.diamond_shape.value.value.value != blank %}
         <li><strong>Shape: </strong>{{ e_product.metafields.custom.diamond_shape.value.value.value }}</li>
@@ -78,10 +86,16 @@
       {% endif %}
       <li><strong>Metal: </strong>{{ e_variant.option1 }}</li>
         </ul>
+
+      <div class="product_form">
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+         {% render 'ring-design-buy-buttons', section: section, product: e_product, product_form_id: product_form_id, e_stone: e_stone %} 
+      </div>
     </div>
     </div>
   </div>
 </div>
+{% endif %}
 
 {% schema %}
 {

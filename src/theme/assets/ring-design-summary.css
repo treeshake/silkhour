@@ -1,6 +1,6 @@
 .ring-design-summary .ring-design_inner{
     display: flex;
-    gap: 40px;
+    gap: 30px;
 }
 .ring-design-summary .ring-design_images{
     display: flex;
@@ -31,4 +31,17 @@ column-gap: 10px;
 .ring-design-summary .ring-design_information  .modify_link{
     text-decoration: underline;
 text-underline-offset: 2px;
+}
+.ring-design-summary .product_form{
+    margin-top: 25px;
+}
+
+@media (max-width: 749px){
+    .ring-design-summary .ring-design_inner{
+        flex-direction: column;
+    }
+    .ring-design-summary .ring-design_images,
+    .ring-design-summary .ring-design_information {
+        width: 100%;
+    }
 }
