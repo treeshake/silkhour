@@ -21,10 +21,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop Best Sellers",
-            "button_link_1": "shopify:\/\/collections\/earrings",
+            "button_link_1": "shopify:\/\/collections\/best-sellers",
             "button_style_secondary_1": false,
-            "button_label_2": "Shop Under $500",
-            "button_link_2": "shopify:\/\/collections\/fine-jewellery",
+            "button_label_2": "Shop Under $1000",
+            "button_link_2": "\/collections\/shop-all?filter.v.price.gte=&filter.v.price.lte=1001",
             "button_style_secondary_2": false
           }
         }
@@ -91,7 +91,7 @@
         "featured_collection_W4Nitn": {
           "type": "featured_collection",
           "settings": {
-            "collection": "engagement-ring-setting"
+            "collection": "engagement-ring"
           }
         },
         "featured_collection_bQ9m98": {
@@ -144,7 +144,7 @@
           "type": "button",
           "settings": {
             "button_label": "CREATE MY RING",
-            "button_link": "shopify:\/\/collections\/earrings",
+            "button_link": "shopify:\/\/collections\/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -178,15 +178,15 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "engagement-ring-setting",
-        "products_to_show": 12,
-        "columns_desktop": 3,
+        "collection": "engagement-ring",
+        "products_to_show": 25,
+        "columns_desktop": 5,
         "full_width": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "outline",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -195,58 +195,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 28,
-        "padding_bottom": 12
-      }
-    },
-    "image_banner_pXdiYJ": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_xdxKat": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_Gwxtkf": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
-        "buttons_mUMLkA": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Best Sellers",
-            "button_link_1": "shopify:\/\/collections\/earrings",
-            "button_style_secondary_1": false,
-            "button_label_2": "Shop Under $500",
-            "button_link_2": "shopify:\/\/collections\/fine-jewellery",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_xdxKat",
-        "text_Gwxtkf",
-        "buttons_mUMLkA"
-      ],
-      "custom_css": [
-        ".banner__content {align-items: end;}"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Banner1.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "padding_bottom": 28
       }
     },
     "image_with_text_fbRkjy": {
@@ -262,7 +211,7 @@
         "text_rqBHqN": {
           "type": "text",
           "settings": {
-            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend natural diamonds and 14k solid gold to round out the sentiment.<\/p>",
+            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend diamonds and 14k solid gold to round out the sentiment.<\/p>",
             "text_style": "body"
           }
         },
@@ -270,7 +219,7 @@
           "type": "button",
           "settings": {
             "button_label": "START WITH A DIAMOND",
-            "button_link": "shopify:\/\/collections\/earrings",
+            "button_link": "shopify:\/\/collections\/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -302,7 +251,7 @@
         "heading_VbjkYp": {
           "type": "heading",
           "settings": {
-            "heading": "Get 15% Off your First Order!",
+            "heading": "Get 10% Off your First Order!",
             "heading_size": "h2"
           }
         },
@@ -336,7 +285,6 @@
     "collection_list_zdQ6RT",
     "image_with_text_H7CdHK",
     "featured_collection_YTMHLV",
-    "image_banner_pXdiYJ",
     "image_with_text_fbRkjy",
     "newsletter_U7RyNG"
   ]
