@@ -1,7 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "custom-main-product-engagement-setting",
+      "type": "main-product",
       "blocks": {
         "title": {
           "type": "title",
@@ -28,8 +37,8 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         },
         "collapsible_tab_aexemE": {
@@ -37,7 +46,7 @@
           "settings": {
             "heading": "Ring Details",
             "icon": "none",
-            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}<\/li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}<\/li><\/ul>",
+            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}</li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}</li></ul>",
             "page": ""
           }
         }

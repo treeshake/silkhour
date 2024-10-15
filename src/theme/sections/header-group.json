@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -28,17 +37,13 @@
       }
     },
     "header": {
-      "type": "custom-header",
+      "type": "header",
       "settings": {
-        "logo_position": "middle-center",
-        "menu": "desktop-simple-menu",
+        "logo_position": "top-center",
+        "menu": "desktop-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
-        "show_line_separator": false,
-        "button_label": "Book Appointment",
-        "button_link": "shopify:\/\/pages\/contact",
-        "btn_text_color": "#ffffff",
-        "btn_back_color": "#000000",
+        "show_line_separator": true,
         "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
@@ -48,10 +53,40 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
+    },
+    "17148891621d7b048e": {
+      "type": "apps",
+      "blocks": {
+        "calpal_calendly_integration_app_block_tq6GJX": {
+          "type": "shopify://apps/calpal-calendly-integration/blocks/app-block/a8aa0544-ffd7-4753-8830-931780ec2b8e",
+          "disabled": true,
+          "settings": {
+            "meeting_link": "",
+            "button_text": "Book An Appointment",
+            "color": "#ffffff",
+            "bg_color": "#121212",
+            "button_width": "18%",
+            "border_radius": "0",
+            "button_alignment": "flex-end",
+            "text_align": "center",
+            "hover_color_change": "off",
+            "hover_background_color": "rgba(0,0,0,0)",
+            "hover_text_color": "rgba(0,0,0,0)",
+            "button_font_family": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "calpal_calendly_integration_app_block_tq6GJX"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "announcement_bar_PTEWNC",
-    "header"
+    "header",
+    "17148891621d7b048e"
   ]
 }

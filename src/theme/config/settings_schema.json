@@ -2,10 +2,10 @@
   {
     "name": "theme_info",
     "theme_name": "Spotlight",
-    "theme_version": "14.0.0",
+    "theme_version": "15.2.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1463,17 +1463,6 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
-      }
-    ]
-  },
-  {
-    "name": "Drawer menu",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "mobile-menu",
-        "default": "main-menu",
-        "label": "t:sections.header.settings.menu.label"
       }
     ]
   }

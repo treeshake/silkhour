@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
@@ -10,22 +19,22 @@
       }
     },
     "product-grid": {
-      "type": "custom-main-collection-diamond-only",
+      "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 1,
-        "color_scheme": "scheme-242160b8-a698-451b-b67b-3947e6f1f308",
-        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "enable_filtering": true,
-        "filter_type": "vertical",
+        "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "1",
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 36
       }
     }
