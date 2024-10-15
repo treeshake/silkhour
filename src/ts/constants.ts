@@ -8,5 +8,6 @@ export const PUB_SUB_EVENTS = {
   cartUpdate: 'cart-update',
   quantityUpdate: 'quantity-update',
   variantChange: 'variant-change',
+  optionValueSelectionChange: 'option-value-selection-change',
   cartError: 'cart-error',
 };
