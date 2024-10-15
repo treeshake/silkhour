@@ -30,17 +30,9 @@
       data-section-id="{{ section.id }}"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          class="icon icon-error"
-          viewBox="0 0 13 13"
-        >
-          <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
-          <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
-          <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
-          <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
-        </svg>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
         <span class="product-form__error-message"></span>
       </div>
 
@@ -51,56 +43,14 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
-
-      <div class="product-form__input product-form__input--dropdown"; style="margin-bottom: 35px;">
-        <label class="form__label">Ring Size</label>
-        <div class="select">
-          <select required class="required select__select" id="ring-size" name="properties[Ring Size]">
-            <option value="F">F</option>
-            <option value="F 1/2">F 1/2</option>
-            <option value="G">G</option>
-            <option value="G 1/2">G 1/2</option>
-            <option value="H">H</option>
-            <option value="H 1/2">H 1/2</option>
-            <option value="I">I</option>
-            <option value="I 1/2">I 1/2</option>
-            <option value="J">J</option>
-            <option value="J 1/2">J 1/2</option>
-            <option value="K">K</option>
-            <option value="K 1/2">K 1/2</option>
-            <option value="L">L</option>
-            <option value="L 1/2">L 1/2</option>
-            <option value="M">M</option>
-            <option value="M 1/2">M 1/2</option>
-            <option value="N">N</option>
-            <option value="N 1/2">N 1/2</option>
-            <option value="Q">Q</option>
-            <option value="Q 1/2">Q 1/2</option>
-            <option value="R">R</option>
-            <option value="R 1/2">R 1/2</option>
-            <option value="S">S</option>
-            <option value="S 1/2">S 1/2</option>
-            <option value="T">T</option>
-            <option value="T 1/2">T 1/2</option>
-            <option value="U">U</option>
-            <option value="U 1/2">U 1/2</option>
-            <option value="V">V</option>
-            <option value="V 1/2">V 1/2</option>
-            <option value="W">W</option>
-            <option value="W 1/2">W 1/2</option>
-            <option value="X">X</option>
-            <option value="X 1/2">X 1/2</option>
-            <option value="Y">Y</option>
-            <option value="Z">Z</option>
-          </select>
-        </div>
-      </div>
-
         <input
           type="hidden"
           name="id"
           value="{{ product.selected_or_first_available_variant.id }}"
-          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+          {% if product.selected_or_first_available_variant.available == false
+            or quantity_rule_soldout
+            or product.selected_or_first_available_variant == null
+          %}
             disabled
           {% endif %}
           class="product-variant-id"
@@ -125,12 +75,17 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
               disabled
             {% endif %}
           >
             <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- if product.selected_or_first_available_variant == null -%}
+                {{ 'products.product.unavailable' | t }}
+              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
@@ -178,7 +133,9 @@
     >
       <template>
         <pickup-availability-preview class="pickup-availability-preview">
-          {% render 'icon-unavailable' %}
+          <span class="svg-wrapper">
+            {{- 'icon-unavailable.svg' | inline_asset_content -}}
+          </span>
           <div class="pickup-availability-info">
             <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
             <button class="pickup-availability-button link link--text underlined-link">
