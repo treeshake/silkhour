@@ -64,20 +64,6 @@
     "collection_list_zdQ6RT": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_whXwXV": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": "fine-jewellery"
-          }
-        },
-        "featured_collection_MxNw4x": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": ""
-          }
-        },
         "featured_collection_c3Jfyk": {
           "type": "featured_collection",
           "settings": {
@@ -88,13 +74,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "earrings"
-          }
-        },
-        "featured_collection_Yxi6C4": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": "tennis-bracelets"
           }
         },
         "featured_collection_W4Nitn": {
@@ -111,11 +90,8 @@
         }
       },
       "block_order": [
-        "featured_collection_whXwXV",
-        "featured_collection_MxNw4x",
         "featured_collection_c3Jfyk",
         "featured_collection_fFPtwP",
-        "featured_collection_Yxi6C4",
         "featured_collection_W4Nitn",
         "featured_collection_bQ9m98"
       ],

@@ -127,6 +127,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "engagement-ring",
     "cart_color_scheme": "scheme-1",
+    "mobile-menu": "mobile-simple-menu",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
