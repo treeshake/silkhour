@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "image_banner_eLkf73": {
@@ -15,25 +6,25 @@
         "heading_gWnmqR": {
           "type": "heading",
           "settings": {
-            "heading": "",
+            "heading": "Bespoke Diamond Jewellery",
             "heading_size": "h1"
           }
         },
         "text_XRfJBX": {
           "type": "text",
           "settings": {
-            "text": "",
+            "text": "<strong>MADE IN AUSTRALIA<\/strong>",
             "text_style": "body"
           }
         },
         "buttons_FnjJLA": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Best Sellers",
-            "button_link_1": "shopify://collections/best-sellers",
+            "button_label_1": "EXPLORE THE COLLECTION",
+            "button_link_1": "shopify:\/\/collections\/best-sellers",
             "button_style_secondary_1": false,
-            "button_label_2": "Shop Under $1000",
-            "button_link_2": "/collections/shop-all?filter.v.price.gte=&filter.v.price.lte=1001",
+            "button_label_2": "",
+            "button_link_2": "\/collections\/shop-all?filter.v.price.gte=&filter.v.price.lte=1001",
             "button_style_secondary_2": false
           }
         }
@@ -47,18 +38,18 @@
         ".banner__content {align-items: end;}"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSC_0540_20copy.jpg",
-        "image_2": "shopify://shop_images/DSC_0044_20copy_1.jpg",
+        "image": "shopify:\/\/shop_images\/DSC_0540_20copy.jpg",
+        "image_2": "shopify:\/\/shop_images\/DSC_0044_20copy_1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "bottom-right",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": true,
-        "show_text_below": false
+        "show_text_below": true
       }
     },
     "collection_list_zdQ6RT": {
@@ -95,6 +86,7 @@
         "featured_collection_W4Nitn",
         "featured_collection_bQ9m98"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -106,6 +98,34 @@
         "swipe_on_mobile": false,
         "padding_top": 12,
         "padding_bottom": 12
+      }
+    },
+    "featured_collection_YTMHLV": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Our Signatures",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "engagement-ring",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
       }
     },
     "image_with_text_H7CdHK": {
@@ -121,15 +141,15 @@
         "text_Qcjq47": {
           "type": "text",
           "settings": {
-            "text": "<p>Every detail selected with your<br/>preferences and style in mind for<br/>a ring that is perfect and true to you. </p>",
+            "text": "<p>Every detail selected with your preferences and style in mind for a ring that is perfect and true to you<\/p>",
             "text_style": "body"
           }
         },
         "button_i8VGQa": {
           "type": "button",
           "settings": {
-            "button_label": "CREATE MY RING",
-            "button_link": "shopify://collections/engagement-ring",
+            "button_label": "EXPLORE",
+            "button_link": "shopify:\/\/collections\/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -140,12 +160,12 @@
         "button_i8VGQa"
       ],
       "settings": {
-        "image": "shopify://shop_images/DSC_0771_20copy_2.jpg",
+        "image": "shopify:\/\/shop_images\/DSC_0771_20copy_2.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "section_color_scheme": "scheme-5",
         "color_scheme": "scheme-5",
@@ -153,34 +173,6 @@
         "mobile_content_alignment": "center",
         "padding_top": 12,
         "padding_bottom": 12
-      }
-    },
-    "featured_collection_YTMHLV": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Best Sellers",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "engagement-ring",
-        "products_to_show": 25,
-        "columns_desktop": 5,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "outline",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 28
       }
     },
     "image_with_text_fbRkjy": {
@@ -196,7 +188,7 @@
         "text_rqBHqN": {
           "type": "text",
           "settings": {
-            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend diamonds and 14k solid gold to round out the sentiment.</p>",
+            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend diamonds and 14k solid gold to round out the sentiment.<\/p>",
             "text_style": "body"
           }
         },
@@ -204,7 +196,7 @@
           "type": "button",
           "settings": {
             "button_label": "START WITH A DIAMOND",
-            "button_link": "shopify://collections/engagement-ring",
+            "button_link": "shopify:\/\/collections\/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -214,8 +206,9 @@
         "text_rqBHqN",
         "button_ErGgG3"
       ],
+      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Snapinsta.app_176208309_2856537817927067_2749204993904897759_n_1080_20_281_29.jpg",
+        "image": "shopify:\/\/shop_images\/Snapinsta.app_176208309_2856537817927067_2749204993904897759_n_1080_20_281_29.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -237,13 +230,13 @@
           "type": "heading",
           "settings": {
             "heading": "Get 10% Off your First Order!",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "paragraph_n3xyzW": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Stay in the know and get first access to sales, new drops, and events</p>"
+            "text": "<p>Stay in the know and get first access to sales, new drops, and events<\/p>"
           }
         },
         "email_form_7BHHdB": {
@@ -268,8 +261,8 @@
   "order": [
     "image_banner_eLkf73",
     "collection_list_zdQ6RT",
-    "image_with_text_H7CdHK",
     "featured_collection_YTMHLV",
+    "image_with_text_H7CdHK",
     "image_with_text_fbRkjy",
     "newsletter_U7RyNG"
   ]

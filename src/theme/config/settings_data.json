@@ -1,17 +1,8 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
-    "logo": "shopify://shop_images/SILKHOUR-WHITE.png",
+    "logo": "shopify:\/\/shop_images\/SILKHOUR-WHITE.png",
     "logo_width": 150,
-    "favicon": "shopify://shop_images/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
+    "favicon": "shopify:\/\/shop_images\/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
     "type_header_font": "playfair_display_n4",
     "heading_scale": 75,
     "type_body_font": "avenir_next_n4",
@@ -110,13 +101,13 @@
     "brand_headline": "",
     "brand_description": "",
     "brand_image_width": 550,
-    "social_facebook_link": "",
-    "social_instagram_link": "https://instagram.com/silkhour",
+    "social_facebook_link": "https:\/\/www.facebook.com\/p\/Silkhour-100066362294724",
+    "social_instagram_link": "https:\/\/instagram.com\/silkhour",
     "social_youtube_link": "",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@silkhour",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https:\/\/au.pinterest.com\/silkhours5903\/",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
