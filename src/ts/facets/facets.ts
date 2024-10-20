@@ -1,6 +1,6 @@
-import { FacetFiltersForm as CustomFacetFiltersForm } from './FacetFiltersForm';
-import { PriceRange as CustomPriceRange } from './PriceRange';
-import { FacetRemove as CustomFacetRemove } from './FacetRemove';
+import { FacetFiltersForm as CustomFacetFiltersForm } from './facet-filters-form';
+import { FacetRemove as CustomFacetRemove } from './facet-remove';
+import { PriceRange as CustomPriceRange } from './price-range';
 
 /**
  * Adapted from facets.js

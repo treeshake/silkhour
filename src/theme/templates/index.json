@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner_eLkf73": {
@@ -21,10 +30,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop Best Sellers",
-            "button_link_1": "shopify:\/\/collections\/best-sellers",
+            "button_link_1": "shopify://collections/best-sellers",
             "button_style_secondary_1": false,
             "button_label_2": "Shop Under $1000",
-            "button_link_2": "\/collections\/shop-all?filter.v.price.gte=&filter.v.price.lte=1001",
+            "button_link_2": "/collections/shop-all?filter.v.price.gte=&filter.v.price.lte=1001",
             "button_style_secondary_2": false
           }
         }
@@ -38,8 +47,8 @@
         ".banner__content {align-items: end;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/DSC_0540_20copy.jpg",
-        "image_2": "shopify:\/\/shop_images\/DSC_0044_20copy_1.jpg",
+        "image": "shopify://shop_images/DSC_0540_20copy.jpg",
+        "image_2": "shopify://shop_images/DSC_0044_20copy_1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "bottom-center",
@@ -55,20 +64,6 @@
     "collection_list_zdQ6RT": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_whXwXV": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": "fine-jewellery"
-          }
-        },
-        "featured_collection_MxNw4x": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": ""
-          }
-        },
         "featured_collection_c3Jfyk": {
           "type": "featured_collection",
           "settings": {
@@ -79,13 +74,6 @@
           "type": "featured_collection",
           "settings": {
             "collection": "earrings"
-          }
-        },
-        "featured_collection_Yxi6C4": {
-          "type": "featured_collection",
-          "disabled": true,
-          "settings": {
-            "collection": "tennis-bracelets"
           }
         },
         "featured_collection_W4Nitn": {
@@ -102,11 +90,8 @@
         }
       },
       "block_order": [
-        "featured_collection_whXwXV",
-        "featured_collection_MxNw4x",
         "featured_collection_c3Jfyk",
         "featured_collection_fFPtwP",
-        "featured_collection_Yxi6C4",
         "featured_collection_W4Nitn",
         "featured_collection_bQ9m98"
       ],
@@ -136,7 +121,7 @@
         "text_Qcjq47": {
           "type": "text",
           "settings": {
-            "text": "<p>Every detail selected with your<br\/>preferences and style in mind for<br\/>a ring that is perfect and true to you. <\/p>",
+            "text": "<p>Every detail selected with your<br/>preferences and style in mind for<br/>a ring that is perfect and true to you. </p>",
             "text_style": "body"
           }
         },
@@ -144,7 +129,7 @@
           "type": "button",
           "settings": {
             "button_label": "CREATE MY RING",
-            "button_link": "shopify:\/\/collections\/engagement-ring",
+            "button_link": "shopify://collections/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -155,7 +140,7 @@
         "button_i8VGQa"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/DSC_0771_20copy_2.jpg",
+        "image": "shopify://shop_images/DSC_0771_20copy_2.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -211,7 +196,7 @@
         "text_rqBHqN": {
           "type": "text",
           "settings": {
-            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend diamonds and 14k solid gold to round out the sentiment.<\/p>",
+            "text": "<p>We’re not saying a card and some flowers aren’t thoughtful—but we do recommend diamonds and 14k solid gold to round out the sentiment.</p>",
             "text_style": "body"
           }
         },
@@ -219,7 +204,7 @@
           "type": "button",
           "settings": {
             "button_label": "START WITH A DIAMOND",
-            "button_link": "shopify:\/\/collections\/engagement-ring",
+            "button_link": "shopify://collections/engagement-ring",
             "button_style_secondary": true
           }
         }
@@ -230,7 +215,7 @@
         "button_ErGgG3"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Snapinsta.app_176208309_2856537817927067_2749204993904897759_n_1080_20_281_29.jpg",
+        "image": "shopify://shop_images/Snapinsta.app_176208309_2856537817927067_2749204993904897759_n_1080_20_281_29.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -258,7 +243,7 @@
         "paragraph_n3xyzW": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Stay in the know and get first access to sales, new drops, and events<\/p>"
+            "text": "<p>Stay in the know and get first access to sales, new drops, and events</p>"
           }
         },
         "email_form_7BHHdB": {

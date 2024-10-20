@@ -1,7 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "logo_width": 100,
-    "favicon": "shopify:\/\/shop_images\/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
+    "favicon": "shopify://shop_images/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
     "type_header_font": "playfair_display_n4",
     "heading_scale": 100,
     "type_body_font": "avenir_next_n4",
@@ -101,7 +110,7 @@
     "brand_description": "",
     "brand_image_width": 550,
     "social_facebook_link": "",
-    "social_instagram_link": "https:\/\/instagram.com\/silkhour",
+    "social_instagram_link": "https://instagram.com/silkhour",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -119,8 +128,6 @@
     "cart_drawer_collection": "engagement-ring",
     "cart_color_scheme": "scheme-1",
     "mobile-menu": "mobile-simple-menu",
-    "checkout_heading_font": "Open Sans",
-    "checkout_body_font": "Open Sans",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",

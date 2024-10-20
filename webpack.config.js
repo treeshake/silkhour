@@ -3,10 +3,10 @@ const path = require('path');
 module.exports = {
   entry: {
     facets: './src/ts/facets/facets.ts',
-    'product-list': './src/ts/ProductList.ts',
-    'product-info': './src/ts/ProductInfo.ts',
+    'product-list': './src/ts/product-list.ts',
+    'product-info': './src/ts/product-info.ts',
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   mode: 'production',
   module: {
     rules: [
