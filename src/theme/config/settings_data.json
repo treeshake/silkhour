@@ -9,13 +9,14 @@
  */
 {
   "current": {
-    "logo_width": 100,
+    "logo": "shopify://shop_images/SILKHOUR-WHITE.png",
+    "logo_width": 150,
     "favicon": "shopify://shop_images/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
     "type_header_font": "playfair_display_n4",
-    "heading_scale": 100,
+    "heading_scale": 75,
     "type_body_font": "avenir_next_n4",
     "body_scale": 100,
-    "page_width": 1400,
+    "page_width": 2000,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 4,
     "spacing_grid_vertical": 4,
