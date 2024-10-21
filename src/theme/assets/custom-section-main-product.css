@@ -7,9 +7,8 @@
   margin: 0rem 0;
 }
 
-.price-item,
-.price-item--regular {
-  font-size: 1.9rem;
+.price--large {
+  font-size: 1.9rem !important;
 }
 
 .product__info-container .product-form,
