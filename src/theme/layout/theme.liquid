@@ -114,11 +114,13 @@
 
       :root {
 
-        /* Custom Font Loading - START */
-        /* --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        /* THEME OVERVIDE - START */
+        /* 
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
-        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }}; */
+        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }}; 
+        */
 
         --font-body-family: "Brandon-Light";
         --font-body-style: "Normal";
@@ -132,7 +134,7 @@
         --font-heading-family: "IvyPrestoHeadline-Light";
         --font-heading-style: "Normal";
         --font-heading-weight: "400";
-        /* Custom Font Loading - END */
+        /* THEME OVERVIDE - END */
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
@@ -267,7 +269,9 @@
         margin: 0;
         font-size: 1.5rem;
         letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
+        /* THEME OVERVIDE - START */
+        /* line-height: calc(1 + 0.8 / var(--font-body-scale)); */
+        /* THEME OVERVIDE - END */
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
