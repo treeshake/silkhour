@@ -229,8 +229,8 @@
         "padding_bottom": 52
       }
     },
-    "custom_featured_collection_tG3fMw": {
-      "type": "custom-featured-collection",
+    "featured_collection_tG3fMw": {
+      "type": "featured-collection",
       "settings": {
         "title": "Signature Rings",
         "heading_size": "h1",
@@ -261,7 +261,7 @@
   "order": [
     "image_banner_eLkf73",
     "collection_list_zdQ6RT",
-    "custom_featured_collection_tG3fMw",
+    "featured_collection_tG3fMw",
     "image_with_text_H7CdHK",
     "image_with_text_fbRkjy",
     "newsletter_U7RyNG"
