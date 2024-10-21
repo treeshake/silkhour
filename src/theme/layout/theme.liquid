@@ -282,7 +282,11 @@
 
       body {
         display: grid;
-        grid-template-rows: auto auto 1fr auto;
+        /* THEME OVERVIDE :: Full height - sticky footer - START */
+        min-height: 100%;
+        grid-template-rows: auto 1fr auto;
+        /* THEME OVERVIDE - END */
+        /* grid-template-rows: auto auto 1fr auto; */
         grid-template-columns: 100%;
         min-height: 100%;
         margin: 0;
@@ -290,7 +294,6 @@
         letter-spacing: 0.06rem;
         /* THEME OVERVIDE - START */
         /* line-height: calc(1 + 0.8 / var(--font-body-scale)); */
-        /* THEME OVERVIDE - END */
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
