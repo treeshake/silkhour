@@ -2,6 +2,11 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
 
+{% comment %} THEME OVERVIDE - START {% endcomment %}
+{{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
+{{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
+{% comment %} THEME OVERVIDE - END {% endcomment %}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -38,7 +43,8 @@
         {% assign skip_card_product_styles = false %}
         {% for recommendation in recommendations.products %}
           <li class="grid__item">
-            {% render 'card-product',
+            {% comment %} THEME OVERVIDE - START {% endcomment %}
+            {% render 'custom-card-product',
               card_product: recommendation,
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
@@ -47,6 +53,7 @@
               show_rating: section.settings.show_rating,
               skip_styles: skip_card_product_styles
             %}
+            {% comment %} THEME OVERVIDE - END {% endcomment %}
           </li>
           {%- assign skip_card_product_styles = true -%}
         {% endfor %}

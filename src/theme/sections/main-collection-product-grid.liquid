@@ -2,6 +2,11 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+{% comment %} THEME OVERVIDE - START {% endcomment %}
+{{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
+{{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
+{% comment %} THEME OVERVIDE - END {% endcomment %}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -165,7 +170,8 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+                  {% comment %} THEME OVERVIDE - START {% endcomment %}
+                  {% render 'custom-card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -177,6 +183,7 @@
                     quick_add: section.settings.quick_add,
                     section_id: section.id
                   %}
+                  {% comment %} THEME OVERVIDE - END {% endcomment %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}

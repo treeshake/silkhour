@@ -4,6 +4,11 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
+{% comment %} THEME OVERVIDE - START {% endcomment %}
+{{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
+{{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
+{% comment %} THEME OVERVIDE - END {% endcomment %}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -104,7 +109,8 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'card-product',
+            {% comment %} THEME OVERVIDE - START {% endcomment %}
+            {% render 'custom-card-product',
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
@@ -115,6 +121,7 @@
               section_id: section.id,
               quick_add: section.settings.quick_add
             %}
+            {% comment %} THEME OVERVIDE - START {% endcomment %}
           </li>
           {%- assign skip_card_product_styles = true -%}
         {%- else -%}
@@ -136,12 +143,14 @@
                 endcase
               %}
               {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
-              {% render 'card-product',
+              {% comment %} THEME OVERVIDE - START {% endcomment %}
+              {% render 'custom-card-product',
                 show_vendor: section.settings.show_vendor,
                 media_aspect_ratio: section.settings.image_ratio,
                 image_shape: section.settings.image_shape,
                 placeholder_image: placeholder_image
               %}
+              {% comment %} THEME OVERVIDE - END {% endcomment %}
             </li>
           {%- endfor -%}
         {%- endfor -%}

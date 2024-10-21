@@ -100,34 +100,6 @@
         "padding_bottom": 12
       }
     },
-    "featured_collection_YTMHLV": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Signature Rings",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "engagement-ring",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "outline",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 16
-      }
-    },
     "image_with_text_H7CdHK": {
       "type": "image-with-text",
       "blocks": {
@@ -256,12 +228,40 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "featured_collection_tG3fMw": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Signature Rings",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "engagement-ring",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
     }
   },
   "order": [
     "image_banner_eLkf73",
     "collection_list_zdQ6RT",
-    "featured_collection_YTMHLV",
+    "featured_collection_tG3fMw",
     "image_with_text_H7CdHK",
     "image_with_text_fbRkjy",
     "newsletter_U7RyNG"

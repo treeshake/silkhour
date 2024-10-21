@@ -18,6 +18,9 @@
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
 
+  {{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
+
   {%- style -%}
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -567,7 +570,7 @@
                                       {%- else -%}
                                         {% assign quick_add = "none" %}
                                       {%- endif -%}
-                                      {% render 'card-product',
+                                      {% render 'custom-card-product',
                                         card_product: product,
                                         media_aspect_ratio: block.settings.image_ratio,
                                         show_secondary_image: false,
