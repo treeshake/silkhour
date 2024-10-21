@@ -18,10 +18,8 @@
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
 
-  {% comment %} THEME OVERVIDE - START {% endcomment %}
   {{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
   {{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
-  {% comment %} THEME OVERVIDE - END {% endcomment %}
 
   {%- style -%}
     .section-{{ section.id }}-padding {

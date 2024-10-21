@@ -35,7 +35,7 @@
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
         "show_line_separator": false,
-        "button_label": "BOOK APPOINTMENT",
+        "button_label": "BOOK AN APPOINTMENT",
         "button_link": "shopify:\/\/pages\/contact",
         "btn_text_color": "#ffffff",
         "btn_back_color": "#000000",
