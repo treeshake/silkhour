@@ -16,6 +16,11 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
+  {% comment %} THEME OVERVIDE - START {% endcomment %}
+  {{ 'custom-component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-component-price.css' | asset_url | stylesheet_tag }}
+  {% comment %} THEME OVERVIDE - END {% endcomment %}
+  
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
@@ -578,7 +583,8 @@
                                       {%- else -%}
                                         {% assign quick_add = 'none' %}
                                       {%- endif -%}
-                                      {% render 'card-product',
+                                      {% comment %} THEME OVERVIDE - START {% endcomment %}
+                                      {% render 'custom-card-product',
                                         card_product: product,
                                         media_aspect_ratio: block.settings.image_ratio,
                                         show_secondary_image: false,
@@ -589,6 +595,7 @@
                                         horizontal_class: true,
                                         horizontal_quick_add: true
                                       %}
+                                      {% comment %} THEME OVERVIDE - END {% endcomment %}
                                     </li>
                                     {%- assign skip_card_product_styles = true -%}
                                   {%- endfor -%}
