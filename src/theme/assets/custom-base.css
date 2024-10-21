@@ -1,0 +1,18 @@
+
+.caption-large,
+.customer .field input,
+.customer select,
+.field__input,
+.form__label,
+.select__select {
+  font-size: 1.4rem;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  letter-spacing: 0.04rem;
+}
+
+.form__label {
+  font-family: var(--font-body-medium-family);
+  font-weight: var(--font-body-weight-bold);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}

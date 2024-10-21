@@ -1,0 +1,19 @@
+.product__title {
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.product__info-container > * + * {
+  margin: 0rem 0;
+}
+
+.price-item,
+.price-item--regular {
+  font-size: 1.9rem;
+}
+
+.product__info-container .product-form,
+.product__info-container .product__description,
+.product__info-container .icon-with-text {
+  margin: 0rem 0;
+}
