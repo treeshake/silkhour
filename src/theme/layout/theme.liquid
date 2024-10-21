@@ -54,7 +54,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-      /* Custom Font Loading - START */
+      /* THEME OVERVIDE - START */
       @font-face {
         font-family: "IvyPrestoHeadline-Light";
         src: url("{{ 'IvyPrestoHeadline-Light.woff2?v=1729403496' | file_url }}") format("woff2");
@@ -64,8 +64,7 @@
         font-family: "Brandon-Light";
         src: url("{{ 'Brandon-Light.woff2?v=1729405622' | file_url }}") format("woff2");
       }
-
-      /* Custom Font Loading - END */
+      /* THEME OVERVIDE - END */
 
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
