@@ -1,21 +1,13 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
-    "logo_width": 100,
-    "favicon": "shopify://shop_images/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
+    "logo": "shopify:\/\/shop_images\/SILKHOUR-WHITE.png",
+    "logo_width": 150,
+    "favicon": "shopify:\/\/shop_images\/android-icon-36x36_32x32_23b0ce37-27c3-446a-b8cd-8576e90e92a3.png",
     "type_header_font": "playfair_display_n4",
-    "heading_scale": 100,
+    "heading_scale": 75,
     "type_body_font": "avenir_next_n4",
     "body_scale": 100,
-    "page_width": 1400,
+    "page_width": 2000,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 4,
     "spacing_grid_vertical": 4,
@@ -42,9 +34,9 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "card_style": "standard",
+    "card_style": "card",
     "card_image_padding": 0,
-    "card_text_alignment": "center",
+    "card_text_alignment": "left",
     "card_color_scheme": "scheme-1",
     "card_border_thickness": 0,
     "card_border_opacity": 0,
@@ -109,13 +101,13 @@
     "brand_headline": "",
     "brand_description": "",
     "brand_image_width": 550,
-    "social_facebook_link": "",
-    "social_instagram_link": "https://instagram.com/silkhour",
+    "social_facebook_link": "https:\/\/www.facebook.com\/p\/Silkhour-100066362294724",
+    "social_instagram_link": "https:\/\/instagram.com\/silkhour",
     "social_youtube_link": "",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https:\/\/www.tiktok.com\/@silkhour",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https:\/\/au.pinterest.com\/silkhours5903\/",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
@@ -162,10 +154,10 @@
           "background": "#000000",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#121212",
-          "button_label": "#f3f3f3",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#000000"
         }
       },
       "scheme-3": {
