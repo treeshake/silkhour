@@ -52,7 +52,7 @@
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": true,
-        "padding_top": 16,
+        "padding_top": 72,
         "padding_bottom": 0
       }
     },

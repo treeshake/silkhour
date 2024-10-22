@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 16
+      }
+    },
+    "image_banner_VHb4kQ": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Snapinsta.app_273538658_626097988623587_8553296223786909196_n_1080.jpg",
+        "image_2": "shopify:\/\/shop_images\/162Q-ER-OV-WG_attKwV6cJypmCTDAz_2b921614-a588-455b-a330-202090e84156.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "custom_schedule_appointment_EDCK3L": {
+      "type": "custom-schedule-appointment",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_VHb4kQ",
+    "custom_schedule_appointment_EDCK3L"
+  ]
+}

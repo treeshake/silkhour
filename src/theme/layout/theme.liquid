@@ -64,6 +64,16 @@
         font-family: "Brandon-Light";
         src: url("{{ 'Brandon-Light.woff2?v=1729405622' | file_url }}") format("woff2");
       }
+
+      @font-face {
+        font-family: "Brandon-Regular";
+        src: url("{{ 'Brandon-Regular.woff2?v=1729540387' | file_url }}") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Brandon-Medium";
+        src: url("{{ 'Brandon-Medium.woff2?v=1729541652' | file_url }}") format("woff2");
+      }
       /* THEME OVERVIDE - END */
 
       {% for scheme in settings.color_schemes -%}
@@ -125,6 +135,16 @@
         --font-body-style: "Normal";
         --font-body-weight: "Normal";
         --font-body-weight-bold: {{ "400" | plus: 300 | at_most: 1000 }};
+
+        --font-body-regular-family: "Brandon-Regular";
+        --font-body-regular-style: "Normal";
+        --font-body-regular-weight: "Normal";
+        --font-body-regular-bold: {{ "400" | plus: 300 | at_most: 1000 }};
+
+        --font-body-medium-family: "Brandon-Medium";
+        --font-body-medium-style: "Normal";
+        --font-body-medium-weight: "Normal";
+        --font-body-medium-bold: {{ "400" | plus: 300 | at_most: 1000 }};
 
         /*
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
@@ -262,7 +282,11 @@
 
       body {
         display: grid;
-        grid-template-rows: auto auto 1fr auto;
+        /* THEME OVERVIDE :: Full height - sticky footer - START */
+        min-height: 100%;
+        grid-template-rows: auto 1fr auto;
+        /* THEME OVERVIDE - END */
+        /* grid-template-rows: auto auto 1fr auto; */
         grid-template-columns: 100%;
         min-height: 100%;
         margin: 0;
@@ -270,7 +294,6 @@
         letter-spacing: 0.06rem;
         /* THEME OVERVIDE - START */
         /* line-height: calc(1 + 0.8 / var(--font-body-scale)); */
-        /* THEME OVERVIDE - END */
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
@@ -284,6 +307,9 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {% comment %} THEME OVERVIDE - START {% endcomment %}
+    {{ 'custom-base.css' | asset_url | stylesheet_tag }}
+    {% comment %} THEME OVERVIDE - END {% endcomment %}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
