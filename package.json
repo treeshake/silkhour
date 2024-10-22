@@ -13,7 +13,7 @@
     "theme:auth": "shopify auth logout && shopify theme list --store vfinejewels.myshopify.com",
     "theme:list": "shopify theme list --store vfinejewels.myshopify.com",
     "theme:pull": "shopify theme pull --nodelete --path src/theme --store vfinejewels.myshopify.com",
-    "theme:dev": "shopify theme dev --path src/theme --store vfinejewels.myshopify.com",
+    "theme:dev": "shopify theme dev --path src/theme --store vfinejewels.myshopify.com --theme",
     "theme:push": "shopify theme push --nodelete --path src/theme --store vfinejewels.myshopify.com",
     "theme:publish": "shopify theme publish --store vfinejewels.myshopify.com"
   },

@@ -34,7 +34,9 @@
     aria-describedby="{{ localPosition }}Label"
   >
     <span>
-      {{- localization.country.name }} |
+      {% comment %} THEME OVERVIDE - START {% endcomment %}
+      {% comment %} {{- localization.country.name }} | {% endcomment %}
+      {% comment %} THEME OVERVIDE - END {% endcomment %}
       {{ localization.country.currency.iso_code }}
       {{ localization.country.currency.symbol -}}
     </span>

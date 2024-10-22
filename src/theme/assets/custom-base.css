@@ -11,8 +11,10 @@
 }
 
 .form__label {
-  font-family: var(--font-body-medium-family);
-  font-weight: var(--font-body-weight-bold);
+  @media screen and (min-width: 750px) {
+    font-family: var(--font-body-medium-family);
+    font-weight: var(--font-body-weight-bold);
+  }
   text-transform: uppercase;
   font-size: 1.2rem;
 }
