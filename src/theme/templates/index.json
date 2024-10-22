@@ -100,6 +100,34 @@
         "padding_bottom": 12
       }
     },
+    "featured_collection_tG3fMw": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Signature Rings",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "engagement-ring",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
     "image_with_text_H7CdHK": {
       "type": "image-with-text",
       "blocks": {
@@ -195,6 +223,25 @@
         "padding_bottom": 12
       }
     },
+    "1729568833309e41d0": {
+      "type": "apps",
+      "blocks": {
+        "social_photos_instagram_ugc_instagram_post_gallery_6thzHi": {
+          "type": "shopify:\/\/apps\/social-photos-instagram-ugc\/blocks\/instagram-post-gallery\/d967a330-599e-491a-8cf1-42a3cd34baa3",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "social_photos_instagram_ugc_instagram_post_gallery_6thzHi"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "newsletter_U7RyNG": {
       "type": "newsletter",
       "blocks": {
@@ -225,36 +272,8 @@
       "settings": {
         "color_scheme": "scheme-2",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "featured_collection_tG3fMw": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Signature Rings",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "engagement-ring",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "outline",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
         "padding_top": 36,
-        "padding_bottom": 16
+        "padding_bottom": 36
       }
     }
   },
@@ -264,6 +283,7 @@
     "featured_collection_tG3fMw",
     "image_with_text_H7CdHK",
     "image_with_text_fbRkjy",
+    "1729568833309e41d0",
     "newsletter_U7RyNG"
   ]
 }
