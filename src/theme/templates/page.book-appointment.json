@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 16
+      }
+    },
+    "image_banner_VHb4kQ": {
+      "type": "image-banner",
+      "blocks": {
+        "text_pDVMq9": {
+          "type": "text",
+          "settings": {
+            "text": "SHOWROOM & APPOINTMENTS",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_pDVMq9"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Snapinsta.app_273538658_626097988623587_8553296223786909196_n_1080.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "custom_liquid_aQR9bL": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/hello-silkhour\/engagement-ring?hide_gdpr_banner=1&text_color=ffffff&primary_color=1a1a1a\" style=\"min-width:320px;height:700px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>",
+        "color_scheme": "",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_VHb4kQ",
+    "custom_liquid_aQR9bL"
+  ]
+}
