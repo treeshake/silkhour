@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -11,8 +20,8 @@
     "image_banner_VHb4kQ": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Snapinsta.app_273538658_626097988623587_8553296223786909196_n_1080.jpg",
-        "image_2": "shopify:\/\/shop_images\/162Q-ER-OV-WG_attKwV6cJypmCTDAz_2b921614-a588-455b-a330-202090e84156.webp",
+        "image": "shopify://shop_images/Snapinsta.app_273538658_626097988623587_8553296223786909196_n_1080.jpg",
+        "image_2": "shopify://shop_images/162Q-ER-OV-WG_attKwV6cJypmCTDAz_2b921614-a588-455b-a330-202090e84156.webp",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "bottom-left",

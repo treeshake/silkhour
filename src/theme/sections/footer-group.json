@@ -1,17 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_liquid_iAJrCY": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "scheme-5",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "image_Ch6jHJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SILKHOUR.png",
+            "image_width": 120,
+            "alignment": "center"
+          }
+        },
+        "link_list_GAkJzJ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "image_Ch6jHJ",
+        "link_list_GAkJzJ"
+      ],
       "settings": {
         "color_scheme": "scheme-5",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
@@ -21,6 +60,7 @@
     }
   },
   "order": [
+    "custom_liquid_iAJrCY",
     "footer"
   ]
 }
