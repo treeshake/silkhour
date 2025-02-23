@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: {
@@ -12,22 +13,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        include: path.resolve(__dirname, "src/ts"),
+        test: /\.(ts|tsx)$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
       {
-        test: /\.(js|ts|jsx|tsx)$/,
-        include: path.resolve(__dirname, "src/react"),
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: "babel-loader",
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".js"],
   },
+  plugins: [new Dotenv()],
   output: {
     filename: "custom-[name].js",
     path: path.resolve(__dirname, "src/theme/assets"),

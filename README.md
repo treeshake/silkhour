@@ -20,6 +20,7 @@ In addition, we use the following to develop:
 - [Node](https://nodejs.org/en/) / [NPM](https://www.npmjs.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Typescript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
 - [Webpack](https://webpack.js.org/)
 
 # Development
@@ -95,8 +96,8 @@ Run `npm run start:dev`. <br>
 This will:
 <br>
 
-1. Watch for changes to files and recompile any tailwind css to `assets/tailwind.css`
-2. Watch for changes to typescript files, recompile, bundle and re-upload to `assets/custom-[name].js`
+1. Watch for changes to files and recompile any tailwind css to `src/theme/assets/tailwind.css`
+2. Watch for changes to typescript files, recompile, bundle and re-upload to `src/theme/assets/custom-[name].js`
 
 ## Publishing the theme
 
