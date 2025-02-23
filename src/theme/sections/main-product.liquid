@@ -44,6 +44,7 @@
     }
   {%- endstyle -%}
 
+  <script src="{{ 'custom-app.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
@@ -202,6 +203,8 @@
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
+                  </div>
+                  <div class="custom-button">
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}

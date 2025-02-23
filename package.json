@@ -28,11 +28,22 @@
   },
   "private": true,
   "homepage": "https://github.com/treeshake/silkhour#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^5.3.4"
+  },
   "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@eslint/js": "^9.3.0",
     "@shopify/prettier-plugin-liquid": "^1.5.0",
     "@types/eslint__js": "^8.42.3",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "@typescript/lib-dom": "npm:@types/web@^0.0.145",
+    "babel-loader": "^8.2.2",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
@@ -41,6 +52,7 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.9.0",
     "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^3.11.2"
   }
 }

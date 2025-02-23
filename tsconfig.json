@@ -1,15 +1,16 @@
 {
+  "include": ["**/*.tsx"],
   "compilerOptions": {
     "outDir": "./src/theme/assets/custom",
     "noImplicitAny": true,
     "esModuleInterop" : true,
     "module": "es6",
     "target": "es6",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
   }
