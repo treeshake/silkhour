@@ -1,4 +1,4 @@
 {
-  "singleQuote": false,
+  "singleQuote": true,
   "plugins": ["@shopify/prettier-plugin-liquid"]
 }
