@@ -11,6 +11,39 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "newsletter_4g3mVm": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_piBGfF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay In The Know",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_dm8PML": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get early access to sales, new drops, and exclusive VIP events.</p>"
+          }
+        },
+        "email_form_nHNqap": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_piBGfF",
+        "paragraph_dm8PML",
+        "email_form_nHNqap"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "custom_liquid_iAJrCY": {
       "type": "custom-liquid",
       "settings": {
@@ -60,6 +93,7 @@
     }
   },
   "order": [
+    "newsletter_4g3mVm",
     "custom_liquid_iAJrCY",
     "footer"
   ]
