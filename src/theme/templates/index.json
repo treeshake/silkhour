@@ -71,8 +71,8 @@
         "collection": "engagement-ring",
         "products_to_show": 25,
         "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": false,
+        "full_width": false,
+        "show_view_all": true,
         "view_all_style": "outline",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
@@ -267,39 +267,6 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "newsletter_U7RyNG": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_VbjkYp": {
-          "type": "heading",
-          "settings": {
-            "heading": "Stay in the know",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_n3xyzW": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Get first access to sales, new drops, and events. Book your engagement ring appointment for $1000 OFF your purchase</p>"
-          }
-        },
-        "email_form_7BHHdB": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_VbjkYp",
-        "paragraph_n3xyzW",
-        "email_form_7BHHdB"
-      ],
-      "settings": {
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -311,7 +278,6 @@
     "image_banner_Lck3km",
     "custom_liquid_RbND6K",
     "custom_liquid_jAULaW",
-    "1729568833309e41d0",
-    "newsletter_U7RyNG"
+    "1729568833309e41d0"
   ]
 }
