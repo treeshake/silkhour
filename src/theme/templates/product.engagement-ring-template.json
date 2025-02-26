@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,18 +14,15 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -35,9 +41,9 @@
         "collapsible_tab_aexemE": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Ring Details",
+            "heading": "Description",
             "icon": "none",
-            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}<\/li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}<\/li><\/ul>",
+            "content": "{{ product.metafields.custom.product_detail | metafield_tag }}",
             "page": ""
           }
         }
