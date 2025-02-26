@@ -6,7 +6,7 @@ module.exports = {
     facets: "./src/ts/facets/facets.ts",
     "product-list": "./src/ts/product-list.ts",
     "product-info": "./src/ts/product-info.ts",
-    app: "./src/react/App.tsx",
+    app: "./src/react/app.tsx",
   },
   // devtool: 'inline-source-map',
   mode: "production",
