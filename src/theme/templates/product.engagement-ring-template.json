@@ -1,22 +1,19 @@
 {
   "sections": {
     "main": {
-      "type": "custom-main-product-engagement-setting",
+      "type": "custom-main-product",
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -35,9 +32,9 @@
         "collapsible_tab_aexemE": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Ring Details",
+            "heading": "Description",
             "icon": "none",
-            "content": "<ul><li>Diamond: {{ product.metafields.custom.diamond_shape.value.value.value }}<\/li><li>Setting: {{ product.metafields.custom.engagement_ring_setting_style.value.value.value }}<\/li><\/ul>",
+            "content": "{{ product.metafields.custom.product_detail | metafield_tag }}",
             "page": ""
           }
         }

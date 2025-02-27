@@ -1,22 +1,19 @@
 {
   "sections": {
     "main": {
-      "type": "custom-main-product-engagement-ring",
+      "type": "custom-main-product",
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
