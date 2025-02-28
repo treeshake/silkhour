@@ -1,6 +1,6 @@
-export function AddDiamond() {
+export function AddDiamond({ producturl }: { producturl: string }) {
   return (
-    <a href="#" className="button">
+    <a href={producturl} className="button">
       Add Diamond
     </a>
   );

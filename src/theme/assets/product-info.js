@@ -155,7 +155,7 @@ if (!customElements.get('product-info')) {
       }
 
       updateOptionValues(html) {
-        // BUG: THIS CAUSES REACT JS APP TO NOT RE-RENDER
+        // BUG: THIS CAUSES REACT JS APP TO NOT RE-RENDER WHEN VARIANT FIELDS CHANGE
         // const variantSelects = html.querySelector('variant-selects');
         // if (variantSelects) {
         //   HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
