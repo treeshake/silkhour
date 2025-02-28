@@ -7,11 +7,6 @@
   margin-bottom: 1.5rem !important;
 }
 
-.product__accordion-container {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
-}
-
 .product__info-container > * + * {
   margin: 0rem 0;
 }

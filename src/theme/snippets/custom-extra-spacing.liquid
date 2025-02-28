@@ -1,0 +1,18 @@
+{%- style -%}
+  .block-{{ block.id }}-padding {
+    padding-top: calc({{ block.settings.padding_top }}px * 0.75);
+    padding-bottom: calc({{ block.settings.padding_bottom }}px  * 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    .block-{{ block.id }}-padding {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class='color-{{ block.settings.color_scheme }} gradient'>
+  <div class='block-{{ block.id }}-padding'>
+    <div class='visually-hidden'>&nbsp;</div>
+  </div>
+</div>
