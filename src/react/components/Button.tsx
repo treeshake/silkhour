@@ -5,31 +5,31 @@ import {
 } from '@shopify/hydrogen-react';
 import { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useSearchParams } from 'react-router';
 import { storefrontClient } from '../shared/api/storefront-api';
 
 export function Button() {
   const [toggle, setToggle] = React.useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
   const shop = useShop();
-
-  // Get specific query parameter
-  const shape = searchParams.get('shape');
 
   const product: Partial<Product> = {
     handle: 'round-lab-diamond-engagement-ring',
   };
 
-  const href = encodeURI("/collections/lab-diamonds?filter.p.m.custom.diamond_shape=gid://shopify/Metaobject/41639411961&sort_by=price-ascending");
+  const handleClick = () => {
+    const url = new URLSearchParams(window.location.search);
+    const variantId = url.get('variant');
+    // Build relative path using current location as base
+    const basePath = window.location.pathname.split('/').slice(0, -1)[0];
+    const href = `${basePath}/collections/lab-diamonds?filter.p.m.custom.diamond_shape=gid://shopify/Metaobject/41639411961&sort_by=price-ascending?ring-variant=${variantId}`;
+
+    // Use history.pushState for SPA-like navigation
+    window.history.pushState({}, '', href);
+  };
 
   return (
     <CartProvider>
       <ProductProvider data={product} initialVariantId={undefined}>
-        <a
-          href={href}
-          className="underline"
-        >
+        <a href="" onClick={handleClick} className="underline">
           or choose your ideal diamond
         </a>
       </ProductProvider>
