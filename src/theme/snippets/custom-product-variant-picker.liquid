@@ -9,9 +9,9 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
+{% assign diamond_shapes = shop.metaobjects.diamond_shape.values %}
+
 {%- unless product.has_only_default_variant -%}
-  {% assign diamond_shapes = shop.metaobjects.diamond_shape.values %}
-  {% assign product_diamond_shapes = product.id %}
   <variant-selects
     id='variant-selects-{{ section.id }}'
     data-section='{{ section.id }}'
@@ -93,14 +93,12 @@
                 padding-bottom: 10px;
               }
             {% endstyle %}
-            <div id='select-diamond-link' class='select-diamond-link'>
-              <script>
-                {% for diamond_shape in diamond_shapes %}
-                  console.log({{ diamond_shape.system.handle | json }})
-                {% endfor %}
-              </script>
-              <!-- Let React take over here ... -->
-            </div>
+            <!-- Let React take over here ... -->
+            <div
+              class='select-diamond-link select-diamond'
+              prop-productid='{{product.id}}'
+              prop-diamondshapes='{{diamond_shapes}}'
+            ></div>
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -108,6 +106,11 @@
 
     <script type='application/json' data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
+    </script>
+    <script>
+      {% for diamond_shape in diamond_shapes %}
+        console.log({{ diamond_shape.system.handle | json }})
+      {% endfor %}
     </script>
   </variant-selects>
 {%- endunless -%}

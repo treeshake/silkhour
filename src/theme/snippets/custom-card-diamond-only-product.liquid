@@ -64,8 +64,8 @@
           <li><strong>Flurouence: </strong> {{ card_product.metafields.custom.diamond_fluorescent.value.text_options.value }}</li>
         {% endif %}
       </ul>
-        <div class="list_add_btn">
-        <a href="{{ card_product.url }}" class="button">Add</a>
+        <!-- Let React take over here ... -->
+        <div class="add-diamond list_add_btn" prop-producturl="{{ card_product.url }}">
         </div>
         </div>
       </div>

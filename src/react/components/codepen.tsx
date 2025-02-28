@@ -7,7 +7,7 @@ import { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import React, { useEffect, useState } from 'react';
 import { storefrontClient } from '../shared/api/storefront-api';
 
-export function Button() {
+export function Codepen(props: any) {
   const [toggle, setToggle] = React.useState(false);
   const shop = useShop();
 
@@ -21,8 +21,6 @@ export function Button() {
     // Build relative path using current location as base
     const basePath = window.location.pathname.split('/').slice(0, -1)[0];
     const href = `${basePath}/collections/lab-diamonds?filter.p.m.custom.diamond_shape=gid://shopify/Metaobject/41639411961&sort_by=price-ascending?ring-variant=${variantId}`;
-
-    // Use history.pushState for SPA-like navigation
     window.history.pushState({}, '', href);
   };
 
