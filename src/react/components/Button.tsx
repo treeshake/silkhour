@@ -14,13 +14,24 @@ export function Button() {
   const location = useLocation();
   const shop = useShop();
 
+  // Get specific query parameter
+  const shape = searchParams.get('shape');
+
   const product: Partial<Product> = {
     handle: 'round-lab-diamond-engagement-ring',
   };
+
+  const href = encodeURI("/collections/lab-diamonds?filter.p.m.custom.diamond_shape=gid://shopify/Metaobject/41639411961&sort_by=price-ascending");
+
   return (
     <CartProvider>
       <ProductProvider data={product} initialVariantId={undefined}>
-        <DumpProduct id="8721874813177" />
+        <a
+          href={href}
+          className="underline"
+        >
+          or choose your ideal diamond
+        </a>
       </ProductProvider>
     </CartProvider>
   );

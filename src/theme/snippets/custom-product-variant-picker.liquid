@@ -8,7 +8,10 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+
 {%- unless product.has_only_default_variant -%}
+  {% assign diamond_shapes = shop.metaobjects.diamond_shape.values %}
+  {% assign product_diamond_shapes = product.id %}
   <variant-selects
     id='variant-selects-{{ section.id }}'
     data-section='{{ section.id }}'
@@ -90,8 +93,13 @@
                 padding-bottom: 10px;
               }
             {% endstyle %}
-            <div class='select-diamond-link'>
-              <a href='/collections/lab-diamonds?sort_by=price-ascending' class='underline'>or choose your ideal diamond</a>
+            <div id='select-diamond-link' class='select-diamond-link'>
+              <script>
+                {% for diamond_shape in diamond_shapes %}
+                  console.log({{ diamond_shape.system.handle | json }})
+                {% endfor %}
+              </script>
+              <!-- Let React take over here ... -->
             </div>
           {%- endif -%}
         </div>
@@ -100,9 +108,6 @@
 
     <script type='application/json' data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
-    </script>
-    <script>
-      console.log({{ product.metafields | json }})
     </script>
   </variant-selects>
 {%- endunless -%}

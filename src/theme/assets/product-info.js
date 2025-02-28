@@ -155,10 +155,11 @@ if (!customElements.get('product-info')) {
       }
 
       updateOptionValues(html) {
-        const variantSelects = html.querySelector('variant-selects');
-        if (variantSelects) {
-          HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
-        }
+        // BUG: THIS CAUSES REACT JS APP TO NOT RE-RENDER
+        // const variantSelects = html.querySelector('variant-selects');
+        // if (variantSelects) {
+        //   HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
+        // }
       }
 
       handleUpdateProductInfo(productUrl) {

@@ -9,11 +9,11 @@ const SHOPIFY_PUBLIC_STOREFRONT_TOKEN = process.env.SHOPIFY_PUBLIC_STOREFRONT_TO
 const SHOPIFY_STORE_COUNTRY_CODE = process.env.SHOPIFY_STORE_COUNTRY_CODE as CountryCode; // prettier-ignore
 const SHOPIFY_STOREFRONT_API_VERSION = process.env.SHOPIFY_STOREFRONT_API_VERSION as string; // prettier-ignore
 
-const domAll = document.querySelectorAll(".custom-button");
+const selectDiamondLink = document.querySelector("#select-diamond-link");
 
 function renderApp() {
-  [...domAll].forEach((node) => {
-    const root = createRoot(node);
+  if (selectDiamondLink) {
+    const root = createRoot(selectDiamondLink);
     root.render(
       <ShopifyProvider
         countryIsoCode={SHOPIFY_STORE_COUNTRY_CODE ?? "AU"}
@@ -27,7 +27,7 @@ function renderApp() {
         </BrowserRouter>
       </ShopifyProvider>,
     );
-  });
+  }
 }
 
 renderApp();
