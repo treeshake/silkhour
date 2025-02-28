@@ -8,15 +8,15 @@ function mountReact(
   RootComponent: FunctionComponent<{ props: any }>,
 ) {
   for (const wrapperSelector of wrapperSelectors) {
-    const el = document.querySelector<Element>(wrapperSelector);
-    if (el) {
+    const elements = document.querySelectorAll<Element>(wrapperSelector);
+    elements.forEach((el) => {
       const props = {
         ...(getAttributes(el, 'prop-') ?? {}),
         wrapperSelector,
       };
       const root = createRoot(el);
       root.render(<RootComponent {...props} />);
-    }
+    });
   }
 }
 
