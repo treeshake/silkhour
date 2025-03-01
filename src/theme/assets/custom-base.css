@@ -63,6 +63,10 @@ h5,
   font-weight: 400 !important;
 }
 
+.button--primary:hover {
+  text-decoration: underline;
+}
+
 .rte ul, .rte ol {
   list-style-position: inside;
   padding-left: 1rem;
@@ -84,5 +88,11 @@ h2,
 .totals__total-value,
 .cart-item__totals,
 .caption-with-letter-spacing {
+  font-weight: 600 !important;
+}
+
+.facets__summary:hover .facets__summary-label {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
   font-weight: 600 !important;
 }
