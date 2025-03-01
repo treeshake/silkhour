@@ -22,6 +22,6 @@ module.exports = {
   },
   output: {
     filename: 'custom-[name].js',
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, 'src/theme/assets'),
   },
 };
