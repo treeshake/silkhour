@@ -57,24 +57,62 @@
 
       /* THEME OVERVIDE - START */
       @font-face {
-        font-family: "IvyPrestoHeadline-Light";
-        src: url("{{ 'IvyPrestoHeadline-Light.woff2?v=1729403496' | file_url }}") format("woff2");
+        font-family: "Sterling Display A";
+        src: url("{{ 'sterling-display-a.woff2?v=1740785597' | file_url }}") format("woff2");
+        font-weight: 400;
+        font-style: normal
       }
 
       @font-face {
-        font-family: "Brandon-Light";
-        src: url("{{ 'Brandon-Light.woff2?v=1729405622' | file_url }}") format("woff2");
+          font-family: "Sterling Display A";
+          src: url("{{ 'sterling-display-a.woff2?v=1740785597' | file_url }}") format("woff2");
+          font-weight: 400;
+          font-style: italic
       }
 
       @font-face {
-        font-family: "Brandon-Regular";
-        src: url("{{ 'Brandon-Regular.woff2?v=1729540387' | file_url }}") format("woff2");
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01.woff2?v=1740785596' | file_url }}") format("woff2");
+          font-weight: 700;
+          font-style: normal
       }
 
       @font-face {
-        font-family: "Brandon-Medium";
-        src: url("{{ 'Brandon-Medium.woff2?v=1729541652' | file_url }}") format("woff2");
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01-600.woff2?v=1740785594' | file_url }}") format("woff2");
+          font-weight: 600;
+          font-style: normal
       }
+
+
+      @font-face {
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01-600.woff2?v=1740785594' | file_url }}") format("woff2");
+          font-weight: 600;
+          font-style: italic
+      }
+
+      @font-face {
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01-400.woff2?v=1740785592' | file_url }}") format("woff2");
+          font-weight: 400;
+          font-style: normal
+      }
+
+      @font-face {
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01-300.woff2?v=1740785511' | file_url }}") format("woff2");
+          font-weight: 300;
+          font-style: normal
+      }
+
+      @font-face {
+          font-family: "Santral W01";
+          src: url("{{ 'santral-w01-300.woff2?v=1740785511' | file_url }}") format("woff2");
+          font-weight: 300;
+          font-style: italic
+      }
+
       /* THEME OVERVIDE - END */
 
       {% for scheme in settings.color_schemes -%}
@@ -132,17 +170,17 @@
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
         */
 
-        --font-body-family: "Brandon-Light";
+        --font-body-family: "Santral W01";
         --font-body-style: "Normal";
         --font-body-weight: "Normal";
         --font-body-weight-bold: {{ "400" | plus: 300 | at_most: 1000 }};
 
-        --font-body-regular-family: "Brandon-Regular";
+        --font-body-regular-family: "Santral W01";
         --font-body-regular-style: "Normal";
         --font-body-regular-weight: "Normal";
         --font-body-regular-bold: {{ "400" | plus: 300 | at_most: 1000 }};
 
-        --font-body-medium-family: "Brandon-Medium";
+        --font-body-medium-family: "Santral W01";
         --font-body-medium-style: "Normal";
         --font-body-medium-weight: "Normal";
         --font-body-medium-bold: {{ "400" | plus: 300 | at_most: 1000 }};
@@ -151,7 +189,7 @@
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }}; */
-        --font-heading-family: "IvyPrestoHeadline-Light";
+        --font-heading-family: "Sterling Display A";
         --font-heading-style: "Normal";
         --font-heading-weight: "400";
         /* THEME OVERVIDE - END */

@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [new Dotenv()],
   output: {
-    filename: "custom-[name].js",
-    path: path.resolve(__dirname, "src/theme/assets"),
+    filename: 'custom-[name].js',
+    path: path.resolve(__dirname, 'src/theme/assets'),
   },
 };
