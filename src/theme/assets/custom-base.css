@@ -57,6 +57,8 @@ h5,
   padding: 0rem !important;
 }
 
+.add-diamond,
+.list_add_btn,
 .button,
 .button--primary,
 .product-form__submit {
@@ -84,6 +86,11 @@ h2,
   }
 }
 
+.select-diamond-link {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-weight: 600 !important;
+}
 
 .totals__total-value,
 .cart-item__totals,

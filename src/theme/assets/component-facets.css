@@ -227,6 +227,7 @@
 .facets__summary:hover .facets__summary-label {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
+  font-weight: 600;
 }
 
 .facets__and-helptext {
