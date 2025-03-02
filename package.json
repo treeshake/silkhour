@@ -29,6 +29,8 @@
   "private": true,
   "homepage": "https://github.com/treeshake/silkhour#readme",
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "@shopify/hydrogen-react": "^2025.1.2",
     "@shopify/storefront-api-client": "^1.0.5",
     "@tailwindcss/cli": "^4.0.9",

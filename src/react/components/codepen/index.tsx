@@ -5,8 +5,11 @@ import {
 } from '@shopify/hydrogen-react';
 import { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import React, { useEffect, useState } from 'react';
-import { storefrontClient } from '../shared/api/storefront-api';
+import { storefrontClient } from '../../shared/api/storefront-api';
 
+/**
+ * This is space to explore the Shopify Hydrogen React components and hooks.
+ */
 export function Codepen(props: any) {
   const [toggle, setToggle] = React.useState(false);
   const shop = useShop();

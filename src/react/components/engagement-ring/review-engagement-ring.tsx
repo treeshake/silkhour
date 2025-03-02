@@ -1,8 +1,8 @@
 import { useFetchProduct } from '../../shared/hooks/product';
+import { createProductGid } from '../../shared/utils/shopify';
 
-export function ReviewCompleteRing() {
-  const f = useFetchProduct('gid://shopify/Product/8554824859897');
-  console.log(f);
+export function ReviewEngagementRing() {
+  const product = useFetchProduct(createProductGid('8554824859897'));
   return (
     <div>
       <h3>
