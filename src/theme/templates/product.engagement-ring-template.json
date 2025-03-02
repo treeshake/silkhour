@@ -33,6 +33,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Description",
+            "expand_by_default": true,
             "icon": "none",
             "content": "{{ product.metafields.custom.product_detail | metafield_tag }}",
             "page": ""
@@ -53,7 +54,7 @@
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
