@@ -31,6 +31,7 @@
   "dependencies": {
     "@shopify/hydrogen-react": "^2025.1.2",
     "@shopify/storefront-api-client": "^1.0.5",
+    "rambda": "^9.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.2.0"

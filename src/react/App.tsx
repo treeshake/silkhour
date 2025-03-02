@@ -20,4 +20,7 @@ function mountReact(
   }
 }
 
-mountReact(['.select-diamond', '.add-diamond'], RootComponent);
+mountReact(
+  ['.select-diamond', '.add-diamond', '.review-complete-ring'],
+  RootComponent,
+);

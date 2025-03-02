@@ -37,8 +37,6 @@ export function Codepen(props: any) {
 
 function DumpProduct({ id }: { id: string }) {
   const [product, setProduct] = useState<Product | null>(null);
-
-  useEffect(() => {}, []);
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await storefrontClient.request(

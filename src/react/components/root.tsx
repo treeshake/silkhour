@@ -2,6 +2,7 @@ import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { BrowserRouter } from 'react-router';
 import { AddDiamond } from './engagement-ring/add-diamond';
+import { ReviewCompleteRing } from './engagement-ring/review-complete-ring';
 import { SelectDiamond } from './engagement-ring/select-diamond';
 
 const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN as string;
@@ -22,6 +23,7 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
       <BrowserRouter>
         {wrapperSelector === '.select-diamond' && <SelectDiamond {...rest} />}
         {wrapperSelector === '.add-diamond' && <AddDiamond {...rest} />}
+        {wrapperSelector === '.review-complete-ring' && <ReviewCompleteRing {...rest} />}
       </BrowserRouter>
     </ShopifyProvider>
   );
