@@ -94,10 +94,10 @@
               }
             {% endstyle %}
             <!-- Let React take over here ... -->
+            <div class="react-ring-builder-subscriber visually-hidden"></div>
             <div
-              class='select-diamond-link select-diamond'
-              prop-product_id='{{product.id}}'
-              prop-diamond_shapes='{{diamond_shapes}}'
+              class='select-diamond-link react-select-diamond'
+              prop-product_id='{{ product.id }}'
             ></div>
           {%- endif -%}
         </div>
@@ -106,11 +106,6 @@
 
     <script type='application/json' data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
-    </script>
-    <script>
-      {% for diamond_shape in diamond_shapes %}
-        console.log({{ diamond_shape.system.handle | json }})
-      {% endfor %}
     </script>
   </variant-selects>
 {%- endunless -%}

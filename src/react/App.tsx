@@ -21,6 +21,12 @@ function mountReact(
 }
 
 mountReact(
-  ['.select-diamond', '.add-diamond', '.review-complete-ring'],
+  [
+    '.react-pagination',
+    '.react-ring-builder-subscriber',
+    '.react-select-diamond',
+    '.react-add-diamond',
+    '.react-review-complete-ring',
+  ],
   RootComponent,
 );

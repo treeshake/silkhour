@@ -32,7 +32,7 @@ if (!customElements.get('quick-add-modal')) {
             const productElement = responseHTML.querySelector('product-info');
 
             this.preprocessHTML(productElement);
-            HTMLUpdateUtility.setInnerHTML(this.modalContent, productElement.outerHTML);
+            // HTMLUpdateUtility.setInnerHTML(this.modalContent, productElement.outerHTML);
 
             if (window.Shopify && Shopify.PaymentButton) {
               Shopify.PaymentButton.init();

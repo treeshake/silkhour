@@ -1,4 +1,4 @@
-import { Product } from '@shopify/hydrogen-react/storefront-api-types';
+import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
 
@@ -7,7 +7,7 @@ export function useFetchProduct(id: string) {
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await storefrontClient.request(
-        `query Product($id: ID!) {
+        `query Product($key: String!, $id: ID!) {
           product(id: $id) {
             id
             title
@@ -37,6 +37,39 @@ export function useFetchProduct(id: string) {
   }, [id]);
 
   return {
-    product
-  }
+    product,
+  };
+}
+
+export function useFetchProductMetaFieldGid(
+  namespace: string,
+  key: string,
+  ownerId: string,
+) {
+  const [productMetafield, setProductMetafield] = useState<string | null>(null);
+  useEffect(() => {
+    const fetchProductMetafield = async () => {
+      const { data } = await storefrontClient.request(
+        `query ProductMetafield($namespace: String!, $key: String!, $ownerId: ID!) {
+          product(id: $ownerId) {
+            ${key}: metafield(namespace: $namespace, key: $key) {
+              value
+            }
+          }
+        }`,
+        {
+          variables: {
+            namespace,
+            key,
+            ownerId,
+          },
+        },
+      );
+      setProductMetafield(data?.product[key]?.value);
+    };
+
+    fetchProductMetafield();
+  }, [ownerId, key, namespace]);
+
+  return productMetafield;
 }

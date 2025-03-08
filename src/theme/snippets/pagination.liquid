@@ -16,7 +16,9 @@
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-      <ul class="pagination__list list-unstyled" role="list">
+      {% comment %} Let React handle from here... {% endcomment %}
+      <div class="react-pagination" prop-paginate='{{ paginate | json }}'></div>
+      {% comment %} <ul class="pagination__list list-unstyled" role="list">
         {%- if paginate.previous -%}
           <li>
             <a
@@ -72,7 +74,7 @@
             </a>
           </li>
         {%- endif -%}
-      </ul>
+      </ul> {% endcomment %}
     </nav>
   </div>
 {%- endif -%}
