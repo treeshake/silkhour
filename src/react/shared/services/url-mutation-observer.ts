@@ -1,25 +1,30 @@
 export class URLMutationObserver {
   private url: string | null = null;
+  private callbackFunction: () => void = () => {};
   private readonly observer: MutationObserver;
   private readonly config: { subtree: boolean; childList: boolean };
 
   constructor(params: Record<string, string | null>) {
-    console.log(`Params:`, params);
-    const observer = new MutationObserver(() => {
+    this.observer = this.constructObserver(params);
+    this.config = { subtree: true, childList: true };
+  }
+
+  private constructObserver(params: Record<string, string | null>) {
+    return new MutationObserver(() => {
       if (window.location.href !== this.url) {
         this.url = window.location.href;
         const newUrl = this.appendQueryParams(params);
         console.log(`Pushing new URL: ${newUrl}`);
         window.history.pushState({}, '', newUrl);
+        this.callbackFunction();
         this.url = newUrl;
       }
     });
-    this.observer = observer;
-    this.config = { subtree: true, childList: true };
   }
 
-  public listenForChanges() {
+  public listenForChanges(callbackFunction: () => void = () => {}) {
     console.log('Start listening for URL changes...');
+    this.callbackFunction = callbackFunction;
     this.observer.observe(document, this.config);
   }
 

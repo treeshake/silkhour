@@ -95,20 +95,19 @@ if (!customElements.get('product-info')) {
 
           if (updateFullPage) {
             document.querySelector('head title').innerHTML = html.querySelector('head title').innerHTML;
-
-            // HTMLUpdateUtility.viewTransition(
-            //   document.querySelector('main'),
-            //   html.querySelector('main'),
-            //   this.preProcessHtmlCallbacks,
-            //   this.postProcessHtmlCallbacks
-            // );
+            HTMLUpdateUtility.viewTransition(
+              document.querySelector('main'),
+              html.querySelector('main'),
+              this.preProcessHtmlCallbacks,
+              this.postProcessHtmlCallbacks
+            );
           } else {
-            // HTMLUpdateUtility.viewTransition(
-            //   this,
-            //   html.querySelector('product-info'),
-            //   this.preProcessHtmlCallbacks,
-            //   this.postProcessHtmlCallbacks
-            // );
+            HTMLUpdateUtility.viewTransition(
+              this,
+              html.querySelector('product-info'),
+              this.preProcessHtmlCallbacks,
+              this.postProcessHtmlCallbacks
+            );
           }
         };
       }
