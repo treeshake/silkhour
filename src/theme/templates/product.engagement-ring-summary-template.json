@@ -33,15 +33,12 @@
         "buy_buttons"
       ],
       "settings": {
-        "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 16,
@@ -49,5 +46,7 @@
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
