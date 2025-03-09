@@ -22,10 +22,10 @@ function mountReact(
   }
 }
 
-const ringBuilder = new RingBuilderService();
+const ring = new RingBuilderService();
 const observer = new URLMutationObserver({
-  variant: ringBuilder.getProductId(),
-  product_id: ringBuilder.getVariantId(),
+  variant: ring.getProductId(),
+  product_id: ring.getVariantId(),
 });
 
 observer.listenForChanges(() => {
@@ -41,7 +41,7 @@ observer.listenForChanges(() => {
   );
 });
 
-  // Clean up function
+// Clean up function
 window.addEventListener('beforeunload', () => {
   observer.disconnect();
 });

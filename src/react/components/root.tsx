@@ -2,8 +2,9 @@ import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { BrowserRouter } from 'react-router';
 import { AddDiamond } from './engagement-ring/add-diamond';
-import { CompleteYourRing } from './engagement-ring/complete-your-ring';
+import { CompleteYourRingMediaGallery } from './engagement-ring/media-gallery';
 import { SelectDiamond } from './engagement-ring/select-diamond';
+import { CompleteYourRing } from './engagement-ring/summary';
 import { Pagination } from './pagination';
 
 const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN as string;
@@ -24,7 +25,7 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
         {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
         {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
         {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
-        {wrapperSelector === '.react-complete-your-ring-media-gallery' && <CompleteYourRing {...rest} />}
+        {wrapperSelector === '.react-complete-your-ring-media-gallery' && <CompleteYourRingMediaGallery {...rest} />}
         {wrapperSelector === '.react-complete-your-ring-summary' && <CompleteYourRing {...rest} />}
       </BrowserRouter>
     </ShopifyProvider>

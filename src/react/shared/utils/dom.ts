@@ -34,3 +34,9 @@ export function getAttributes(el: Element, prefix: String | null = null) {
       return acc;
     }, {});
 }
+
+
+
+export function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}

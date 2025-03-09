@@ -1,3 +1,5 @@
+import { isNil } from 'rambda';
+
 export type RingConfiguration = {
   variantId?: string | null;
   productId?: string | null;
@@ -97,5 +99,36 @@ export class RingBuilderService {
     }
 
     return searchParams;
+  }
+
+  private deserializeFromStorage(): RingConfiguration | null {
+    const ringConfigurationSession = sessionStorage.getItem(
+      'engagement.ring.configuration',
+    );
+    const ringBuilder: RingConfiguration | null = !isNil(
+      ringConfigurationSession,
+    )
+      ? JSON.parse(ringConfigurationSession)
+      : null;
+
+    return ringBuilder;
+  }
+
+  /**
+   * Store attributes in sessionStorage - not ideal, but pagination and possibly other selections on the collections page is stripping the URL queries
+   */
+  public serializeToStorage(): RingConfiguration {
+    const current = this.deserializeFromStorage() ?? {};
+    const changes = {
+      variantId: this.variantId,
+      productId: this.productId,
+      diamondId: this.diamondId,
+    };
+    const payload: RingConfiguration = {
+      ...(current ?? {}),
+      ...changes,
+    };
+    sessionStorage.setItem('engagement.ring.builder', JSON.stringify(payload));
+    return payload;
   }
 }
