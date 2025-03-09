@@ -2,3 +2,7 @@
 build
 coverage
 node_modules
+
+# prettier config for typescript projects only
+# Ignore all .liquid files
+**/*.liquid

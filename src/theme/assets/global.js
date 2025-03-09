@@ -1252,7 +1252,6 @@ class BulkAdd extends HTMLElement {
   }
 
   getSectionsUrl() {
-    console.log(`Get sections URL`);
     if (window.pageNumber) {
       return `${window.location.pathname}?page=${window.pageNumber}`;
     } else {

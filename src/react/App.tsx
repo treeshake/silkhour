@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import { createRoot } from 'react-dom/client';
+import { RingBuilderService } from './components/engagement-ring/services';
 import { RootComponent } from './components/root';
 import { URLMutationObserver } from './shared/services/url-mutation-observer';
 import { getAttributes } from './shared/utils/dom';
@@ -21,16 +22,25 @@ function mountReact(
   }
 }
 
-const obs = new URLMutationObserver({});
-obs.listenForChanges(() => {
+const ringBuilder = new RingBuilderService();
+const observer = new URLMutationObserver({
+  variant: ringBuilder.getProductId(),
+  product_id: ringBuilder.getVariantId(),
+});
+
+observer.listenForChanges(() => {
   mountReact(
     [
       '.react-pagination',
-      '.react-ring-builder-subscriber',
       '.react-select-diamond',
       '.react-add-diamond',
       '.react-review-complete-ring',
     ],
     RootComponent,
   );
+});
+
+  // Clean up function
+window.addEventListener('beforeunload', () => {
+  observer.disconnect();
 });

@@ -3,7 +3,6 @@ import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { BrowserRouter } from 'react-router';
 import { AddDiamond } from './engagement-ring/add-diamond';
 import { ReviewEngagementRing } from './engagement-ring/review-engagement-ring';
-import { RingBuilderSubscriber } from './engagement-ring/ring-builder-subscriber';
 import { SelectDiamond } from './engagement-ring/select-diamond';
 import { Pagination } from './pagination';
 
@@ -23,7 +22,6 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
     >
       <BrowserRouter>
         {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
-        {wrapperSelector === '.react-ring-builder-subscriber' && <RingBuilderSubscriber {...rest} />}
         {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
         {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
         {wrapperSelector === '.react-review-complete-ring' && <ReviewEngagementRing {...rest} />}

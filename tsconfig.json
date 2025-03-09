@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.tsx"],
+  "include": ["**/*.tsx", "**/*.ts"],
   "compilerOptions": {
     "outDir": "./src/theme/assets/custom",
     "noImplicitAny": true,
