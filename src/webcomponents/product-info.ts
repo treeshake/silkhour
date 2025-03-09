@@ -22,7 +22,6 @@ export class ProductInfo extends HTMLElement {
   variantChangeUnsubscriber?: () => void = undefined;
 
   connectedCallback() {
-    console.log(`Connected callback`);
     if (!this.input) return;
     this.quantityForm = this.querySelector('.product-form__quantity');
     if (!this.quantityForm) return;
