@@ -6,4 +6,3 @@ export const storefrontClient = createStorefrontApiClient({
   apiVersion: process.env.SHOPIFY_STOREFRONT_API_VERSION as string,
   publicAccessToken: process.env.SHOPIFY_PUBLIC_STOREFRONT_TOKEN as string,
 });
-

@@ -1,10 +1,5 @@
-export function formatCurrency(
-  amount: number | string,
-  currency: string,
-  locale: string = 'en-US',
-): string {
-  const numericAmount =
-    typeof amount === 'string' ? parseFloat(amount) : amount;
+export function formatCurrency(amount: number | string, currency: string, locale: string = 'en-US'): string {
+  const numericAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: currency,

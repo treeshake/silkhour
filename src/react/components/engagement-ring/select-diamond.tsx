@@ -5,14 +5,8 @@ interface SelectDiamondLinkProps {
   product_id: string;
 }
 
-export function SelectDiamond({
-  product_id: productId = '',
-}: SelectDiamondLinkProps) {
-  const diamondShapeGid = useFetchProductMetaFieldGid(
-    'custom',
-    'diamond_shape',
-    productId,
-  );
+export function SelectDiamond({ product_id: productId = '' }: SelectDiamondLinkProps) {
+  const diamondShapeGid = useFetchProductMetaFieldGid('custom', 'diamond_shape', productId);
 
   const handleClick = () => {
     const ring = new RingBuilderService();
@@ -23,7 +17,7 @@ export function SelectDiamond({
 
   return (
     <a href="" onClick={handleClick} className="tw-underline tw-text-black">
-      or choose your diamond
+      or choose your bespoke diamond
     </a>
   );
 }

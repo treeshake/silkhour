@@ -12,17 +12,9 @@ export class RingBuilderService {
   private readonly productId: string | null;
   private readonly diamondId: string | null;
 
-  constructor({
-    variantId = null,
-    productId = null,
-    diamondId = null,
-  }: RingConfiguration | undefined = {}) {
+  constructor({ variantId = null, productId = null, diamondId = null }: RingConfiguration | undefined = {}) {
     const searchParams = new URLSearchParams(window.location.search);
-    this.variantId =
-      variantId ||
-      searchParams.get('variant') ||
-      searchParams.get('variant_id') ||
-      null;
+    this.variantId = variantId || searchParams.get('variant') || searchParams.get('variant_id') || null;
     this.productId = productId || searchParams.get('product_id') || null;
     this.diamondId = diamondId || searchParams.get('diamond_id') || null;
   }
@@ -35,11 +27,7 @@ export class RingBuilderService {
     return this.productId;
   }
 
-  public getCurrentConfiguration(): [
-    typeof this.productId,
-    typeof this.variantId,
-    typeof this.diamondId,
-  ] {
+  public getCurrentConfiguration(): [typeof this.productId, typeof this.variantId, typeof this.diamondId] {
     return [this.productId, this.variantId, this.diamondId];
   }
 
@@ -56,20 +44,12 @@ export class RingBuilderService {
   }
 
   public reconstructURL(fromExistingUrl?: string): URL {
-    const searchParams = fromExistingUrl
-      ? new URL(fromExistingUrl).searchParams
-      : new URLSearchParams();
+    const searchParams = fromExistingUrl ? new URL(fromExistingUrl).searchParams : new URLSearchParams();
 
-    return new URL(
-      `?${this.appendConfiguration(searchParams).toString()}`,
-      window.location.href,
-    );
+    return new URL(`?${this.appendConfiguration(searchParams).toString()}`, window.location.href);
   }
 
-  public routeToSelectDiamond(
-    productId: string,
-    diamondShapeGid: string,
-  ): void {
+  public routeToSelectDiamond(productId: string, diamondShapeGid: string): void {
     const url = new URLSearchParams(window.location.search);
     url.append('sort_by', 'price-ascending');
     url.append('filter.p.m.custom.diamond_shape', diamondShapeGid);
@@ -81,9 +61,7 @@ export class RingBuilderService {
     window.history.pushState({}, '', href);
   }
 
-  public appendConfiguration(
-    searchParams: URLSearchParams = new URLSearchParams(),
-  ): URLSearchParams {
+  public appendConfiguration(searchParams: URLSearchParams = new URLSearchParams()): URLSearchParams {
     // prettier-ignore
     if (this.productId && this.hasProductId() && !searchParams.has('product_id')) {
       searchParams.append('product_id', this.productId);
@@ -103,14 +81,8 @@ export class RingBuilderService {
   }
 
   private deserializeFromStorage(): RingConfiguration | null {
-    const ringConfigurationSession = sessionStorage.getItem(
-      'engagement.ring.configuration',
-    );
-    const ringBuilder: RingConfiguration | null = !isNil(
-      ringConfigurationSession,
-    )
-      ? JSON.parse(ringConfigurationSession)
-      : null;
+    const ringConfigurationSession = sessionStorage.getItem('engagement.ring.configuration');
+    const ringBuilder: RingConfiguration | null = !isNil(ringConfigurationSession) ? JSON.parse(ringConfigurationSession) : null;
 
     return ringBuilder;
   }

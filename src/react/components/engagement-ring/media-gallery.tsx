@@ -13,19 +13,13 @@ export function CompleteYourRingMediaGallery() {
     return null;
   }
 
-  const mediaImages = [...ringProductMedia, ...diamondProductMedia].filter(
-    (m) => !isNil(m.image),
-  );
+  const mediaImages = [...ringProductMedia, ...diamondProductMedia].filter((m) => !isNil(m.image));
 
   return (
     <div className="tw-grid tw-grid-cols-2 tw-gap-4 tw-mb-8">
       {mediaImages.map((media) => (
         <div key={media.id}>
-          <img
-            src={media.image.url}
-            alt={media.image.altText || 'Product image'}
-            className="tw-w-full tw-h-auto tw-object-cover"
-          />
+          <img src={media.image.url} alt={media.image.altText || 'Product image'} className="tw-w-full tw-h-auto tw-object-cover" />
         </div>
       ))}
     </div>

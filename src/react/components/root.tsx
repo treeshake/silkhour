@@ -1,5 +1,6 @@
 import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
+import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router';
 import { AddDiamond } from './engagement-ring/add-diamond';
 import { CompleteYourRingMediaGallery } from './engagement-ring/media-gallery';
@@ -14,20 +15,22 @@ const SHOPIFY_STOREFRONT_API_VERSION = process.env.SHOPIFY_STOREFRONT_API_VERSIO
 
 export function RootComponent({ wrapperSelector, ...rest }: any) {
   return (
-    <ShopifyProvider
-      countryIsoCode={SHOPIFY_STORE_COUNTRY_CODE ?? 'AU'}
-      languageIsoCode="EN"
-      storefrontToken={SHOPIFY_PUBLIC_STOREFRONT_TOKEN}
-      storefrontApiVersion={SHOPIFY_STOREFRONT_API_VERSION}
-      storeDomain={SHOPIFY_STORE_DOMAIN}
-    >
-      <BrowserRouter>
-        {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
-        {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
-        {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
-        {wrapperSelector === '.react-complete-your-ring-media-gallery' && <CompleteYourRingMediaGallery {...rest} />}
-        {wrapperSelector === '.react-complete-your-ring-summary' && <CompleteYourRing {...rest} />}
-      </BrowserRouter>
-    </ShopifyProvider>
+    <StrictMode>
+      <ShopifyProvider
+        countryIsoCode={SHOPIFY_STORE_COUNTRY_CODE ?? 'AU'}
+        languageIsoCode="EN"
+        storefrontToken={SHOPIFY_PUBLIC_STOREFRONT_TOKEN}
+        storefrontApiVersion={SHOPIFY_STOREFRONT_API_VERSION}
+        storeDomain={SHOPIFY_STORE_DOMAIN}
+      >
+        <BrowserRouter>
+          {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
+          {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
+          {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
+          {wrapperSelector === '.react-complete-your-ring-media-gallery' && <CompleteYourRingMediaGallery {...rest} />}
+          {wrapperSelector === '.react-complete-your-ring-summary' && <CompleteYourRing {...rest} />}
+        </BrowserRouter>
+      </ShopifyProvider>
+    </StrictMode>
   );
 }

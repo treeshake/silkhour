@@ -1,9 +1,6 @@
 import { CartProvider } from '@shopify/hydrogen-react';
 import { isNil } from 'rambda';
-import {
-  useFetchProduct,
-  useFetchProductVariant,
-} from '../../shared/hooks/product';
+import { useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
 import { formatCurrency } from '../../shared/utils/currency';
 import { extractMetafieldValue } from '../../shared/utils/shopify';
 import { RingBuilderService } from './services';
@@ -20,9 +17,7 @@ export function CompleteYourRing() {
   const variant = useFetchProductVariant(variantId!);
   const diamond = useFetchProduct(diamondId);
 
-  const metafieldKeysProduct = [
-    { key: 'diamond_shape', fieldKey: 'value', label: 'Diamond Shape' },
-  ];
+  const metafieldKeysProduct = [{ key: 'diamond_shape', fieldKey: 'value', label: 'Diamond Shape' }];
 
   const metafieldKeysDiamond = [
     { key: 'diamond_weight', fieldKey: 'value', label: 'Carat' },
@@ -33,18 +28,14 @@ export function CompleteYourRing() {
     { key: 'diamond_fluorescent', fieldKey: 'text_options', label: 'Fluorescence' }, // prettier-ignore
   ];
 
-  const productMetafieldValues = metafieldKeysProduct.map(
-    ({ key, fieldKey, label }) => ({
-      label,
-      value: extractMetafieldValue(product, key, fieldKey) ?? 'Unknown',
-    }),
-  );
-  const diamondMetafieldValues = metafieldKeysDiamond.map(
-    ({ key, fieldKey, label }) => ({
-      label,
-      value: extractMetafieldValue(diamond, key, fieldKey) ?? 'Unknown',
-    }),
-  );
+  const productMetafieldValues = metafieldKeysProduct.map(({ key, fieldKey, label }) => ({
+    label,
+    value: extractMetafieldValue(product, key, fieldKey) ?? 'Unknown',
+  }));
+  const diamondMetafieldValues = metafieldKeysDiamond.map(({ key, fieldKey, label }) => ({
+    label,
+    value: extractMetafieldValue(diamond, key, fieldKey) ?? 'Unknown',
+  }));
 
   const handleCheckout = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -60,38 +51,23 @@ export function CompleteYourRing() {
             <div>
               <div className="tw-flex tw-justify-between tw-pb-5">
                 <h5 className="product-summary-subheading">Setting</h5>
-                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
-                  Change/Edit
-                </h5>
+                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">Change/Edit</h5>
               </div>
               <div className="tw-flex tw-justify-between tw-pb-5">
-                <h2 className="product-title-smaller tw-mr-2">
-                  {product.title}
-                </h2>
-                <h2 className="product-price-smaller tw-whitespace-nowrap">
-                  {formatCurrency(
-                    variant.price.amount,
-                    variant.price.currencyCode,
-                  )}
-                </h2>
+                <h2 className="product-title-smaller tw-mr-2">{product.title}</h2>
+                <h2 className="product-price-smaller tw-whitespace-nowrap">{formatCurrency(variant.price.amount, variant.price.currencyCode)}</h2>
               </div>
               <div>
                 {variant.selectedOptions
                   .filter((option) => option.name !== 'Diamond Size')
                   .map((option) => (
-                    <div
-                      key={option.name}
-                      className="tw-flex tw-justify-between tw-mb-2"
-                    >
+                    <div key={option.name} className="tw-flex tw-justify-between tw-mb-2">
                       <span>{option.name}:</span>
                       <span>{option.value}</span>
                     </div>
                   ))}
                 {productMetafieldValues.map(({ label, value }) => (
-                  <div
-                    key={label}
-                    className="tw-flex tw-justify-between tw-mb-2"
-                  >
+                  <div key={label} className="tw-flex tw-justify-between tw-mb-2">
                     <span>{label}:</span>
                     <span>{value}</span>
                   </div>
@@ -103,27 +79,17 @@ export function CompleteYourRing() {
             <div>
               <div className="tw-flex tw-justify-between tw-pb-5">
                 <h5 className="product-summary-subheading">Diamond</h5>
-                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
-                  Change/Edit
-                </h5>
+                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">Change/Edit</h5>
               </div>
               <div className="tw-flex tw-justify-between tw-pb-5">
-                <h2 className="product-title-smaller tw-mr-2">
-                  {diamond.title}
-                </h2>
+                <h2 className="product-title-smaller tw-mr-2">{diamond.title}</h2>
                 <h2 className="product-price-smaller tw-whitespace-nowrap">
-                  {formatCurrency(
-                    diamond.priceRange.minVariantPrice.amount,
-                    diamond.priceRange.minVariantPrice.currencyCode,
-                  )}
+                  {formatCurrency(diamond.priceRange.minVariantPrice.amount, diamond.priceRange.minVariantPrice.currencyCode)}
                 </h2>
               </div>
               <div>
                 {diamondMetafieldValues.map(({ label, value }) => (
-                  <div
-                    key={label}
-                    className="tw-flex tw-justify-between tw-mb-2"
-                  >
+                  <div key={label} className="tw-flex tw-justify-between tw-mb-2">
                     <span>{label}:</span>
                     <span>{value}</span>
                   </div>
@@ -137,8 +103,7 @@ export function CompleteYourRing() {
                 <h2 className="product-title-smaller">Total</h2>
                 <h2 className="product-title-smaller">
                   {formatCurrency(
-                    Number(variant.price.amount) +
-                      Number(diamond.priceRange.minVariantPrice.amount),
+                    Number(variant.price.amount) + Number(diamond.priceRange.minVariantPrice.amount),
                     diamond.priceRange.minVariantPrice.currencyCode,
                   )}
                 </h2>

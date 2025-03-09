@@ -1,7 +1,4 @@
-import type {
-  Product,
-  ProductVariant,
-} from '@shopify/hydrogen-react/storefront-api-types';
+import type { Product, ProductVariant } from '@shopify/hydrogen-react/storefront-api-types';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
 import { Media } from '../types/product-media';
@@ -66,11 +63,7 @@ export function useFetchProduct(id: string) {
   return product;
 }
 
-export function useFetchProductMetaFieldGid(
-  namespace: string,
-  key: string,
-  ownerId: string,
-) {
+export function useFetchProductMetaFieldGid(namespace: string, key: string, ownerId: string) {
   const [productMetafield, setProductMetafield] = useState<string | null>(null);
   useEffect(() => {
     const fetchProductMetafield = async () => {

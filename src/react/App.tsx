@@ -5,10 +5,7 @@ import { RootComponent } from './components/root';
 import { URLMutationObserver } from './shared/services/url-mutation-observer';
 import { getAttributes } from './shared/utils/dom';
 
-function mountReact(
-  wrapperSelectors: string[],
-  RootComponent: FunctionComponent<{ props: any }>,
-) {
+function mountReact(wrapperSelectors: string[], RootComponent: FunctionComponent<{ props: any }>) {
   for (const wrapperSelector of wrapperSelectors) {
     const elements = document.querySelectorAll<Element>(wrapperSelector);
     elements.forEach((el) => {
@@ -30,13 +27,7 @@ const observer = new URLMutationObserver({
 
 observer.listenForChanges(() => {
   mountReact(
-    [
-      '.react-pagination',
-      '.react-select-diamond',
-      '.react-add-diamond',
-      '.react-complete-your-ring-media-gallery',
-      '.react-complete-your-ring-summary',
-    ],
+    ['.react-pagination', '.react-select-diamond', '.react-add-diamond', '.react-complete-your-ring-media-gallery', '.react-complete-your-ring-summary'],
     RootComponent,
   );
 });

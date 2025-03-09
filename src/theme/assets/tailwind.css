@@ -554,11 +554,6 @@ video {
   display: none;
 }
 
-.tw-mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .tw-my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -568,20 +563,20 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.tw-mt-8 {
-  margin-top: 2rem;
-}
-
-.tw-mt-0 {
-  margin-top: 0px;
+.tw-mb-8 {
+  margin-bottom: 2rem;
 }
 
 .tw-mr-2 {
   margin-right: 0.5rem;
 }
 
-.tw-mb-8 {
-  margin-bottom: 2rem;
+.tw-mt-0 {
+  margin-top: 0px;
+}
+
+.tw-mt-8 {
+  margin-top: 2rem;
 }
 
 .tw-flex {
@@ -598,10 +593,6 @@ video {
 
 .tw-w-full {
   width: 100%;
-}
-
-.tw-max-w-2xl {
-  max-width: 42rem;
 }
 
 .tw-cursor-pointer {
@@ -624,24 +615,8 @@ video {
   gap: 1rem;
 }
 
-.tw-gap-8 {
-  gap: 2rem;
-}
-
 .tw-gap-y-8 {
   row-gap: 2rem;
-}
-
-.tw-gap-y-4 {
-  row-gap: 1rem;
-}
-
-.tw-gap-y-2 {
-  row-gap: 0.5rem;
-}
-
-.tw-overflow-x-auto {
-  overflow-x: auto;
 }
 
 .tw-whitespace-nowrap {
@@ -651,16 +626,6 @@ video {
 .tw-object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.tw-px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.tw-py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .tw-pb-5 {
@@ -682,12 +647,6 @@ video {
 
 @media (min-width: 768px) {
   .md\:tw-mt-0 {
-    margin-top: 0px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:tw-mt-0 {
     margin-top: 0px;
   }
 }
