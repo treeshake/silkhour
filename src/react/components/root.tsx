@@ -24,7 +24,8 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
         {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
         {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
         {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
-        {wrapperSelector === '.react-complete-your-ring' && <CompleteYourRing {...rest} />}
+        {wrapperSelector === '.react-complete-your-ring-media-gallery' && <CompleteYourRing {...rest} />}
+        {wrapperSelector === '.react-complete-your-ring-summary' && <CompleteYourRing {...rest} />}
       </BrowserRouter>
     </ShopifyProvider>
   );

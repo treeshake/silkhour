@@ -34,7 +34,8 @@ observer.listenForChanges(() => {
       '.react-pagination',
       '.react-select-diamond',
       '.react-add-diamond',
-      '.react-complete-your-ring',
+      '.react-complete-your-ring-media-gallery',
+      '.react-complete-your-ring-summary',
     ],
     RootComponent,
   );
