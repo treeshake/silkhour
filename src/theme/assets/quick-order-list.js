@@ -177,7 +177,6 @@ if (!customElements.get('quick-order-list')) {
       }
 
       refresh() {
-        console.log(`REFRESHING...`);
         return new Promise((resolve, reject) => {
           fetch(`${this.getSectionsUrl()}?section_id=${this.sectionId}`)
             .then((response) => response.text())
