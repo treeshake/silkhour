@@ -24,11 +24,11 @@ export function CompleteYourRing() {
   ];
 
   const metafieldKeysDiamond = [
-    { key: 'diamond_weight', fieldKey: 'value', label: 'Weight' },
-    { key: 'diamond_color', fieldKey: 'value', label: 'Color' },
+    { key: 'diamond_weight', fieldKey: 'value', label: 'Carat' },
     { key: 'diamond_clarity', fieldKey: 'value', label: 'Clarity' },
-    { key: 'diamond_certification', fieldKey: 'value', label: 'Diamond Certification' }, // prettier-ignore
+    { key: 'diamond_color', fieldKey: 'value', label: 'Color' },
     { key: 'diamond_cut', fieldKey: 'name', label: 'Cut' },
+    { key: 'diamond_certification', fieldKey: 'value', label: 'Diamond Certification' }, // prettier-ignore
     { key: 'diamond_fluorescent', fieldKey: 'text_options', label: 'Fluorescence' }, // prettier-ignore
   ];
 
@@ -48,17 +48,17 @@ export function CompleteYourRing() {
   return (
     <section>
       {product && diamond && variant && (
-        <div className="flex flex-col gap-4">
-          <div className="pb-15">
-            <div className="flex justify-between pb-5">
+        <div className="tw-flex tw-flex-col tw-gap-y-8 tw-mt-8 md:tw-mt-0">
+          <div>
+            <div className="tw-flex tw-justify-between tw-pb-5">
               <h5 className="product-summary-subheading">Setting</h5>
-              <h5 className="product-summary-subheading underline hover:cursor-pointer">
+              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
                 Change/Edit
               </h5>
             </div>
-            <div className="flex justify-between pb-5">
-              <h2 className="product-title-smaller">{product.title}</h2>
-              <h2 className="product-price-smaller">
+            <div className="tw-flex tw-justify-between tw-pb-5">
+              <h2 className="product-title-smaller tw-mr-2">{product.title}</h2>
+              <h2 className="product-price-smaller tw-whitespace-nowrap">
                 {formatCurrency(
                   variant.price.amount,
                   variant.price.currencyCode,
@@ -69,13 +69,16 @@ export function CompleteYourRing() {
               {variant.selectedOptions
                 .filter((option) => option.name !== 'Diamond Size')
                 .map((option) => (
-                  <div key={option.name} className="flex justify-between mb-2">
+                  <div
+                    key={option.name}
+                    className="tw-flex tw-justify-between tw-mb-2"
+                  >
                     <span>{option.name}:</span>
                     <span>{option.value}</span>
                   </div>
                 ))}
               {productMetafieldValues.map(({ label, value }) => (
-                <div key={label} className="flex justify-between mb-2">
+                <div key={label} className="tw-flex tw-justify-between tw-mb-2">
                   <span>{label}:</span>
                   <span>{value}</span>
                 </div>
@@ -83,16 +86,16 @@ export function CompleteYourRing() {
             </div>
           </div>
 
-          <div className="pb-15">
-            <div className="flex justify-between pb-5">
+          <div>
+            <div className="tw-flex tw-justify-between tw-pb-5">
               <h5 className="product-summary-subheading">Diamond</h5>
-              <h5 className="product-summary-subheading underline hover:cursor-pointer">
+              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
                 Change/Edit
               </h5>
             </div>
-            <div className="flex justify-between pb-5">
-              <h2 className="product-title-smaller">{diamond.title}</h2>
-              <h2 className="product-price-smaller">
+            <div className="tw-flex tw-justify-between tw-pb-5">
+              <h2 className="product-title-smaller tw-mr-2">{diamond.title}</h2>
+              <h2 className="product-price-smaller tw-whitespace-nowrap">
                 {formatCurrency(
                   diamond.priceRange.minVariantPrice.amount,
                   diamond.priceRange.minVariantPrice.currencyCode,
@@ -101,7 +104,7 @@ export function CompleteYourRing() {
             </div>
             <div>
               {diamondMetafieldValues.map(({ label, value }) => (
-                <div key={label} className="flex justify-between mb-2">
+                <div key={label} className="tw-flex tw-justify-between tw-mb-2">
                   <span>{label}:</span>
                   <span>{value}</span>
                 </div>
@@ -109,8 +112,8 @@ export function CompleteYourRing() {
             </div>
           </div>
 
-          <div className="pb-15">
-            <div className="flex justify-between">
+          <div>
+            <div className="tw-flex tw-justify-between">
               <h2 className="product-title-smaller">Total</h2>
               <h2 className="product-title-smaller">
                 {formatCurrency(

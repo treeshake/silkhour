@@ -18,18 +18,16 @@ export function CompleteYourRingMediaGallery() {
   );
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-4 sm:px-2 sm:py-4 lg:max-w-7xl lg:px-4">
-      <div className="grid grid-cols-2 gap-4">
-        {mediaImages.map((media) => (
-          <div key={media.id}>
-            <img
-              src={media.image.url}
-              alt={media.image.altText || 'Product image'}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="tw-grid tw-grid-cols-2 tw-gap-4">
+      {mediaImages.map((media) => (
+        <div key={media.id}>
+          <img
+            src={media.image.url}
+            alt={media.image.altText || 'Product image'}
+            className="tw-w-full tw-h-auto tw-object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }

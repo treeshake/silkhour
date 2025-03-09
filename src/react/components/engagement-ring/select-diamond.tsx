@@ -22,7 +22,7 @@ export function SelectDiamond({
   };
 
   return (
-    <a href="" onClick={handleClick} className="underline text-black">
+    <a href="" onClick={handleClick} className="tw-underline tw-text-black">
       or choose your diamond
     </a>
   );
