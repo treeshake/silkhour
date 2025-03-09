@@ -18,7 +18,7 @@ export function CompleteYourRingMediaGallery() {
   );
 
   return (
-    <div className="tw-grid tw-grid-cols-2 tw-gap-4">
+    <div className="tw-grid tw-grid-cols-2 tw-gap-4 tw-mb-8">
       {mediaImages.map((media) => (
         <div key={media.id}>
           <img

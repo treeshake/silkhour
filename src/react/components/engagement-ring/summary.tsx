@@ -1,3 +1,4 @@
+import { CartProvider } from '@shopify/hydrogen-react';
 import { isNil } from 'rambda';
 import {
   useFetchProduct,
@@ -20,7 +21,7 @@ export function CompleteYourRing() {
   const diamond = useFetchProduct(diamondId);
 
   const metafieldKeysProduct = [
-    { key: 'diamond_shape', fieldKey: 'value', label: 'Shape' },
+    { key: 'diamond_shape', fieldKey: 'value', label: 'Diamond Shape' },
   ];
 
   const metafieldKeysDiamond = [
@@ -45,91 +46,138 @@ export function CompleteYourRing() {
     }),
   );
 
+  const handleCheckout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = '/cart/checkout';
+  };
+
   return (
-    <section>
-      {product && diamond && variant && (
-        <div className="tw-flex tw-flex-col tw-gap-y-8 tw-mt-8 md:tw-mt-0">
-          <div>
-            <div className="tw-flex tw-justify-between tw-pb-5">
-              <h5 className="product-summary-subheading">Setting</h5>
-              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
-                Change/Edit
-              </h5>
-            </div>
-            <div className="tw-flex tw-justify-between tw-pb-5">
-              <h2 className="product-title-smaller tw-mr-2">{product.title}</h2>
-              <h2 className="product-price-smaller tw-whitespace-nowrap">
-                {formatCurrency(
-                  variant.price.amount,
-                  variant.price.currencyCode,
-                )}
-              </h2>
-            </div>
+    <CartProvider>
+      <section>
+        {product && diamond && variant && (
+          <div className="tw-flex tw-flex-col tw-gap-y-8 tw-mt-8 md:tw-mt-0">
+            {/* Engagement ring setting */}
             <div>
-              {variant.selectedOptions
-                .filter((option) => option.name !== 'Diamond Size')
-                .map((option) => (
+              <div className="tw-flex tw-justify-between tw-pb-5">
+                <h5 className="product-summary-subheading">Setting</h5>
+                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
+                  Change/Edit
+                </h5>
+              </div>
+              <div className="tw-flex tw-justify-between tw-pb-5">
+                <h2 className="product-title-smaller tw-mr-2">
+                  {product.title}
+                </h2>
+                <h2 className="product-price-smaller tw-whitespace-nowrap">
+                  {formatCurrency(
+                    variant.price.amount,
+                    variant.price.currencyCode,
+                  )}
+                </h2>
+              </div>
+              <div>
+                {variant.selectedOptions
+                  .filter((option) => option.name !== 'Diamond Size')
+                  .map((option) => (
+                    <div
+                      key={option.name}
+                      className="tw-flex tw-justify-between tw-mb-2"
+                    >
+                      <span>{option.name}:</span>
+                      <span>{option.value}</span>
+                    </div>
+                  ))}
+                {productMetafieldValues.map(({ label, value }) => (
                   <div
-                    key={option.name}
+                    key={label}
                     className="tw-flex tw-justify-between tw-mb-2"
                   >
-                    <span>{option.name}:</span>
-                    <span>{option.value}</span>
+                    <span>{label}:</span>
+                    <span>{value}</span>
                   </div>
                 ))}
-              {productMetafieldValues.map(({ label, value }) => (
-                <div key={label} className="tw-flex tw-justify-between tw-mb-2">
-                  <span>{label}:</span>
-                  <span>{value}</span>
-                </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          <div>
-            <div className="tw-flex tw-justify-between tw-pb-5">
-              <h5 className="product-summary-subheading">Diamond</h5>
-              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
-                Change/Edit
-              </h5>
-            </div>
-            <div className="tw-flex tw-justify-between tw-pb-5">
-              <h2 className="product-title-smaller tw-mr-2">{diamond.title}</h2>
-              <h2 className="product-price-smaller tw-whitespace-nowrap">
-                {formatCurrency(
-                  diamond.priceRange.minVariantPrice.amount,
-                  diamond.priceRange.minVariantPrice.currencyCode,
-                )}
-              </h2>
-            </div>
+            {/* Diamond selection */}
             <div>
-              {diamondMetafieldValues.map(({ label, value }) => (
-                <div key={label} className="tw-flex tw-justify-between tw-mb-2">
-                  <span>{label}:</span>
-                  <span>{value}</span>
-                </div>
-              ))}
+              <div className="tw-flex tw-justify-between tw-pb-5">
+                <h5 className="product-summary-subheading">Diamond</h5>
+                <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">
+                  Change/Edit
+                </h5>
+              </div>
+              <div className="tw-flex tw-justify-between tw-pb-5">
+                <h2 className="product-title-smaller tw-mr-2">
+                  {diamond.title}
+                </h2>
+                <h2 className="product-price-smaller tw-whitespace-nowrap">
+                  {formatCurrency(
+                    diamond.priceRange.minVariantPrice.amount,
+                    diamond.priceRange.minVariantPrice.currencyCode,
+                  )}
+                </h2>
+              </div>
+              <div>
+                {diamondMetafieldValues.map(({ label, value }) => (
+                  <div
+                    key={label}
+                    className="tw-flex tw-justify-between tw-mb-2"
+                  >
+                    <span>{label}:</span>
+                    <span>{value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div>
-            <div className="tw-flex tw-justify-between">
-              <h2 className="product-title-smaller">Total</h2>
-              <h2 className="product-title-smaller">
-                {formatCurrency(
-                  Number(variant.price.amount) +
-                    Number(diamond.priceRange.minVariantPrice.amount),
-                  diamond.priceRange.minVariantPrice.currencyCode,
-                )}
-              </h2>
+            {/* Totals */}
+            <div>
+              <div className="tw-flex tw-justify-between">
+                <h2 className="product-title-smaller">Total</h2>
+                <h2 className="product-title-smaller">
+                  {formatCurrency(
+                    Number(variant.price.amount) +
+                      Number(diamond.priceRange.minVariantPrice.amount),
+                    diamond.priceRange.minVariantPrice.currencyCode,
+                  )}
+                </h2>
+              </div>
+            </div>
+
+            {/* Buy buttons */}
+            <div className="tw-flex tw-flex-col tw-my-4">
+              <div className="product-form__buttons">
+                <button
+                  type="submit"
+                  name="add"
+                  className="product-form__submit button button--full-width button--primary"
+                  aria-haspopup="dialog"
+                  onClick={handleCheckout}
+                >
+                  <span>CHECKOUT</span>
+                </button>
+              </div>
+
+              <div className="product-form__buttons">
+                <button
+                  type="submit"
+                  name="add"
+                  className="product-form__submit button button--full-width button--primary"
+                  aria-haspopup="dialog"
+                  onClick={handleCheckout}
+                >
+                  <span>ADD TO BAG</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      <pre>{JSON.stringify(ring.getCurrentConfiguration(), null, 2)}</pre>
-      <pre>{JSON.stringify(product, null, 2)}</pre>
-      <pre>{JSON.stringify(variant, null, 2)}</pre>
-      <pre>{JSON.stringify(diamond, null, 2)}</pre>
-    </section>
+        )}
+        <pre>{JSON.stringify(ring.getCurrentConfiguration(), null, 2)}</pre>
+        <pre>{JSON.stringify(product, null, 2)}</pre>
+        <pre>{JSON.stringify(variant, null, 2)}</pre>
+        <pre>{JSON.stringify(diamond, null, 2)}</pre>
+      </section>
+    </CartProvider>
   );
 }
