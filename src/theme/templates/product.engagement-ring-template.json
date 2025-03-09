@@ -37,6 +37,14 @@
             "show_gift_card_recipient": false
           }
         },
+        "extra_spacing_Ae4GFV": {
+          "type": "extra_spacing",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "padding_top": 4,
+            "padding_bottom": 4
+          }
+        },
         "collapsible_tab_aexemE": {
           "type": "collapsible_tab",
           "settings": {
@@ -45,14 +53,6 @@
             "icon": "none",
             "content": "{{ product.metafields.custom.product_detail | metafield_tag }}",
             "page": ""
-          }
-        },
-        "extra_spacing_Ae4GFV": {
-          "type": "extra_spacing",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "padding_top": 4,
-            "padding_bottom": 4
           }
         }
       },
@@ -63,8 +63,8 @@
         "variant_picker",
         "extra_spacing_TEFDJe",
         "buy_buttons",
-        "collapsible_tab_aexemE",
-        "extra_spacing_Ae4GFV"
+        "extra_spacing_Ae4GFV",
+        "collapsible_tab_aexemE"
       ],
       "settings": {
         "enable_sticky_info": false,
