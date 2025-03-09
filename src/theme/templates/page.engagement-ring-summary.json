@@ -1,20 +1,25 @@
 {
   "sections": {
+    "custom_extra_spacing_VHT9FY": {
+      "type": "custom-extra-spacing",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
     "main": {
       "type": "custom-page-complete-your-engagement-ring",
-      "blocks": {
-      },
-      "block_order": [
-      ],
       "settings": {
         "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "contain",
+        "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "hide_variants": true,
+        "mobile_thumbnails": "hide",
         "enable_video_looping": true,
         "padding_top": 16,
         "padding_bottom": 16
@@ -22,6 +27,7 @@
     }
   },
   "order": [
+    "custom_extra_spacing_VHT9FY",
     "main"
   ]
 }

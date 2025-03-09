@@ -38,14 +38,16 @@
         "buy_buttons"
       ],
       "settings": {
-        "product": "{{ product.metafields.custom.referenced_product.value.setting.value }}",
+        "product": "",
         "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "contain",
+        "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 16,

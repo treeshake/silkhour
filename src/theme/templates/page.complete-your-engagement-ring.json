@@ -2,10 +2,6 @@
   "sections": {
     "main": {
       "type": "custom-page-complete-your-engagement-ring",
-      "blocks": {
-      },
-      "block_order": [
-      ],
       "settings": {
         "enable_sticky_info": false,
         "color_scheme": "scheme-1",
@@ -14,7 +10,6 @@
         "media_fit": "contain",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "hide_variants": true,
         "enable_video_looping": true,
         "padding_top": 16,
         "padding_bottom": 16

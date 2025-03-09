@@ -22,6 +22,14 @@
             "swatch_shape": "circle"
           }
         },
+        "extra_spacing_TEFDJe": {
+          "type": "extra_spacing",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "padding_top": 4,
+            "padding_bottom": 4
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -38,6 +46,14 @@
             "content": "{{ product.metafields.custom.product_detail | metafield_tag }}",
             "page": ""
           }
+        },
+        "extra_spacing_Ae4GFV": {
+          "type": "extra_spacing",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "padding_top": 4,
+            "padding_bottom": 4
+          }
         }
       },
       "block_order": [
@@ -45,8 +61,10 @@
         "price",
         "description",
         "variant_picker",
+        "extra_spacing_TEFDJe",
         "buy_buttons",
-        "collapsible_tab_aexemE"
+        "collapsible_tab_aexemE",
+        "extra_spacing_Ae4GFV"
       ],
       "settings": {
         "enable_sticky_info": false,
