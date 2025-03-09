@@ -1,6 +1,11 @@
-import type { Product } from '@shopify/hydrogen-react/storefront-api-types';
+import type {
+  Product,
+  ProductVariant,
+} from '@shopify/hydrogen-react/storefront-api-types';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
+import { Media } from '../types/product-media';
+import { createProductGid, createProductVariantGid } from '../utils/shopify';
 
 export function useFetchProduct(id: string) {
   const [product, setProduct] = useState<Product | null>(null);
@@ -26,19 +31,17 @@ export function useFetchProduct(id: string) {
         }`,
         {
           variables: {
-            id,
+            id: createProductGid(id),
           },
         },
       );
-      setProduct(data);
+      setProduct(data?.product);
     };
 
     fetchProduct();
   }, [id]);
 
-  return {
-    product,
-  };
+  return product;
 }
 
 export function useFetchProductMetaFieldGid(
@@ -61,7 +64,7 @@ export function useFetchProductMetaFieldGid(
           variables: {
             namespace,
             key,
-            ownerId,
+            ownerId: createProductGid(ownerId),
           },
         },
       );
@@ -72,4 +75,127 @@ export function useFetchProductMetaFieldGid(
   }, [ownerId, key, namespace]);
 
   return productMetafield;
+}
+
+export function useFetchProductMedia(id: string) {
+  const [media, setMedia] = useState<Media[]>([]);
+
+  useEffect(() => {
+    const fetchMedia = async () => {
+      const { data } = await storefrontClient.request(
+        `query ProductMedia($id: ID!) {
+          product(id: $id) {
+            media(first: 20) {
+              nodes {
+                ... on MediaImage {
+                  id
+                  image {
+                    url
+                    altText
+                    width
+                    height
+                  }
+                }
+                ... on Video {
+                  id
+                  sources {
+                    url
+                    mimeType
+                    format
+                    height
+                    width
+                  }
+                }
+                ... on ExternalVideo {
+                  id
+                  embedUrl
+                }
+                ... on Model3d {
+                  id
+                  sources {
+                    url
+                    mimeType
+                    format
+                  }
+                  previewImage {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }`,
+        {
+          variables: {
+            id: createProductGid(id),
+          },
+        },
+      );
+      setMedia(data.product.media.nodes);
+    };
+
+    fetchMedia();
+  }, [id]);
+
+  return media;
+}
+
+export function useFetchProductVariant(variantId: string) {
+  const [variant, setVariant] = useState<ProductVariant | null>(null);
+
+  useEffect(() => {
+    const fetchVariant = async () => {
+      const { data } = await storefrontClient.request(
+        `query ProductVariant($id: ID!) {
+          node(id: $id) {
+            ... on ProductVariant {
+              id
+              title
+              price {
+                amount
+                currencyCode
+              }
+              sku
+              availableForSale
+              image {
+                url
+                altText
+                width
+                height
+              }
+              product {
+                id
+                title
+                description
+                handle
+                vendor
+                productType
+                tags
+              }
+              selectedOptions {
+                name
+                value
+              }
+              compareAtPrice {
+                amount
+                currencyCode
+              }
+              weight
+              weightUnit
+            }
+          }
+        }`,
+        {
+          variables: {
+            id: createProductVariantGid(variantId),
+          },
+        },
+      );
+      setVariant(data?.node);
+    };
+
+    fetchVariant();
+  }, [variantId]);
+
+  return variant;
 }

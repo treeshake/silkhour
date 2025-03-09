@@ -1,5 +1,4 @@
 import { useFetchProductMetaFieldGid } from '../../shared/hooks/product';
-import { createProductGid } from '../../shared/utils/shopify';
 import { RingBuilderService } from './services';
 
 interface SelectDiamondLinkProps {
@@ -12,7 +11,7 @@ export function SelectDiamond({
   const diamondShapeGid = useFetchProductMetaFieldGid(
     'custom',
     'diamond_shape',
-    createProductGid(productId),
+    productId,
   );
 
   const handleClick = () => {
@@ -23,7 +22,7 @@ export function SelectDiamond({
   };
 
   return (
-    <a href="" onClick={handleClick} className="underline">
+    <a href="" onClick={handleClick} className="underline text-black">
       or choose your diamond
     </a>
   );
