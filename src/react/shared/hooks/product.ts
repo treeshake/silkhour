@@ -27,6 +27,28 @@ export function useFetchProduct(id: string) {
                 currencyCode
               }
             }
+            metafields(identifiers: [
+              { namespace: "custom", key: "diamond_shape" },
+              { namespace: "custom", key: "diamond_weight" },
+              { namespace: "custom", key: "diamond_color" },
+              { namespace: "custom", key: "diamond_clarity" },
+              { namespace: "custom", key: "diamond_certification" },
+              { namespace: "custom", key: "diamond_cut" },
+              { namespace: "custom", key: "diamond_fluorescent" },
+            ]) {
+              namespace
+              key
+              value
+              reference {
+                ... on Metaobject {
+                  id
+                  fields {
+                    key
+                    value
+                  }
+                }
+              }
+            }
           }
         }`,
         {
