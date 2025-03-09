@@ -7,10 +7,10 @@ interface AddDiamondProps {
 export function AddDiamond({
   diamond_id: diamondId,
 }: AddDiamondProps) {
-  const ringBuilder = new RingBuilderService({ diamondId });
+  const ring = new RingBuilderService({ diamondId });
   return (
     <a
-      href={`/pages/complete-your-ring?${ringBuilder.appendConfiguration().toString()}`}
+      href={`/pages/complete-your-ring?${ring.appendConfiguration().toString()}`}
       className="button"
     >
       Select Diamond

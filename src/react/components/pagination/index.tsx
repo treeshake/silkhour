@@ -43,14 +43,14 @@ export function Pagination({
   // Get the URL parameters,, this wasn't possible in the shopify liquid version.
   // Note that we don't need the product variant as this is an inbuilt type that shopify recognizes and
   // does NOT strip.
-  const ringBuilder = new RingBuilderService();
-  const ringBuilderParams = ringBuilder.reconstructURL().toString();
+  const ring = new RingBuilderService();
+  const ringParams = ring.reconstructURL().toString();
   return (
     <ul className="pagination__list list-unstyled" role="list">
       {paginate.previous && (
         <li>
           <a
-            href={`${paginate.previous.url}&${ringBuilderParams}${anchor}`}
+            href={`${paginate.previous.url}&${ringParams}${anchor}`}
             className="pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
             aria-label={ariaLabelPrevious}
           >
@@ -69,7 +69,7 @@ export function Pagination({
           <li key={index}>
             {part.is_link ? (
               <a
-                href={`${part.url}&${ringBuilderParams}${anchor}`}
+                href={`${part.url}&${ringParams}${anchor}`}
                 className="pagination__item link"
                 aria-label={`${ariaLabelPage} ${part.title}`}
                 dangerouslySetInnerHTML={{
@@ -101,7 +101,7 @@ export function Pagination({
       {paginate.next && (
         <li>
           <a
-            href={`${paginate.next.url}&${ringBuilderParams.toString()}${anchor}`}
+            href={`${paginate.next.url}&${ringParams}${anchor}`}
             className="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
             aria-label={ariaLabelNext}
           >

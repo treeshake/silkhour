@@ -15,9 +15,9 @@ export function SelectDiamond({
   );
 
   const handleClick = () => {
-    const ringBuilder = new RingBuilderService();
+    const ring = new RingBuilderService();
     if (productId && diamondShapeGid) {
-      ringBuilder.routeToSelectDiamond(productId, diamondShapeGid);
+      ring.routeToSelectDiamond(productId, diamondShapeGid);
     }
   };
 
