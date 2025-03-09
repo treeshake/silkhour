@@ -7,7 +7,7 @@ export function useFetchProduct(id: string) {
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await storefrontClient.request(
-        `query Product($key: String!, $id: ID!) {
+        `query Product($id: ID!) {
           product(id: $id) {
             id
             title

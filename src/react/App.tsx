@@ -34,7 +34,7 @@ observer.listenForChanges(() => {
       '.react-pagination',
       '.react-select-diamond',
       '.react-add-diamond',
-      '.react-review-complete-ring',
+      '.react-complete-your-ring',
     ],
     RootComponent,
   );
