@@ -9,6 +9,7 @@ function mountReact(wrapperSelectors: string[], RootComponent: FunctionComponent
   for (const wrapperSelector of wrapperSelectors) {
     const elements = document.querySelectorAll<Element>(wrapperSelector);
     elements.forEach((el) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const props = {
         ...(getAttributes(el, 'prop-') ?? {}),
         wrapperSelector,
@@ -27,7 +28,13 @@ const observer = new URLMutationObserver({
 
 observer.listenForChanges(() => {
   mountReact(
-    ['.react-pagination', '.react-select-diamond', '.react-add-diamond', '.react-complete-your-ring-media-gallery', '.react-complete-your-ring-summary'],
+    [
+      '.react-pagination',
+      '.react-select-diamond',
+      '.react-add-diamond',
+      '.react-complete-your-ring-media-gallery',
+      '.react-complete-your-ring-summary',
+    ],
     RootComponent,
   );
 });

@@ -1,3 +1,5 @@
+import { isNil } from 'rambda';
+
 export function getCookie(name: string): string | null {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -6,5 +8,6 @@ export function getCookie(name: string): string | null {
 }
 
 export function getCartSessionCookie() {
-  return decodeURIComponent(getCookie('cart') ?? '');
+  const cartCookie = getCookie('cart');
+  return !isNil(cartCookie) ? decodeURIComponent(cartCookie) : null;
 }
