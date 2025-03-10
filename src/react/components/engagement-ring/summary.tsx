@@ -5,7 +5,11 @@ import { useAddItemsToCart, useRetrieveCart } from '../../shared/hooks/cart';
 import { useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
 import { getCartSessionCookie } from '../../shared/utils/cookies';
 import { formatCurrency } from '../../shared/utils/currency';
-import { createProductGid, createProductVariantGid, extractMetafieldValue } from '../../shared/utils/shopify';
+import {
+  createProductGid,
+  createProductVariantGid,
+  extractMetafieldValue
+} from '../../shared/utils/shopify';
 import { SpinIfLoading } from '../spinner/spin-if-loading';
 import { RingBuilderService } from './services';
 
@@ -158,10 +162,18 @@ function CompleteYourRingSummary({
 
 export function AddToCartButton({ variantId, diamondId }: { variantId: string; diamondId: string }) {
   const cartToken = getCartSessionCookie();
-  const cart: any = useRetrieveCart(cartToken);
+  const cart = useRetrieveCart(cartToken);
   const { addItemsToCart, loading } = useAddItemsToCart();
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (loading) {
+      return;
+    }
+
+    if (isNil(cart)) {
+      // Error handling here...
+      return;
+    }
     const lineItems: CartLineInput[] = [
       {
         merchandiseId: createProductVariantGid(variantId),
@@ -173,7 +185,7 @@ export function AddToCartButton({ variantId, diamondId }: { variantId: string; d
       },
     ];
     try {
-      addItemsToCart(cart.id, lineItems);
+      addItemsToCart(cart.id!, lineItems);
 
       // window.location.href = '/cart';
     } catch (error) {
@@ -190,7 +202,7 @@ export function AddToCartButton({ variantId, diamondId }: { variantId: string; d
         onClick={handleAddToCart}
         disabled={loading}
       >
-        <SpinIfLoading loading={loading}>
+        <SpinIfLoading loading={false}>
           <span>ADD TO BAG</span>
         </SpinIfLoading>
       </button>

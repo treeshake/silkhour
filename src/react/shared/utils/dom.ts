@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /**
  * retrieves attributes from an element and turn them into an object
  * @param el - html element
  * @param prefix
  * @returns boolean
  */
-export function getAttributes(el: Element, prefix: String | null = null) {
+export function getAttributes(el: Element, prefix: string | null = null) {
   // turn the nodelist into an array
   return Array.prototype.slice.call(el.attributes).reduce((acc, attributeNode) => {
     // turn the array into an object
