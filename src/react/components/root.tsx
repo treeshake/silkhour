@@ -1,11 +1,11 @@
 import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { StrictMode } from 'react';
-import { AddDiamond } from './engagement-ring/add-diamond';
-import { CompleteYourRingMediaGallery } from './engagement-ring/media-gallery';
-import { SelectDiamond } from './engagement-ring/select-diamond';
-import { CompleteYourRing } from './engagement-ring/summary';
 import { Pagination } from './pagination';
+import { AddDiamond } from './ring-builder/add-diamond';
+import { CompleteYourRingMediaGallery } from './ring-builder/media-gallery';
+import { SelectDiamond } from './ring-builder/select-diamond';
+import { CompleteYourRing } from './ring-builder/summary';
 
 const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN as string;
 const SHOPIFY_PUBLIC_STOREFRONT_TOKEN = process.env.SHOPIFY_PUBLIC_STOREFRONT_TOKEN as string; // prettier-ignore

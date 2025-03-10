@@ -1,5 +1,5 @@
 import DOMPurify from 'dompurify';
-import { RingBuilderService } from '../engagement-ring/services';
+import { RingBuilderService } from '../ring-builder/services';
 
 type PaginationPart = {
   title: number | string;

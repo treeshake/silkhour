@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RingBuilderService } from './components/engagement-ring/services';
+import { RingBuilderService } from './components/ring-builder/services';
 import { RootComponent } from './components/root';
 import { URLMutationObserver } from './shared/services/url-mutation-observer';
 import { getAttributes } from './shared/utils/dom';
