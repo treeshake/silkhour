@@ -56,9 +56,7 @@ export class RingBuilderService {
     url.append('product_id', productId);
 
     // Build relative path using current location as base
-
-    const href = `${getBasePath()}/collections/lab-diamonds?${url.toString()}`;
-    window.history.pushState({}, '', href);
+    window.location.assign(`${getBasePath()}/collections/lab-diamonds?${url.toString()}`);
   }
 
   public appendConfiguration(searchParams: URLSearchParams = new URLSearchParams()): URLSearchParams {
@@ -82,7 +80,9 @@ export class RingBuilderService {
 
   private deserializeFromStorage(): RingConfiguration | null {
     const ringConfigurationSession = sessionStorage.getItem('engagement.ring.configuration');
-    const ringBuilder: RingConfiguration | null = !isNil(ringConfigurationSession) ? JSON.parse(ringConfigurationSession) : null;
+    const ringBuilder = !isNil(ringConfigurationSession)
+      ? (JSON.parse(ringConfigurationSession) as RingConfiguration | null)
+      : null;
 
     return ringBuilder;
   }

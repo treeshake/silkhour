@@ -1,3 +1,4 @@
+
 export class URLMutationObserver {
   private url: string | null = null;
   private callbackFunction: () => void = () => {};
@@ -14,8 +15,6 @@ export class URLMutationObserver {
       if (window.location.href !== this.url) {
         this.url = window.location.href;
         const newUrl = this.appendQueryParams(params);
-        console.log(`Pushing new URL: ${newUrl}`);
-        window.history.pushState({}, '', newUrl);
         this.callbackFunction();
         this.url = newUrl;
       }
@@ -44,6 +43,9 @@ export class URLMutationObserver {
         url.searchParams.set(key, value);
       }
     });
-    return url.toString();
+    const newUrl = url.toString();
+    console.log(`Replacing state URL: ${newUrl}`);
+    window.history.replaceState(null, '', newUrl);
+    return newUrl;
   }
 }

@@ -4,14 +4,15 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import type {
-  Product,
-  ProductVariant,
-} from '@shopify/hydrogen-react/storefront-api-types';
+import type { Product, ProductVariant } from '@shopify/hydrogen-react/storefront-api-types';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
 import { Media } from '../types/product-media';
 import { createProductGid, createProductVariantGid } from '../utils/shopify';
+
+export function flattenNodes(data?: { edges?: { node?: { id?: string } }[] }): string[] {
+  return (data?.edges?.map((edge) => edge?.node?.id).filter(Boolean) as string[]) ?? [];
+}
 
 export function useFetchProduct(id: string) {
   const [product, setProduct] = useState<Product | null>(null);
@@ -33,6 +34,35 @@ export function useFetchProduct(id: string) {
                 currencyCode
               }
             }
+            metafields(identifiers: [
+              { namespace: "custom", key: "diamond_shape" },
+              { namespace: "custom", key: "diamond_weight" },
+              { namespace: "custom", key: "diamond_color" },
+              { namespace: "custom", key: "diamond_clarity" },
+              { namespace: "custom", key: "diamond_certification" },
+              { namespace: "custom", key: "diamond_cut" },
+              { namespace: "custom", key: "diamond_fluorescent" },
+            ]) {
+              namespace
+              key
+              value
+              reference {
+                ... on Metaobject {
+                  id
+                  fields {
+                    key
+                    value
+                  }
+                }
+              }
+            }
+            variants(first: 100) {
+              edges {
+                node {
+                  id
+                }
+              }
+            }
           }
         }`,
         {
@@ -50,11 +80,7 @@ export function useFetchProduct(id: string) {
   return product;
 }
 
-export function useFetchProductMetaFieldGid(
-  namespace: string,
-  key: string,
-  ownerId: string,
-) {
+export function useFetchProductMetaFieldGid(namespace: string, key: string, ownerId: string) {
   const [productMetafield, setProductMetafield] = useState<string | null>(null);
   useEffect(() => {
     const fetchProductMetafield = async () => {
@@ -204,43 +230,4 @@ export function useFetchProductVariant(variantId: string) {
   }, [variantId]);
 
   return variant;
-}
-
-export function useFetchAllProductMetafields(productId: string) {
-  const [metafields, setMetafields] = useState<Record<string, any> | null>(null);
-
-  useEffect(() => {
-    const fetchMetafields = async () => {
-      const { data } = await storefrontClient.request(
-        `query ProductMetafields($id: ID!, $identifiers: [HasMetafieldsIdentifier!]!) {
-          product(id: $id) {
-            metafields(identifiers: $identifiers) {
-              id
-              namespace
-              key
-              value
-            }
-          }
-        }`,
-        {
-          variables: {
-            id: createProductGid(productId),
-            identifiers: [{ namespace: "*", key: "*" }],
-          },
-        },
-      );
-      const metafieldsData = data?.product?.metafields.reduce(
-        (acc: Record<string, any>, node: { id: string; namespace: string; key: string; value: any }) => {
-          acc[`${node.namespace}:${node.key}`] = { id: node.id, value: node.value };
-          return acc;
-        },
-        {},
-      );
-      setMetafields(metafieldsData);
-    };
-
-    fetchMetafields();
-  }, [productId]);
-
-  return metafields;
 }

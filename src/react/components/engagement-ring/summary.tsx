@@ -1,16 +1,12 @@
 import { CartProvider } from '@shopify/hydrogen-react';
-import { CartLineInput } from '@shopify/hydrogen-react/storefront-api-types';
-import { isNil } from 'rambda';
-import { useAddItemsToCart, useRetrieveCart } from '../../shared/hooks/cart';
-import { useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
-import { getCartSessionCookie } from '../../shared/utils/cookies';
+import { isEmpty, isNil } from 'rambda';
+import { useEffect } from 'react';
+import { flattenNodes, useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
+import { isLoading, isSuccess } from '../../shared/types/status';
 import { formatCurrency } from '../../shared/utils/currency';
-import {
-  createProductGid,
-  createProductVariantGid,
-  extractMetafieldValue
-} from '../../shared/utils/shopify';
+import { extractMetafieldValue } from '../../shared/utils/shopify';
 import { SpinIfLoading } from '../spinner/spin-if-loading';
+import { useAddToCart } from './hooks';
 import { RingBuilderService } from './services';
 
 export function CompleteYourRing() {
@@ -20,7 +16,7 @@ export function CompleteYourRing() {
     // Error handling, redirect back to step 1 ?
     return null;
   }
-  return <CompleteYourRingSummary productId={productId!} variantId={variantId!} diamondId={diamondId!} />;
+  return <CompleteYourRingSummary productId={productId!} variantId={variantId!} diamondId={diamondId} />;
 }
 
 function CompleteYourRingSummary({
@@ -32,9 +28,12 @@ function CompleteYourRingSummary({
   variantId: string;
   diamondId: string;
 }) {
-  const product = useFetchProduct(productId!);
-  const variant = useFetchProductVariant(variantId!);
+  const product = useFetchProduct(productId);
+  const variant = useFetchProductVariant(variantId);
   const diamond = useFetchProduct(diamondId);
+
+  const variantGid = variant?.id;
+  const diamondVariantGids = flattenNodes(diamond?.variants);
 
   const metafieldKeysProduct = [{ key: 'diamond_shape', fieldKey: 'value', label: 'Diamond Shape' }];
   const metafieldKeysDiamond = [
@@ -134,21 +133,24 @@ function CompleteYourRingSummary({
           {/* Buy buttons */}
           <CartProvider>
             <div className="tw-flex tw-flex-col tw-my-4">
-              <div className="product-form__buttons">
-                <button
-                  type="submit"
-                  name="add"
-                  className="product-form__submit button button--full-width button--primary"
-                  aria-haspopup="dialog"
-                  onClick={handleCheckout}
-                >
-                  <span>CHECKOUT NOW</span>
-                </button>
-              </div>
-
-              <div className="product-form__buttons">
-                <AddToCartButton variantId={variantId} diamondId={diamondId} />
-              </div>
+              {!isNil(variantGid) && !isEmpty(diamondVariantGids) && (
+                <>
+                  <AddToCartButton
+                    key="Checkout now button"
+                    variantGid={variantGid}
+                    diamondVariantGid={diamondVariantGids[0]}
+                    buttonText="Checkout now"
+                    redirectUrl="/cart/checkout"
+                  />
+                  <AddToCartButton
+                    key="Add to cart button"
+                    variantGid={variantGid}
+                    diamondVariantGid={diamondVariantGids[0]}
+                    buttonText="Add to cart"
+                    redirectUrl="/cart"
+                  />
+                </>
+              )}
             </div>
           </CartProvider>
         </div>
@@ -160,53 +162,35 @@ function CompleteYourRingSummary({
   );
 }
 
-export function AddToCartButton({ variantId, diamondId }: { variantId: string; diamondId: string }) {
-  const cartToken = getCartSessionCookie();
-  const cart = useRetrieveCart(cartToken);
-  const { addItemsToCart, loading } = useAddItemsToCart();
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (loading) {
-      return;
-    }
+interface AddToCartButtonProps {
+  variantGid: string;
+  diamondVariantGid: string;
+  redirectUrl: string;
+  buttonText: string;
+}
 
-    if (isNil(cart)) {
-      // Error handling here...
-      return;
+export function AddToCartButton({ variantGid, diamondVariantGid, redirectUrl, buttonText }: AddToCartButtonProps) {
+  const { status, handleAddToCart } = useAddToCart(variantGid, diamondVariantGid);
+  useEffect(() => {
+    if (isSuccess(status)) {
+      window.location.assign(redirectUrl);
     }
-    const lineItems: CartLineInput[] = [
-      {
-        merchandiseId: createProductVariantGid(variantId),
-        quantity: 1,
-      },
-      {
-        merchandiseId: createProductGid(diamondId),
-        quantity: 1,
-      },
-    ];
-    try {
-      addItemsToCart(cart.id!, lineItems);
-
-      // window.location.href = '/cart';
-    } catch (error) {
-      console.error('Failed to add to cart:', error);
-    }
-  };
+  }, [status, redirectUrl]);
   return (
-    <>
+    <div className="product-form__buttons">
       <button
         type="submit"
         name="add"
         className="product-form__submit button button--full-width button--primary"
         aria-haspopup="dialog"
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={handleAddToCart}
-        disabled={loading}
+        disabled={isLoading(status)}
       >
         <SpinIfLoading loading={false}>
-          <span>ADD TO BAG</span>
+          <span>{buttonText.toUpperCase()}</span>
         </SpinIfLoading>
       </button>
-      <pre>{JSON.stringify(cart, null, 2)}</pre>
-    </>
+    </div>
   );
 }
