@@ -1,21 +1,28 @@
 import { isNil } from 'rambda';
-import { getBasePath } from '../../shared/utils/browser';
 
 export type RingConfiguration = {
   variantId?: string | null;
   productId?: string | null;
+  productVariantId?: string | null;
   diamondId?: string | null;
 };
 
 export class RingBuilderService {
   private readonly variantId: string | null;
   private readonly productId: string | null;
+  private readonly productVariantId: string | null;
   private readonly diamondId: string | null;
 
-  constructor({ variantId = null, productId = null, diamondId = null }: RingConfiguration | undefined = {}) {
+  constructor({
+    variantId = null,
+    productId = null,
+    productVariantId = null,
+    diamondId = null,
+  }: RingConfiguration | undefined = {}) {
     const searchParams = new URLSearchParams(window.location.search);
     this.variantId = variantId || searchParams.get('variant') || searchParams.get('variant_id') || null;
     this.productId = productId || searchParams.get('product_id') || null;
+    this.productVariantId = productVariantId || searchParams.get('product_variant_id') || null;
     this.diamondId = diamondId || searchParams.get('diamond_id') || null;
   }
 
@@ -27,12 +34,29 @@ export class RingBuilderService {
     return this.productId;
   }
 
-  public getCurrentConfiguration(): [typeof this.productId, typeof this.variantId, typeof this.diamondId] {
-    return [this.productId, this.variantId, this.diamondId];
+  public getProductVariantId(): string | null {
+    return this.productVariantId;
+  }
+
+  public getDiamondId(): string | null {
+    return this.diamondId;
+  }
+
+  public getCurrentConfiguration(): [
+    typeof this.productId,
+    typeof this.productVariantId,
+    typeof this.variantId,
+    typeof this.diamondId,
+  ] {
+    return [this.productId, this.productVariantId, this.variantId, this.diamondId];
   }
 
   public hasProductId(): boolean {
     return this.productId !== null;
+  }
+
+  public hasProductVariantId(): boolean {
+    return this.productVariantId !== null;
   }
 
   public hasVariantId(): boolean {
@@ -49,33 +73,43 @@ export class RingBuilderService {
     return new URL(`?${this.appendConfiguration(searchParams).toString()}`, window.location.href);
   }
 
-  public routeToSelectDiamond(productId: string, diamondShapeGid: string): void {
+  public routeToSelectDiamond(
+    productId: string,
+    selectedOrFirstAvailableVariant: string,
+    diamondShapeGid: string,
+  ): void {
+
+    console.log(window.location.search);
+    
     const url = new URLSearchParams(window.location.search);
     url.append('sort_by', 'price-ascending');
     url.append('filter.p.m.custom.diamond_shape', diamondShapeGid);
     url.append('product_id', productId);
+    url.append('product_variant_id', selectedOrFirstAvailableVariant);
 
     // Build relative path using current location as base
-    window.location.assign(`${getBasePath()}/collections/lab-diamonds?${url.toString()}`);
+    window.history.replaceState({}, '', `/collections/lab-diamonds?${url.toString()}`);
   }
 
   public appendConfiguration(searchParams: URLSearchParams = new URLSearchParams()): URLSearchParams {
-    // prettier-ignore
     if (this.productId && this.hasProductId() && !searchParams.has('product_id')) {
       searchParams.append('product_id', this.productId);
     }
-
-    // prettier-ignore
+    if (this.productVariantId && this.hasProductVariantId() && !searchParams.has('product_variant_id')) {
+      searchParams.append('product_variant_id', this.productVariantId);
+    }
     if (this.variantId && this.hasVariantId() && !searchParams.has('variant')) {
       searchParams.append('variant', this.variantId);
     }
-
-    // prettier-ignore
     if (this.diamondId && this.hasDiamondId() && !searchParams.has('diamond_id')) {
       searchParams.append('diamond_id', this.diamondId);
     }
 
     return searchParams;
+  }
+
+  public isConfigurationComplete() {
+    return !isNil(this.productId) && (!isNil(this.variantId) || !isNil(this.productVariantId)) && !isNil(this.diamondId);
   }
 
   private deserializeFromStorage(): RingConfiguration | null {
@@ -95,6 +129,7 @@ export class RingBuilderService {
     const changes = {
       variantId: this.variantId,
       productId: this.productId,
+      productVariantId: this.productVariantId,
       diamondId: this.diamondId,
     };
     const payload: RingConfiguration = {

@@ -22,8 +22,10 @@ function mountReact(wrapperSelectors: string[], RootComponent: FunctionComponent
 
 const ring = new RingBuilderService();
 const observer = new URLMutationObserver({
-  variant: ring.getProductId(),
-  product_id: ring.getVariantId(),
+  variant: ring.getVariantId(),
+  product_id: ring.getProductId(),
+  product_variant_id: ring.getProductVariantId(),
+  diamond_id: ring.getDiamondId(),
 });
 
 observer.listenForChanges(() => {

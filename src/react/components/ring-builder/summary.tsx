@@ -12,12 +12,19 @@ import { RingBuilderService } from './services';
 
 export function CompleteYourRing() {
   const ring = new RingBuilderService();
-  const [productId, variantId, diamondId] = ring.getCurrentConfiguration(); // prettier-ignore
-  if ((isNil(productId) && isNil(variantId)) || isNil(diamondId)) {
+  if (!ring.isConfigurationComplete()) {
     // Error handling, redirect back to step 1 ?
     return null;
   }
-  return <CompleteYourRingSummary productId={productId!} variantId={variantId!} diamondId={diamondId} />;
+
+  const [productId, productVariantId, variantId, diamondId] = ring.getCurrentConfiguration(); // prettier-ignore
+  return (
+    <CompleteYourRingSummary
+      productId={productId!}
+      variantId={variantId! || productVariantId!}
+      diamondId={diamondId!}
+    />
+  );
 }
 
 function CompleteYourRingSummary({

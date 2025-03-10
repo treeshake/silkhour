@@ -44,7 +44,7 @@ export function Pagination({
   // Note that we don't need the product variant as this is an inbuilt type that shopify recognizes and
   // does NOT strip.
   const ring = new RingBuilderService();
-  const ringParams = ring.reconstructURL().toString();
+  const ringParams = ring.appendConfiguration().toString();
   return (
     <ul className="pagination__list list-unstyled" role="list">
       {paginate.previous && (

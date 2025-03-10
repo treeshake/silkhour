@@ -44,7 +44,7 @@ export class URLMutationObserver {
       }
     });
     const newUrl = url.toString();
-    console.log(`Replacing state URL: ${newUrl}`);
+    console.log(`Replacing state URL from ${href} to ${newUrl}`);
     window.history.replaceState(null, '', newUrl);
     return newUrl;
   }
