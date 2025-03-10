@@ -95,7 +95,6 @@ if (!customElements.get('product-info')) {
 
           if (updateFullPage) {
             document.querySelector('head title').innerHTML = html.querySelector('head title').innerHTML;
-
             HTMLUpdateUtility.viewTransition(
               document.querySelector('main'),
               html.querySelector('main'),
@@ -155,10 +154,11 @@ if (!customElements.get('product-info')) {
       }
 
       updateOptionValues(html) {
-        const variantSelects = html.querySelector('variant-selects');
-        if (variantSelects) {
-          HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
-        }
+        // BUG: THIS CAUSES REACT JS APP TO NOT RE-RENDER WHEN VARIANT FIELDS CHANGE
+        // const variantSelects = html.querySelector('variant-selects');
+        // if (variantSelects) {
+        //   HTMLUpdateUtility.viewTransition(this.variantSelectors, variantSelects, this.preProcessHtmlCallbacks);
+        // }
       }
 
       handleUpdateProductInfo(productUrl) {

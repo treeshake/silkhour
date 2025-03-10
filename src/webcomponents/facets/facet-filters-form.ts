@@ -11,6 +11,7 @@ export class FacetFiltersForm extends HTMLElement {
     super();
     this.onActiveFilterClick = this.onActiveFilterClick.bind(this);
 
+    // @ts-ignore
     this.debouncedOnSubmit = debounce((event: any) => {
       this.onSubmitHandler(event);
     }, 800);
@@ -19,6 +20,7 @@ export class FacetFiltersForm extends HTMLElement {
     facetForm?.addEventListener('input', this.debouncedOnSubmit.bind(this));
 
     const facetWrapper = this.querySelector('#FacetsWrapperDesktop');
+    // @ts-ignore
     if (facetWrapper) facetWrapper.addEventListener('keyup', onKeyUpEscape);
   }
 
@@ -79,6 +81,7 @@ export class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderFilters(html, event);
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderProductCount(html);
+        // @ts-ignore
         if (typeof initializeScrollAnimationTrigger === 'function')
           // @ts-ignore
           initializeScrollAnimationTrigger(html.innerHTML);
@@ -90,7 +93,9 @@ export class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderFilters(html, event);
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderProductCount(html);
+    // @ts-ignore
     if (typeof initializeScrollAnimationTrigger === 'function')
+      // @ts-ignore
       initializeScrollAnimationTrigger(html.innerHTML);
   }
 
