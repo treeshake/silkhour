@@ -587,12 +587,12 @@ video {
   display: grid;
 }
 
-.tw-h-auto {
-  height: auto;
-}
-
 .tw-h-32 {
   height: 8rem;
+}
+
+.tw-h-auto {
+  height: auto;
 }
 
 .tw-w-full {

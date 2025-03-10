@@ -3,6 +3,7 @@ import { isEmpty, isNil } from 'rambda';
 import { useEffect } from 'react';
 import { flattenNodes, useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
 import { isLoading, isSuccess } from '../../shared/types/status';
+import { LabelledValue } from '../../shared/types/value';
 import { formatCurrency } from '../../shared/utils/currency';
 import { extractMetafieldValue } from '../../shared/utils/shopify';
 import { SpinIfLoading } from '../spinner/spin-if-loading';
@@ -53,11 +54,6 @@ function CompleteYourRingSummary({
     label,
     value: extractMetafieldValue(diamond, key, fieldKey) ?? 'Unknown',
   }));
-
-  const handleCheckout = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.location.href = '/cart/checkout';
-  };
   return (
     <section>
       {product && diamond && variant && (
@@ -139,6 +135,7 @@ function CompleteYourRingSummary({
                     key="Checkout now button"
                     variantGid={variantGid}
                     diamondVariantGid={diamondVariantGids[0]}
+                    diamondMetafieldValues={diamondMetafieldValues}
                     buttonText="Checkout now"
                     redirectUrl="/cart/checkout"
                   />
@@ -146,6 +143,7 @@ function CompleteYourRingSummary({
                     key="Add to cart button"
                     variantGid={variantGid}
                     diamondVariantGid={diamondVariantGids[0]}
+                    diamondMetafieldValues={diamondMetafieldValues}
                     buttonText="Add to cart"
                     redirectUrl="/cart"
                   />
@@ -155,9 +153,9 @@ function CompleteYourRingSummary({
           </CartProvider>
         </div>
       )}
-      <pre>{JSON.stringify(product, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(product, null, 2)}</pre>
       <pre>{JSON.stringify(variant, null, 2)}</pre>
-      <pre>{JSON.stringify(diamond, null, 2)}</pre>
+      <pre>{JSON.stringify(diamond, null, 2)}</pre> */}
     </section>
   );
 }
@@ -165,12 +163,19 @@ function CompleteYourRingSummary({
 interface AddToCartButtonProps {
   variantGid: string;
   diamondVariantGid: string;
+  diamondMetafieldValues: LabelledValue[];
   redirectUrl: string;
   buttonText: string;
 }
 
-export function AddToCartButton({ variantGid, diamondVariantGid, redirectUrl, buttonText }: AddToCartButtonProps) {
-  const { status, handleAddToCart } = useAddToCart(variantGid, diamondVariantGid);
+export function AddToCartButton({
+  variantGid,
+  diamondVariantGid,
+  diamondMetafieldValues,
+  redirectUrl,
+  buttonText,
+}: AddToCartButtonProps) {
+  const { status, handleAddToCart } = useAddToCart(variantGid, diamondVariantGid, diamondMetafieldValues);
   useEffect(() => {
     if (isSuccess(status)) {
       window.location.assign(redirectUrl);

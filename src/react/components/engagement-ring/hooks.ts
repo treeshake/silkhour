@@ -3,9 +3,10 @@ import { isNil } from 'rambda';
 import { useState } from 'react';
 import { useAddItemsToCart, useRetrieveCart } from '../../shared/hooks/cart';
 import { IStatus, STATUS } from '../../shared/types/status';
+import { LabelledValue } from '../../shared/types/value';
 import { getCartSessionCookie } from '../../shared/utils/cookies';
 
-export function useAddToCart(variantGid: string, diamondVariantGid: string) {
+export function useAddToCart(variantGid: string, diamondVariantGid: string, diamondMetafieldValues: LabelledValue[]) {
   const cartToken = getCartSessionCookie();
   const cart = useRetrieveCart(cartToken);
   const { addItemsToCart } = useAddItemsToCart();
@@ -16,10 +17,16 @@ export function useAddToCart(variantGid: string, diamondVariantGid: string) {
       // Error handling here...
       return;
     }
+    const diamondAttributes = diamondMetafieldValues.map(({ label, value }) => ({
+      key: label,
+      value: value,
+    }));
+
     const lineItems: CartLineInput[] = [
       {
         merchandiseId: diamondVariantGid,
         quantity: 1,
+        attributes: diamondAttributes,
       },
       {
         merchandiseId: variantGid,
