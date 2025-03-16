@@ -56,8 +56,8 @@ export function useAddToCart(variantGid: string, diamondVariantGid: string, diam
 export function useProgressBar() {
   const steps: Step[] = [
     { id: '1', name: 'Ring Setting', description: 'Start with an engagement ring setting', href: '#', status: 'complete' },
-    { id: '2', name: 'Diamond', description: 'Select your diamond', href: '#', status: 'current' },
-    { id: '3', name: 'Review', description: 'Confirm and finalise your design', href: '#', status: 'upcoming' },
+    { id: '2', name: 'Diamond', description: 'Select your diamond', href: '#', status: 'complete' },
+    { id: '3', name: 'Review', description: 'Confirm and finalise your design', href: '#', status: 'current' },
   ];
   
   const ring = new RingBuilderService();
