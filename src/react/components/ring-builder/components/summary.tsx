@@ -7,22 +7,23 @@ import { LabelledValue } from '../../../shared/types/value';
 import { formatCurrency } from '../../../shared/utils/currency';
 import { extractMetafieldValue } from '../../../shared/utils/shopify';
 import { SpinIfLoading } from '../../spinner/spin-if-loading';
-import { useAddToCart } from '../hooks';
+import { useAddToCart, useRingBuilderNavigation } from '../hooks';
 import { RingBuilderService } from '../services';
 
 export function CompleteYourRing() {
   const ring = new RingBuilderService();
+  const [productId, productVariantId, variantId, diamondId, diamondShapeGid] = ring.getCurrentConfiguration(); // prettier-ignore
   if (!ring.isConfigurationComplete()) {
     // Error handling, redirect back to step 1 ?
     return null;
   }
-
-  const [productId, productVariantId, variantId, diamondId] = ring.getCurrentConfiguration(); // prettier-ignore
+  const diamondPageHref = ring.createDiamondPageUrl(productId!, productVariantId!, diamondShapeGid!);
   return (
     <CompleteYourRingSummary
       productId={productId!}
       variantId={variantId! || productVariantId!}
       diamondId={diamondId!}
+      diamondPageHref={diamondPageHref}
     />
   );
 }
@@ -31,15 +32,18 @@ function CompleteYourRingSummary({
   productId,
   variantId,
   diamondId,
+  diamondPageHref,
 }: {
   productId: string;
   variantId: string;
   diamondId: string;
+  diamondPageHref: string;
 }) {
   const product = useFetchProduct(productId);
   const variant = useFetchProductVariant(variantId);
   const diamond = useFetchProduct(diamondId);
-
+  const { steps } = useRingBuilderNavigation(product, diamond, diamondPageHref);
+  const [settingStep, diamondStep] = steps;
   const variantGid = variant?.id;
   const diamondVariantGids = flattenNodes(diamond?.variants);
 
@@ -69,7 +73,9 @@ function CompleteYourRingSummary({
           <div>
             <div className="tw-flex tw-justify-between tw-pb-5">
               <h5 className="product-summary-subheading">Setting</h5>
-              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">Change/Edit</h5>
+              <a href={settingStep.href} className="h5 product-summary-subheading tw-underline hover:tw-cursor-pointer">
+                Change/Edit
+              </a>
             </div>
             <div className="tw-flex tw-justify-between tw-pb-5">
               <h2 className="product-title-smaller tw-mr-2">{product.title}</h2>
@@ -99,7 +105,9 @@ function CompleteYourRingSummary({
           <div>
             <div className="tw-flex tw-justify-between tw-pb-5">
               <h5 className="product-summary-subheading">Diamond</h5>
-              <h5 className="product-summary-subheading tw-underline hover:tw-cursor-pointer">Change/Edit</h5>
+              <a href={diamondStep.href} className="h5 product-summary-subheading tw-underline hover:tw-cursor-pointer">
+                Change/Edit
+              </a>
             </div>
             <div className="tw-flex tw-justify-between tw-pb-5">
               <h2 className="product-title-smaller tw-mr-2">{diamond.title}</h2>

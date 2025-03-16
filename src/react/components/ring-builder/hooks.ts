@@ -1,11 +1,10 @@
-import { CartLineInput } from '@shopify/hydrogen-react/storefront-api-types';
+import { CartLineInput, Product } from '@shopify/hydrogen-react/storefront-api-types';
 import { isNil } from 'rambda';
 import { useState } from 'react';
 import { useAddItemsToCart, useRetrieveCart } from '../../shared/hooks/cart';
 import { IStatus, STATUS } from '../../shared/types/status';
 import { LabelledValue } from '../../shared/types/value';
 import { getCartSessionCookie } from '../../shared/utils/cookies';
-import { RingBuilderService } from './services';
 import { Step } from './types';
 
 export function useAddToCart(variantGid: string, diamondVariantGid: string, diamondMetafieldValues: LabelledValue[]) {
@@ -53,17 +52,34 @@ export function useAddToCart(variantGid: string, diamondVariantGid: string, diam
   };
 }
 
-export function useProgressBar() {
-  const steps: Step[] = [
-    { id: '1', name: 'Ring Setting', description: 'Start with an engagement ring setting', href: '#', status: 'complete' },
-    { id: '2', name: 'Diamond', description: 'Select your diamond', href: '#', status: 'complete' },
-    { id: '3', name: 'Review', description: 'Confirm and finalise your design', href: '#', status: 'current' },
-  ];
-  
-  const ring = new RingBuilderService();
+const steps: Step[] = [
+  {
+    id: '1',
+    name: 'Ring Setting',
+    description: 'Select and customize your setting',
+    href: '/collections/engagement-ring',
+    status: 'current',
+  },
+  { id: '2', name: 'Diamond', description: 'Select your diamond', href: '#', status: 'upcoming' },
+  { id: '3', name: 'Review', description: 'Confirm and finalise your ring', href: '#', status: 'upcoming' },
+];
+export function useRingBuilderNavigation(product: Product | null, diamond: Product | null, diamondPageHref: string | null) {
+  let [settingStep, diamondStep, reviewStep] = steps;
 
+  if (!isNil(product)) {
+    settingStep.status = 'complete';
+    settingStep.description = product?.title ?? '';
+    diamondStep.status = 'current';
+  }
+  if (!isNil(diamond) && !isNil(diamondPageHref)) {
+    settingStep.status = 'complete';
+    diamondStep.status = 'complete';
+    diamondStep.description = diamond?.title ?? '';
+    diamondStep.href = diamondPageHref;
+    reviewStep.status = 'current';
+  }
 
   return {
-    steps
+    steps: [settingStep, diamondStep, reviewStep],
   };
 }

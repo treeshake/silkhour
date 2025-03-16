@@ -6,12 +6,20 @@ interface SelectDiamondLinkProps {
   product_id: string;
 }
 
-export function SelectDiamond({ selected_or_first_available_variant: selectedOrFirstAvailableVariant = '', product_id: productId = '' }: SelectDiamondLinkProps) {
+export function SelectDiamond({
+  selected_or_first_available_variant: selectedOrFirstAvailableVariant = '',
+  product_id: productId = '',
+}: SelectDiamondLinkProps) {
   const diamondShapeGid = useFetchProductMetaFieldGid('custom', 'diamond_shape', productId);
   const handleClick = () => {
     const ring = new RingBuilderService();
     if (productId && diamondShapeGid && selectedOrFirstAvailableVariant) {
-      ring.routeToSelectDiamond(productId, selectedOrFirstAvailableVariant, diamondShapeGid);
+      // Route to diamond page
+      window.history.replaceState(
+        {},
+        '',
+        ring.createDiamondPageUrl(productId, selectedOrFirstAvailableVariant, diamondShapeGid),
+      );
     }
   };
 

@@ -5,6 +5,7 @@ export type RingConfiguration = {
   productId?: string | null;
   productVariantId?: string | null;
   diamondId?: string | null;
+  diamondShapeGid?: string | null;
 };
 
 export class RingBuilderService {
@@ -12,18 +13,21 @@ export class RingBuilderService {
   private readonly productId: string | null;
   private readonly productVariantId: string | null;
   private readonly diamondId: string | null;
+  private readonly diamondShapeGid: string | null;
 
   constructor({
     variantId = null,
     productId = null,
     productVariantId = null,
     diamondId = null,
+    diamondShapeGid = null,
   }: RingConfiguration | undefined = {}) {
     const searchParams = new URLSearchParams(window.location.search);
     this.variantId = variantId || searchParams.get('variant') || searchParams.get('variant_id') || null;
     this.productId = productId || searchParams.get('product_id') || null;
     this.productVariantId = productVariantId || searchParams.get('product_variant_id') || null;
     this.diamondId = diamondId || searchParams.get('diamond_id') || null;
+    this.diamondShapeGid = diamondShapeGid || searchParams.get('filter.p.m.custom.diamond_shape') || null;
   }
 
   public getVariantId(): string | null {
@@ -47,8 +51,9 @@ export class RingBuilderService {
     typeof this.productVariantId,
     typeof this.variantId,
     typeof this.diamondId,
+    typeof this.diamondShapeGid,
   ] {
-    return [this.productId, this.productVariantId, this.variantId, this.diamondId];
+    return [this.productId, this.productVariantId, this.variantId, this.diamondId, this.diamondShapeGid];
   }
 
   public hasProductId(): boolean {
@@ -67,19 +72,23 @@ export class RingBuilderService {
     return this.diamondId !== null;
   }
 
-  public routeToSelectDiamond(
-    productId: string,
-    selectedOrFirstAvailableVariant: string,
-    diamondShapeGid: string,
-  ): void {  
+  public hasDiamondShapeGid(): boolean {
+    return this.diamondShapeGid !== null;
+  }
+
+  public createDiamondPageUrl(productId: string, selectedOrFirstAvailableVariant: string, diamondShapeGid: string) {
     const url = new URLSearchParams(window.location.search);
     url.append('sort_by', 'price-ascending');
     url.append('filter.p.m.custom.diamond_shape', diamondShapeGid);
     url.append('product_id', productId);
     url.append('product_variant_id', selectedOrFirstAvailableVariant);
 
-    // Build relative path using current location as base
-    window.history.replaceState({}, '', `/collections/lab-diamonds?${url.toString()}`);
+    // Remove the diamond_id if it exists, as we are selecting a new diamond
+    if (url.has('diamond_id')) {
+      url.delete('diamond_id');
+    }
+
+    return `/collections/lab-diamonds?${url.toString()}`;
   }
 
   public appendConfiguration(searchParams: URLSearchParams = new URLSearchParams()): URLSearchParams {
@@ -95,12 +104,17 @@ export class RingBuilderService {
     if (this.diamondId && this.hasDiamondId() && !searchParams.has('diamond_id')) {
       searchParams.append('diamond_id', this.diamondId);
     }
+    if (this.diamondShapeGid && this.hasDiamondShapeGid() && !searchParams.has('filter.p.m.custom.diamond_shape')) {
+      searchParams.append('filter.p.m.custom.diamond_shape', this.diamondShapeGid);
+    }
 
     return searchParams;
   }
 
   public isConfigurationComplete() {
-    return !isNil(this.productId) && (!isNil(this.variantId) || !isNil(this.productVariantId)) && !isNil(this.diamondId);
+    return (
+      !isNil(this.productId) && (!isNil(this.variantId) || !isNil(this.productVariantId)) && !isNil(this.diamondId)
+    );
   }
 
   private deserializeFromStorage(): RingConfiguration | null {

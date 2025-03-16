@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { Product, ProductVariant } from '@shopify/hydrogen-react/storefront-api-types';
+import { isNil } from 'rambda';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
 import { Media } from '../types/product-media';
@@ -74,6 +75,9 @@ export function useFetchProduct(id: string) {
       setProduct(data?.product);
     };
 
+    if (isNil(id)) {
+      return;
+    }
     fetchProduct();
   }, [id]);
 

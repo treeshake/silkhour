@@ -40,8 +40,8 @@ export function Pagination({
 }: PaginationProps) {
   const sanitizedIconCaretSvg = DOMPurify.sanitize(iconCaretSvg);
 
-  // Get the URL parameters,, this wasn't possible in the shopify liquid version.
-  // Note that we don't need the product variant as this is an inbuilt type that shopify recognizes and
+  // Get the URL parameters, this wasn't possible in the shopify liquid version.
+  // Note that we don't need the product variant and filters as this is an inbuilt type that shopify recognizes and
   // does NOT strip.
   const ring = new RingBuilderService();
   const ringParams = ring.appendConfiguration().toString();
