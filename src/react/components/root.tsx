@@ -4,6 +4,7 @@ import { StrictMode } from 'react';
 import { Pagination } from './pagination';
 import { AddDiamond } from './ring-builder/add-diamond';
 import { CompleteYourRingMediaGallery } from './ring-builder/media-gallery';
+import { RingBuilderProgressBar } from './ring-builder/progress-bar';
 import { SelectDiamond } from './ring-builder/select-diamond';
 import { CompleteYourRing } from './ring-builder/summary';
 
@@ -22,6 +23,7 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
         storefrontApiVersion={SHOPIFY_STOREFRONT_API_VERSION}
         storeDomain={SHOPIFY_STORE_DOMAIN}
       >
+          {wrapperSelector === '.react-ring-builder-progress' && <RingBuilderProgressBar {...rest} />}
           {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
           {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}
           {wrapperSelector === '.react-add-diamond' && <AddDiamond {...rest} />}
