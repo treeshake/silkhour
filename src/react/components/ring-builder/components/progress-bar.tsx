@@ -6,7 +6,7 @@ export function RingBuilderProgressBar() {
   const { steps } = useProgressBar();
   return (
     <div className="tw-mb-[10px] tw-lg:mb-[20px]">
-      <div className="lg:tw-border-b lg:tw-border-t lg:tw-white tw-bg-[#801B2B]">
+      <div className="lg:tw-border-b lg:tw-white tw-bg-[#801B2B]">
         <nav aria-label="Progress">
           <ol
             role="list"
@@ -31,7 +31,7 @@ export function RingBuilderProgressBar() {
                         className={classNames(
                           stepIdx !== 0 ? 'lg:tw-pl-9' : '',
                           'tw-flex tw-items-start tw-px-6 tw-py-5 tw-font-medium',
-                          stepIdx !== steps.length - 1 ? 'tw-border-r' : '',
+                          stepIdx !== steps.length - 1 ? 'lg:tw-border-r' : '',
                         )}
                       >
                         <span className="tw-shrink-0">
