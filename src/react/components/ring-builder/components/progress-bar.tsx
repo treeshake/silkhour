@@ -5,7 +5,7 @@ import { useProgressBar } from '../hooks';
 export function RingBuilderProgressBar() {
   const { steps } = useProgressBar();
   return (
-    <div className="tw-mb-[10px] lg:tw-my-[45px]">
+    <div className="tw-mb-[10px] tw-lg:mb-[20px]">
       <div className="lg:tw-border-b lg:tw-border-t lg:tw-white tw-bg-[#801B2B]">
         <nav aria-label="Progress">
           <ol

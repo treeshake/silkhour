@@ -6,7 +6,7 @@ import { AddDiamond } from './ring-builder/components/add-diamond';
 import { CompleteYourRingMediaGallery } from './ring-builder/components/media-gallery';
 import { RingBuilderProgressBar } from './ring-builder/components/progress-bar';
 import { SelectDiamond } from './ring-builder/components/select-diamond';
-import { CompleteYourRing } from './ring-builder/summary';
+import { CompleteYourRing } from './ring-builder/components/summary';
 
 const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN as string;
 const SHOPIFY_PUBLIC_STOREFRONT_TOKEN = process.env.SHOPIFY_PUBLIC_STOREFRONT_TOKEN as string; // prettier-ignore

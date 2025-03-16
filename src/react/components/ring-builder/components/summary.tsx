@@ -1,14 +1,14 @@
 import { CartProvider } from '@shopify/hydrogen-react';
 import { isEmpty, isNil } from 'rambda';
 import { useEffect } from 'react';
-import { flattenNodes, useFetchProduct, useFetchProductVariant } from '../../shared/hooks/product';
-import { isLoading, isSuccess } from '../../shared/types/status';
-import { LabelledValue } from '../../shared/types/value';
-import { formatCurrency } from '../../shared/utils/currency';
-import { extractMetafieldValue } from '../../shared/utils/shopify';
-import { SpinIfLoading } from '../spinner/spin-if-loading';
-import { useAddToCart } from './hooks';
-import { RingBuilderService } from './services';
+import { flattenNodes, useFetchProduct, useFetchProductVariant } from '../../../shared/hooks/product';
+import { isLoading, isSuccess } from '../../../shared/types/status';
+import { LabelledValue } from '../../../shared/types/value';
+import { formatCurrency } from '../../../shared/utils/currency';
+import { extractMetafieldValue } from '../../../shared/utils/shopify';
+import { SpinIfLoading } from '../../spinner/spin-if-loading';
+import { useAddToCart } from '../hooks';
+import { RingBuilderService } from '../services';
 
 export function CompleteYourRing() {
   const ring = new RingBuilderService();
