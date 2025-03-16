@@ -1,4 +1,4 @@
-import { RingBuilderService } from './services';
+import { RingBuilderService } from '../services';
 
 interface AddDiamondProps {
   diamond_id: string;

@@ -1,20 +1,16 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
-import { classNames } from '../../shared/utils/dom';
-
-const steps = [
-  { id: '1', name: 'Ring Design', description: 'Start with an engagement ring setting', href: '#', status: 'complete' },
-  { id: '2', name: 'Diamond', description: 'Select your Centerstone', href: '#', status: 'current' },
-  { id: '3', name: 'Review', description: 'Confirm and finalise your design', href: '#', status: 'upcoming' },
-];
+import { classNames } from '../../../shared/utils/dom';
+import { useProgressBar } from '../hooks';
 
 export function RingBuilderProgressBar() {
+  const { steps } = useProgressBar();
   return (
-    <div className="tw-mt-[20px] tw-mb-[10px] lg:tw-my-[45px]">
-      <div className="lg:tw-border-b lg:tw-border-t lg:tw-border-gray-200">
+    <div className="tw-mb-[10px] lg:tw-my-[45px]">
+      <div className="lg:tw-border-b lg:tw-border-t lg:tw-white tw-bg-[#801B2B]">
         <nav aria-label="Progress">
           <ol
             role="list"
-            className="tw-overflow-hidden tw-rounded-md lg:tw-flex lg:tw-rounded-none lg:tw-border-l lg:tw-border-r lg:tw-border-gray-200"
+            className="tw-overflow-hidden tw-rounded-md lg:tw-flex lg:tw-rounded-none lg:tw-border-white"
           >
             {steps.map((step, stepIdx) => (
               <li key={step.id} className="tw-relative tw-overflow-hidden lg:tw-flex-1">
@@ -22,7 +18,7 @@ export function RingBuilderProgressBar() {
                   className={classNames(
                     stepIdx === 0 ? 'tw-rounded-t-md tw-border-b-0' : '',
                     stepIdx === steps.length - 1 ? 'tw-rounded-b-md tw-border-t-0' : '',
-                    'tw-overflow-hidden tw-border tw-border-gray-200 lg:tw-border-0',
+                    'tw-overflow-hidden tw-border-b tw-border-white lg:tw-border-0',
                   )}
                 >
                   {step.status === 'complete' ? (
@@ -39,13 +35,13 @@ export function RingBuilderProgressBar() {
                         )}
                       >
                         <span className="tw-shrink-0">
-                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-bg-indigo-600">
-                            <CheckIcon aria-hidden="true" className="tw-size-6 tw-text-white" />
+                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-bg-white">
+                            <CheckIcon aria-hidden="true" className="tw-size-6 tw-text-[#801B2B]" />
                           </span>
                         </span>
                         <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-                          <span className="tw-font-medium">{step.name}</span>
-                          <span className="tw-font-medium tw-text-gray-500">{step.description}</span>
+                          <span className="tw-font-medium tw-text-white">{step.name}</span>
+                          <span className="tw-font-medium tw-text-white">{step.description}</span>
                         </span>
                       </span>
                     </a>
@@ -53,7 +49,7 @@ export function RingBuilderProgressBar() {
                     <a href={step.href} aria-current="step">
                       <span
                         aria-hidden="true"
-                        className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-1 tw-bg-indigo-600 lg:tw-bottom-0 lg:tw-top-auto lg:tw-h-1 lg:tw-w-full"
+                        className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-1 tw-bg-white lg:tw-bottom-0 lg:tw-top-auto lg:tw-h-1 lg:tw-w-full"
                       />
                       <span
                         className={classNames(
@@ -63,13 +59,13 @@ export function RingBuilderProgressBar() {
                         )}
                       >
                         <span className="tw-shrink-0">
-                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-border-2 tw-border-indigo-600">
-                            <span className="tw-text-indigo-600">{step.id}</span>
+                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-border-2 tw-border-white">
+                            <span className="tw-text-white">{step.id}</span>
                           </span>
                         </span>
                         <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-                          <span className="tw-font-medium tw-text-indigo-600">{step.name}</span>
-                          <span className="tw-font-medium tw-text-gray-500">{step.description}</span>
+                          <span className="tw-font-medium tw-text-white">{step.name}</span>
+                          <span className="tw-font-medium tw-text-white">{step.description}</span>
                         </span>
                       </span>
                     </a>
@@ -87,13 +83,13 @@ export function RingBuilderProgressBar() {
                         )}
                       >
                         <span className="tw-shrink-0">
-                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-border-2 tw-border-gray-300">
-                            <span className="tw-text-gray-500">{step.id}</span>
+                          <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-border-2 tw-border-white">
+                            <span className="tw-text-white">{step.id}</span>
                           </span>
                         </span>
                         <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-                          <span className="tw-font-medium tw-text-gray-500">{step.name}</span>
-                          <span className="tw-font-medium tw-text-gray-500">{step.description}</span>
+                          <span className="tw-font-medium tw-text-white">{step.name}</span>
+                          <span className="tw-font-medium tw-text-white">{step.description}</span>
                         </span>
                       </span>
                     </a>

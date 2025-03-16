@@ -1,6 +1,6 @@
 import { isNil } from 'rambda';
-import { useFetchProductMedia } from '../../shared/hooks/product';
-import { RingBuilderService } from './services';
+import { useFetchProductMedia } from '../../../shared/hooks/product';
+import { RingBuilderService } from '../services';
 
 export function CompleteYourRingMediaGallery() {
   const ring = new RingBuilderService();

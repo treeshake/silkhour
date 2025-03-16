@@ -1,5 +1,5 @@
-import { useFetchProductMetaFieldGid } from '../../shared/hooks/product';
-import { RingBuilderService } from './services';
+import { useFetchProductMetaFieldGid } from '../../../shared/hooks/product';
+import { RingBuilderService } from '../services';
 
 interface SelectDiamondLinkProps {
   selected_or_first_available_variant: string;

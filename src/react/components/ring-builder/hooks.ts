@@ -5,6 +5,8 @@ import { useAddItemsToCart, useRetrieveCart } from '../../shared/hooks/cart';
 import { IStatus, STATUS } from '../../shared/types/status';
 import { LabelledValue } from '../../shared/types/value';
 import { getCartSessionCookie } from '../../shared/utils/cookies';
+import { RingBuilderService } from './services';
+import { Step } from './types';
 
 export function useAddToCart(variantGid: string, diamondVariantGid: string, diamondMetafieldValues: LabelledValue[]) {
   const cartToken = getCartSessionCookie();
@@ -48,5 +50,20 @@ export function useAddToCart(variantGid: string, diamondVariantGid: string, diam
     cart,
     status,
     handleAddToCart,
+  };
+}
+
+export function useProgressBar() {
+  const steps: Step[] = [
+    { id: '1', name: 'Ring Setting', description: 'Start with an engagement ring setting', href: '#', status: 'complete' },
+    { id: '2', name: 'Diamond', description: 'Select your diamond', href: '#', status: 'current' },
+    { id: '3', name: 'Review', description: 'Confirm and finalise your design', href: '#', status: 'upcoming' },
+  ];
+  
+  const ring = new RingBuilderService();
+
+
+  return {
+    steps
   };
 }

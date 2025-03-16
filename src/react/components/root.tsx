@@ -2,10 +2,10 @@ import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { StrictMode } from 'react';
 import { Pagination } from './pagination';
-import { AddDiamond } from './ring-builder/add-diamond';
-import { CompleteYourRingMediaGallery } from './ring-builder/media-gallery';
-import { RingBuilderProgressBar } from './ring-builder/progress-bar';
-import { SelectDiamond } from './ring-builder/select-diamond';
+import { AddDiamond } from './ring-builder/components/add-diamond';
+import { CompleteYourRingMediaGallery } from './ring-builder/components/media-gallery';
+import { RingBuilderProgressBar } from './ring-builder/components/progress-bar';
+import { SelectDiamond } from './ring-builder/components/select-diamond';
 import { CompleteYourRing } from './ring-builder/summary';
 
 const SHOPIFY_STORE_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN as string;

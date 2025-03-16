@@ -67,20 +67,11 @@ export class RingBuilderService {
     return this.diamondId !== null;
   }
 
-  public reconstructURL(fromExistingUrl?: string): URL {
-    const searchParams = fromExistingUrl ? new URL(fromExistingUrl).searchParams : new URLSearchParams();
-
-    return new URL(`?${this.appendConfiguration(searchParams).toString()}`, window.location.href);
-  }
-
   public routeToSelectDiamond(
     productId: string,
     selectedOrFirstAvailableVariant: string,
     diamondShapeGid: string,
-  ): void {
-
-    console.log(window.location.search);
-    
+  ): void {  
     const url = new URLSearchParams(window.location.search);
     url.append('sort_by', 'price-ascending');
     url.append('filter.p.m.custom.diamond_shape', diamondShapeGid);
