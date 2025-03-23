@@ -68,7 +68,7 @@ function CompletedStep({ step, steps, stepIdx }: StepProps) {
           <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
             <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
             <span className="tw-font-medium tw-text-white tw-text-nowrap">{step.description}</span>
-            <a href={step.href} className="tw-invisible">
+            <a href={step.href} className="tw-text-white tw-underline">
               Change
             </a>
           </span>
