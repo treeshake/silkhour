@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 
 export interface Step {
   id: string;
@@ -5,4 +6,5 @@ export interface Step {
   description: string;
   href: string;
   status: 'complete' | 'current' | 'upcoming';
+  icon: ReactNode;
 }

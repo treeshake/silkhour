@@ -235,3 +235,131 @@ export function useFetchProductVariant(variantId: string) {
 
   return variant;
 }
+
+export function useFetchProductByHandle(handle: string | null) {
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      if (!handle) return;
+
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await storefrontClient.request(
+          `query getProductByHandle($handle: String!) {
+              product(handle: $handle) {
+                id
+                title
+                handle
+                description
+                collections(first: 1) {
+                  edges {
+                    node {
+                      id
+                      handle
+                      title
+                    }
+                  }
+                }
+                priceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+                images(first: 1) {
+                  edges {
+                    node {
+                      url
+                      altText
+                    }
+                  }
+                }
+                variants(first: 250) {
+                  edges {
+                    node {
+                      id
+                      title
+                      price {
+                        amount
+                        currencyCode
+                      }
+                      selectedOptions {
+                        name
+                        value
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          {
+            variables: {
+              handle,
+            },
+          },
+        );
+        setProduct(response.data.product);
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error('Failed to fetch product'));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [handle]);
+
+  return { product, loading, error };
+}
+
+export function useFetchCollectionByHandle(handle: string | null) {
+  const [collection, setCollection] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetchCollection = async () => {
+      if (!handle) return;
+
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await storefrontClient.request(
+          `query getCollectionByHandle($handle: String!) {
+            collection(handle: $handle) {
+              id
+              handle
+              title
+              description
+              image {
+                url
+                altText
+              }
+            }
+          }`,
+          {
+            variables: {
+              handle,
+            },
+          },
+        );
+        setCollection(response.data.collection);
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error('Failed to fetch collection'));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCollection();
+  }, [handle]);
+
+  return { collection, loading, error };
+}
