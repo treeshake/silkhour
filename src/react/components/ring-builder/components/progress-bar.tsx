@@ -64,13 +64,16 @@ function CompletedStep({ step, steps, stepIdx }: StepProps) {
             <CheckIcon aria-hidden="true" className="tw-stroke-2 tw-size-6 tw-text-[#801B2B]" stroke="currentColor" />
           </span>
         </span>
-        <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-          <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
-          <span className="tw-font-medium tw-text-white">{step.description}</span>
-          <a href={step.href} className="tw-font-medium tw-text-white tw-underline">
-            Change
-          </a>
-        </span>
+        <div className="tw-flex tw-w-full">
+          <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
+            <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
+            <span className="tw-font-medium tw-text-white tw-text-nowrap">{step.description}</span>
+            <a href={step.href} className="tw-invisible">
+              Change
+            </a>
+          </span>
+          <span className="tw-grow">{step.icon}</span>
+        </div>
       </span>
     </div>
   );
@@ -91,13 +94,16 @@ function CurrentStep({ step, stepIdx, steps }: StepProps) {
             <span className="tw-text-white">{step.id}</span>
           </span>
         </span>
-        <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-          <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
-          <span className="tw-font-medium tw-text-white">{step.description}</span>
-          <a href={step.href} className="tw-invisible">
-            Change
-          </a>
-        </span>
+        <div className="tw-flex tw-w-full">
+          <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
+            <h3 className="tw-font-medium tw-text-white tw-pb-3 tw-underline">{step.name}</h3>
+            <span className="tw-font-medium tw-text-white tw-text-nowrap">{step.description}</span>
+            <a href={step.href} className="tw-invisible">
+              Change
+            </a>
+          </span>
+          <span className="tw-grow">{step.icon}</span>
+        </div>
       </span>
     </div>
   );
@@ -122,13 +128,16 @@ function UpcomingStep({ step, stepIdx, steps }: StepProps) {
             <span className="tw-text-white">{step.id}</span>
           </span>
         </span>
-        <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-          <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
-          <span className="tw-font-medium tw-text-white">{step.description}</span>
-          <a href={step.href} className="tw-invisible">
-            Change
-          </a>
-        </span>
+        <div className="tw-flex tw-w-full">
+          <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
+            <h3 className="tw-font-medium tw-text-white tw-pb-3">{step.name}</h3>
+            <span className="tw-font-medium tw-text-white tw-text-nowrap">{step.description}</span>
+            <a href={step.href} className="tw-invisible">
+              Change
+            </a>
+          </span>
+          <span className="tw-grow">{step.icon}</span>
+        </div>
       </span>
     </div>
   );
