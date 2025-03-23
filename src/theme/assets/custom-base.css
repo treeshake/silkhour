@@ -103,3 +103,18 @@ h2,
   text-underline-offset: 0.3rem;
   font-weight: 600 !important;
 }
+
+/**
+Engagement Ring summary - TODO move it later
+**/
+.product-title-smaller {
+  font-size: 26px !important;
+}
+
+.product-summary-subheading {
+  text-transform: uppercase;
+}
+
+.product-price-smaller {
+  font-size: 22px !important;
+}

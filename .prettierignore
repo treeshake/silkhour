@@ -2,3 +2,10 @@
 build
 coverage
 node_modules
+
+# prettier config for typescript projects only
+# Ignore all .liquid files
+**/*.liquid
+
+# Ignore files in the shopify theme folder
+src/theme

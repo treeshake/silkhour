@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  prefix: 'tw-',
   content: [
     "./src/**/*.{html,liquid,js}",
     "./src/theme/assets/**/*.{html,liquid,js}",
@@ -8,6 +9,7 @@ module.exports = {
     "./src/theme/sections/**/*.{html,liquid,js}",
     "./src/theme/snippets/**/*.{html,liquid,js}",
     "./src/theme/templates/**/*.{html,liquid,js}",
+    "./src/react/**/*.{tsx,jsx}",
   ],
   theme: {
     extend: {},
