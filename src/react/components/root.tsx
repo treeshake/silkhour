@@ -1,6 +1,7 @@
 import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { StrictMode } from 'react';
+import { Breadcrumbs } from './breadcrumbs/Breadcrumbs';
 import { Pagination } from './pagination';
 import { AddDiamond } from './ring-builder/components/add-diamond';
 import { CompleteYourRingMediaGallery } from './ring-builder/components/media-gallery';
@@ -23,6 +24,7 @@ export function RootComponent({ wrapperSelector, ...rest }: any) {
         storefrontApiVersion={SHOPIFY_STOREFRONT_API_VERSION}
         storeDomain={SHOPIFY_STORE_DOMAIN}
       >
+          {wrapperSelector === '.react-nav-breadcrumbs' && <Breadcrumbs {...rest} />}
           {wrapperSelector === '.react-ring-builder-progress' && <RingBuilderProgressBar {...rest} />}
           {wrapperSelector === '.react-pagination' && <Pagination {...rest} />}
           {wrapperSelector === '.react-select-diamond' && <SelectDiamond {...rest} />}

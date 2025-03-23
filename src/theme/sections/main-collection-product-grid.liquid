@@ -44,6 +44,7 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
 
   <!-- Let React take over here... -->
+  <div class="react-nav-breadcrumbs"></div>
   <div class="react-ring-builder-progress tw-pb-8"></div>
 
   {%- paginate collection.products by section.settings.products_per_page -%}

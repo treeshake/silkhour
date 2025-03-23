@@ -1,7 +1,6 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { useFetchProduct } from '../../../shared/hooks/product';
 import { classNames } from '../../../shared/utils/dom';
-import { Breadcrumbs } from '../../breadcrumbs/Breadcrumbs';
 import { useRingBuilderNavigation } from '../hooks';
 import { RingBuilderService } from '../services';
 import { Step } from '../types';
@@ -14,29 +13,23 @@ export function RingBuilderProgressBar() {
   const diamondPageHref = ring.createDiamondPageUrl(productId!, productVariantId!, diamondShapeGid!);
   const { steps } = useRingBuilderNavigation(product, diamond, diamondPageHref);
   return (
-    <>
-      <Breadcrumbs />
-      <div className="tw-mb-[10px] tw-lg:mb-[20px]">
-        <div className="lg:tw-white tw-bg-[#801B2B]">
-          <nav aria-label="Progress">
-            <ol
-              role="list"
-              className="tw-overflow-hidden tw-rounded-md lg:tw-flex lg:tw-rounded-none lg:tw-border-white"
-            >
-              {steps.map((step, stepIdx) => (
-                <li key={step.id} className="tw-relative tw-overflow-hidden lg:tw-flex-1">
-                  <div className="tw-border-b-2 tw-border-white lg:tw-border-b-0">
-                    {step.status === 'complete' && <CompletedStep step={step} stepIdx={stepIdx} steps={steps} />}
-                    {step.status === 'current' && <CurrentStep step={step} stepIdx={stepIdx} steps={steps} />}
-                    {step.status === 'upcoming' && <UpcomingStep step={step} stepIdx={stepIdx} steps={steps} />}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </div>
+    <div className="tw-mb-[10px] tw-lg:mb-[20px]">
+      <div className="lg:tw-white tw-bg-[#801B2B]">
+        <nav aria-label="Progress">
+          <ol role="list" className="tw-overflow-hidden tw-rounded-md lg:tw-flex lg:tw-rounded-none lg:tw-border-white">
+            {steps.map((step, stepIdx) => (
+              <li key={step.id} className="tw-relative tw-overflow-hidden lg:tw-flex-1">
+                <div className="tw-border-b-2 tw-border-white lg:tw-border-b-0">
+                  {step.status === 'complete' && <CompletedStep step={step} stepIdx={stepIdx} steps={steps} />}
+                  {step.status === 'current' && <CurrentStep step={step} stepIdx={stepIdx} steps={steps} />}
+                  {step.status === 'upcoming' && <UpcomingStep step={step} stepIdx={stepIdx} steps={steps} />}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </nav>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -32,7 +32,6 @@ function BreadcrumbNavigation({ productHandle, collectionHandle }: BreadcrumbNav
   const { product } = useFetchProductByHandle(productHandle);
   const { collection } = useFetchCollectionByHandle(collectionHandle);
   const crumbs: Crumb[] = [{ name: 'Home', href: '/' }];
-  console.log(product, collection);
   if (!isNil(product)) {
     // Extract the collection, to build the first crumb.
     const collectionNode = product?.collections?.edges[0]?.node;
@@ -82,8 +81,9 @@ function BreadcrumbNavigation({ productHandle, collectionHandle }: BreadcrumbNav
                 <a
                   href={crumb.href}
                   className={classNames(
-                    'tw-ml-2 tw-font-medium tw-text-[12px] hover:tw-text-gray-700 hover:tw-underline',
+                    'tw-font-medium tw-text-[12px] hover:tw-text-gray-700 hover:tw-underline',
                     idx === crumbs.length - 1 ? 'tw-underline' : '',
+                    idx !== 0 ? 'tw-ml-2' : ''
                   )}
                 >
                   {crumb.name}

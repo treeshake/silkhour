@@ -31,6 +31,7 @@ const observer = new URLMutationObserver({
 observer.listenForChanges(() => {
   mountReact(
     [
+      '.react-nav-breadcrumbs',
       '.react-ring-builder-progress',
       '.react-pagination',
       '.react-select-diamond',
