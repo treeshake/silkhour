@@ -17,3 +17,8 @@ export function extractMetafieldValue(product: Product | null, key: string, fiel
     (field) => field.key === fieldKey,
   )?.value;
 }
+
+export function extractGuidValue(guid: string) {
+  const parts = guid.split('/');
+  return parts[parts.length - 1];
+}

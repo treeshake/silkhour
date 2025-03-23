@@ -1,7 +1,7 @@
 import { ShopifyProvider } from '@shopify/hydrogen-react';
 import { CountryCode } from '@shopify/hydrogen-react/storefront-api-types';
 import { StrictMode } from 'react';
-import { Breadcrumbs } from './breadcrumbs/Breadcrumbs';
+import { Breadcrumbs } from './navigation/breadcrumbs';
 import { Pagination } from './pagination';
 import { AddDiamond } from './ring-builder/components/add-diamond';
 import { CompleteYourRingMediaGallery } from './ring-builder/components/media-gallery';

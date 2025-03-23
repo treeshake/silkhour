@@ -799,8 +799,8 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.tw-pb-16 {
-  padding-bottom: 4rem;
+.tw-pb-12 {
+  padding-bottom: 3rem;
 }
 
 .tw-pb-3 {
@@ -821,10 +821,6 @@ video {
 
 .tw-pr-2 {
   padding-right: 0.5rem;
-}
-
-.tw-pb-12 {
-  padding-bottom: 3rem;
 }
 
 .tw-text-\[12px\] {

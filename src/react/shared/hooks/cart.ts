@@ -3,7 +3,8 @@ import { CartLineInput } from '@shopify/hydrogen-react/storefront-api-types';
 import { isNil } from 'rambda';
 import { useEffect, useState } from 'react';
 import { storefrontClient } from '../api/storefront-api';
-import { createCartGid } from '../utils/shopify';
+import { setCookie } from '../utils/cookies';
+import { createCartGid, extractGuidValue } from '../utils/shopify';
 
 export function useRetrieveCart(cartToken: string | null) {
   const [cart, setCart] = useState<Cart | undefined | null>(null);
@@ -13,7 +14,7 @@ export function useRetrieveCart(cartToken: string | null) {
       try {
         if (isNil(cartToken)) {
           // Create a new cart if cartToken is null
-          const { data } = await storefrontClient.request<{ cart: Cart }>(
+          const { data } = await storefrontClient.request<{ cartCreate: { cart: Cart } }>(
             `mutation CreateCart {
               cartCreate {
                 cart {
@@ -50,7 +51,11 @@ export function useRetrieveCart(cartToken: string | null) {
               }
             }`,
           );
-          setCart(data?.cart);
+          setCart(data?.cartCreate?.cart);
+          const cartGuid = data?.cartCreate?.cart?.id;
+          if (!isNil(cartGuid)) {
+            setCookie('cart', extractGuidValue(cartGuid));
+          }
           return;
         }
         // Fetch existing cart
