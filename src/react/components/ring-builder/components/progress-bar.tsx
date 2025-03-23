@@ -14,17 +14,13 @@ export function RingBuilderProgressBar() {
   const { steps } = useRingBuilderNavigation(product, diamond, diamondPageHref);
   return (
     <div className="tw-mb-[10px] tw-lg:mb-[20px]">
-      <div className="lg:tw-border-b lg:tw-white tw-bg-[#801B2B]">
+      <div className="lg:tw-white tw-bg-[#801B2B]">
         <nav aria-label="Progress">
           <ol role="list" className="tw-overflow-hidden tw-rounded-md lg:tw-flex lg:tw-rounded-none lg:tw-border-white">
             {steps.map((step, stepIdx) => (
               <li key={step.id} className="tw-relative tw-overflow-hidden lg:tw-flex-1">
                 <div
-                  className={classNames(
-                    stepIdx === 0 ? 'tw-rounded-t-md tw-border-b-0' : '',
-                    stepIdx === steps.length - 1 ? 'tw-rounded-b-md tw-border-t-0' : '',
-                    'tw-overflow-hidden tw-border-b tw-border-white lg:tw-border-0',
-                  )}
+                  className="tw-border-b-2 tw-border-white lg:tw-border-b-0"
                 >
                   {step.status === 'complete' && <CompletedStep step={step} stepIdx={stepIdx} steps={steps} />}
                   {step.status === 'current' && <CurrentStep step={step} stepIdx={stepIdx} steps={steps} />}
@@ -54,13 +50,13 @@ function CompletedStep({ step, steps, stepIdx }: StepProps) {
       />
       <span
         className={classNames(
-          'tw-flex tw-items-start tw-px-6 tw-py-5 tw-font-medium lg:tw-border-b-0 tw-border-white tw-border-b',
-          stepIdx !== steps.length - 1 ? 'lg:tw-border-r' : '',
+          'tw-flex tw-items-start tw-px-6 tw-py-5 tw-font-medium tw-border-white',
+          stepIdx !== steps.length - 1 ? 'lg:tw-border-r-2' : '',
         )}
       >
         <span className="tw-shrink-0">
           <span className="tw-flex tw-size-10 tw-items-center tw-justify-center tw-rounded-full tw-bg-white">
-            <CheckIcon aria-hidden="true" className="tw-size-6 tw-text-[#801B2B]" />
+            <CheckIcon aria-hidden="true" className="tw-stroke-2 tw-size-6 tw-text-[#801B2B]" stroke="currentColor"/>
           </span>
         </span>
         <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
@@ -78,15 +74,15 @@ function CompletedStep({ step, steps, stepIdx }: StepProps) {
 function CurrentStep({ step, stepIdx, steps }: StepProps) {
   return (
     <div aria-current="step">
-      <span
+      {/* <span
         aria-hidden="true"
         className="tw-absolute tw-left-0 tw-top-0 tw-h-full tw-w-1 tw-bg-white lg:tw-bottom-0 lg:tw-top-auto lg:tw-h-1 lg:tw-w-full"
-      />
+      /> */}
       <span
         className={classNames(
           stepIdx !== 0 ? 'lg:tw-pl-9' : '',
           'tw-flex tw-items-start tw-px-6 tw-py-5 tw-font-medium',
-          stepIdx !== steps.length - 1 ? 'tw-border-r' : '',
+          stepIdx !== steps.length - 1 ? 'lg:tw-border-r-2' : '',
         )}
       >
         <span className="tw-shrink-0">
@@ -95,8 +91,8 @@ function CurrentStep({ step, stepIdx, steps }: StepProps) {
           </span>
         </span>
         <span className="tw-ml-4 tw-mt-0.5 tw-flex tw-min-w-0 tw-flex-col">
-          <span className="tw-font-medium tw-text-white">{step.name}</span>
-          <span className="tw-font-medium tw-text-white">{step.description}</span>
+          <span className="tw-font-medium tw-text-white tw-underline">{step.name}</span>
+          <span className="tw-font-medium tw-text-white tw-underline">{step.description}</span>
           <a href={step.href} className="tw-invisible">
             Change
           </a>
@@ -117,7 +113,7 @@ function UpcomingStep({ step, stepIdx, steps }: StepProps) {
         className={classNames(
           stepIdx !== 0 ? 'lg:tw-pl-9' : '',
           'tw-flex tw-items-start tw-px-6 tw-py-5 tw-font-medium',
-          stepIdx !== steps.length - 1 ? 'tw-border-r' : '',
+          stepIdx !== steps.length - 1 ? 'lg:tw-border-r-2' : '',
         )}
       >
         <span className="tw-shrink-0">
