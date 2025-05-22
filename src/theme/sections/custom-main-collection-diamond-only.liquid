@@ -40,7 +40,7 @@
 
 <section>
   <div class="react-nav-breadcrumbs"></div>
-  <div class="react-ring-builder-progress"></div>
+  {% comment %} <div class="react-ring-builder-progress"></div> {% endcomment %}
 </section>
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} custom_cllection_main">
   {%- paginate collection.products by section.settings.products_per_page -%}

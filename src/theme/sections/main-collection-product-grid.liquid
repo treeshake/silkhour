@@ -46,9 +46,9 @@
   <!-- Let React take over here... -->
   <section>
     <div class="react-nav-breadcrumbs"></div>
-    {%- if section.settings.show_ring_builder -%}
-      <div class="react-ring-builder-progress tw-pb-8"></div>
-    {%- endif -%}
+    {% comment %} {%- if section.settings.show_ring_builder -%} {% endcomment %}
+      {% comment %} <div class="react-ring-builder-progress tw-pb-8"></div> {% endcomment %}
+    {% comment %} {%- endif -%} {% endcomment %}
   </section>
 
   {%- paginate collection.products by section.settings.products_per_page -%}
