@@ -69,7 +69,13 @@
           data-media-id="{{ section.id }}-{{ featured_media.id }}"
         >
           {%- assign media_position = 1 -%}
-          {% render 'product-thumbnail',
+          
+          {% comment %} 
+           THEME OVERVIDE - START
+           {% render 'product-thumbnail', %}
+          THEME OVERVIDE - END
+          {% endcomment %}
+          {% render 'custom-product-thumbnail',
             media: featured_media,
             media_count: media_count,
             position: media_position,
@@ -107,7 +113,12 @@
                 assign lazy_load = true
               endif
             -%}
-            {% render 'product-thumbnail',
+            {% comment %} 
+             THEME OVERVIDE - START
+             {% render 'product-thumbnail', %}
+             THEME OVERVIDE - END
+            {% endcomment %}
+            {% render 'custom-product-thumbnail',
               media: media,
               media_count: media_count,
               position: media_position,

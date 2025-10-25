@@ -21,12 +21,17 @@
 }
 
 .price--large {
-  font-size: 1.9rem !important;
-  font-weight: 600 !important;
+  font-size: 1.8rem !important;
+  font-weight: 300 !important;
 }
 
 .product__info-container .product-form,
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
   margin: 0rem 0;
+}
+
+.product-form__buttons {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
