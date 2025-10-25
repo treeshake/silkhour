@@ -30,3 +30,8 @@
 .product__info-container .icon-with-text {
   margin: 0rem 0;
 }
+
+.product-form__buttons {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}

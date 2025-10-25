@@ -239,7 +239,7 @@
       "settings": {
         "custom_liquid": "<h1>\nSee The Latest @Silkhour\n<\/h1>",
         "color_scheme": "",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
@@ -254,7 +254,9 @@
       "block_order": [
         "social_photos_instagram_ugc_instagram_post_gallery_6thzHi"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "{ padding-bottom: 20px; }"
+      ],
       "settings": {
         "include_margins": true
       }
