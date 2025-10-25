@@ -144,6 +144,13 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "6176556142592085346": {
+        "type": "shopify://apps/justuno-email-sms-pop-ups/blocks/star_rating/ea1f1a23-7069-4266-a6e1-df04f87c7e94",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
