@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -15,7 +24,7 @@
         "paragraph_dm8PML": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Get early access to sales, new drops, and exclusive VIP events.<\/p>"
+            "text": "<p>Get early access to sales, new drops, and exclusive VIP events.</p>"
           }
         },
         "email_form_nHNqap": {
@@ -50,7 +59,7 @@
         "image_Ch6jHJ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SILKHOUR.png",
+            "image": "shopify://shop_images/SILKHOUR.png",
             "image_width": 120,
             "alignment": "center"
           }

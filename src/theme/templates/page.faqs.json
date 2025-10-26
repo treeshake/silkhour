@@ -1,14 +1,398 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
-        "padding_bottom": 28
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_AYBEGf": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_k6yyY3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will it take to receive my order?",
+            "icon": "none",
+            "row_content": "<p>Every piece of Silkhour jewellery is individually handcrafted in our Sydney studio.<br/><br/>Estimated production times are listed on each product page. Items marked <em>ready to ship</em> will be dispatched promptly.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9pNpBK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I request faster processing for my order?",
+            "icon": "none",
+            "row_content": "<p>If you need your order urgently, please reach out to our Customer Care team before completing your purchase. We’ll do our best to accommodate your request wherever possible.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nxiDPX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I change or cancel my order after it’s been placed?",
+            "icon": "none",
+            "row_content": "<p>As most orders are assigned to our jewellers shortly after purchase, please contact us within 24 hours if you need to make changes or request a cancellation.<br/><br/>Email <a><strong>hello@silkhour.com</strong></a> with your order number and details of your request.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ERpycw": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Which payment methods do you accept?",
+            "icon": "none",
+            "row_content": "<p>We accept all major credit cards, PayPal, and Afterpay for both online and in-store purchases.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3yFVyh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are gift cards available?",
+            "icon": "none",
+            "row_content": "<p>Yes. Gift cards can be purchased online or at any Silkhour boutique.<br/><br/>All gift cards are interchangeable and redeemable both online and in-store.<br/><br/>Online gift cards are delivered digitally, but if you’d prefer a physical version, please contact us at <a><strong>hello@silkhour.com</strong></a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hFaLbQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I check my order status?",
+            "icon": "none",
+            "row_content": "<p>After placing your order, you’ll receive a confirmation email.<br/><br/>When your piece is ready to ship, we’ll send a dispatch email with your tracking details so you can follow its journey.<br/><br/>If you don’t see your confirmation or tracking email, please check your spam or junk folder, or contact our team for assistance.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_k6yyY3",
+        "collapsible_row_9pNpBK",
+        "collapsible_row_nxiDPX",
+        "collapsible_row_ERpycw",
+        "collapsible_row_3yFVyh",
+        "collapsible_row_hFaLbQ"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Orders & Dispatch",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "collapsible_content_p8eVcn": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_h76ebf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I track my order?",
+            "icon": "none",
+            "row_content": "<p>Once your order has been dispatched, you’ll receive a shipping confirmation email that includes your courier details and tracking number.<br/><br/>Domestic orders are shipped via <strong>Australia Post</strong>, while international orders are sent via <strong>DHL</strong>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zK96Jj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you require a signature on delivery?",
+            "icon": "none",
+            "row_content": "<p>Yes, all orders require a signature upon delivery for security reasons.<br/><br/>If you’re unavailable at the time of delivery, your parcel will be redirected to your local post office or DHL service point for collection.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8yn6gQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I need to pay import duties or taxes?",
+            "icon": "none",
+            "row_content": "<p>Depending on your country’s import regulations, your order may be subject to customs duties or taxes.<br/><br/>Any applicable fees will appear at checkout and can be prepaid with your order.<br/><br/>Please note these charges are determined by your country’s customs authorities and are not set by Silkhour.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WrcjGW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My tracking says “delivered,” but I haven’t received my parcel. What should I do?",
+            "icon": "none",
+            "row_content": "<p>Since all orders require a signature, first check with other household members or neighbours who may have accepted the parcel.<br/><br/>If your parcel is still missing:</p><ul><li>Use your tracking number to lodge an enquiry directly with the courier.<br/></li><li>Contact our Customer Care team at <a><strong>hello@silkhour.com</strong></a> if the issue remains unresolved.<br/></li></ul><p>Our team is available <strong>Monday to Friday, 8:00am–4:00pm AEST.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_K6dm7g": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you deliver to PO boxes?",
+            "icon": "none",
+            "row_content": "<p>Yes, we can deliver to PO boxes within Australia. Please note that a signature on delivery is still required.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_h76ebf",
+        "collapsible_row_zK96Jj",
+        "collapsible_row_8yn6gQ",
+        "collapsible_row_WrcjGW",
+        "collapsible_row_K6dm7g"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Shipping & Deliveries",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "collapsible_content_xJ43RM": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_DrtVj8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is your jewellery made to order?",
+            "icon": "none",
+            "row_content": "<p>Yes. Every Silkhour piece is made to order in our Sydney studio by our team of skilled jewellers. Each product description includes an estimated production timeframe.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hDwdBX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where are your pieces made?",
+            "icon": "none",
+            "row_content": "<p>All Silkhour designs are created and handcrafted in Australia at our Sydney studio, using responsibly sourced materials.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KLMmHL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is your jewellery nickel-free?",
+            "icon": "none",
+            "row_content": "<p>Yes — all Silkhour jewellery is 100% nickel-free.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_DrtVj8",
+        "collapsible_row_hDwdBX",
+        "collapsible_row_KLMmHL"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Production",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "collapsible_content_PzAxM4": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wWcJny": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your returns policy?",
+            "icon": "none",
+            "row_content": "<p>We offer refunds & exchanges within 14 days of receiving your order. Please note that resizing or exchanges for gold and silver pieces may incur a small fee.<br/><br/>Return postage costs are the responsibility of the customer. If you have any questions before purchasing, please contact <a><strong>hello@silkhour.com</strong></a>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9pfJhz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return an item?",
+            "icon": "none",
+            "row_content": "<p>- To qualify for an exchange or store credit, items must be:<br/>Unworn and in original condition</p><p>- Returned in their original packaging</p><p><br/>To start a return:</p><ol><li>Email <a><strong>hello@silkhour.com</strong></a> to request a Return Merchandise Authorisation (RMA) form.</li><li>Complete and include the form with your return.</li></ol><p><br/>Returns without an RMA may not be accepted.<br/><br/>We recommend using an insured express service with signature on delivery, as we cannot accept responsibility for items lost or damaged in transit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HjAJH3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I ordered the wrong size or item — what should I do?",
+            "icon": "none",
+            "row_content": "<p>Please contact our Customer Care team within 24 hours of placing your order at <a><strong>hello@silkhour.com</strong></a>, quoting your order number.<br/><br/>Our team will advise on next steps.<br/><br/>Please note that resizing or exchanges for gold and silver pieces may incur a fee.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pmFGTD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My tracking says “delivered,” but I haven’t received my parcel. What should I do?",
+            "icon": "none",
+            "row_content": "<p>Since all orders require a signature, first check with other household members or neighbours who may have accepted the parcel.<br/><br/>If your parcel is still missing:</p><ul><li>Use your tracking number to lodge an enquiry directly with the courier.<br/></li><li>Contact our Customer Care team at <a><strong>hello@silkhour.com</strong></a> if the issue remains unresolved.<br/></li></ul><p>Our team is available <strong>Monday to Friday, 8:00am–4:00pm AEST.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zpe3dm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you deliver to PO boxes?",
+            "icon": "none",
+            "row_content": "<p>Yes, we can deliver to PO boxes within Australia. Please note that a signature on delivery is still required.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wWcJny",
+        "collapsible_row_9pfJhz",
+        "collapsible_row_HjAJH3",
+        "collapsible_row_pmFGTD",
+        "collapsible_row_zpe3dm"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Returns & Exchanges",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 48
+      }
+    },
+    "collapsible_content_7Krt8D": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_gxHyLr": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do your pieces come with a warranty?",
+            "icon": "none",
+            "row_content": "<p>es — all Silkhour jewellery is covered by a 1-year warranty from the date of purchase for manufacturing faults.<br/><br/>The warranty does not cover:</p><p>- Normal wear and tear</p><p>- Broken chains, bent rings or earrings</p><p>- Damaged stones or pearls</p><p>- Faded or oxidised plating<br/><br/>Proof of purchase is required for all warranty claims.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_t6ChkV": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return an item?",
+            "icon": "none",
+            "row_content": "<p>- To qualify for an exchange or store credit, items must be:<br/>Unworn and in original condition</p><p>- Returned in their original packaging</p><p><br/>To start a return:</p><ol><li>Email <a><strong>hello@silkhour.com</strong></a> to request a Return Merchandise Authorisation (RMA) form.</li><li>Complete and include the form with your return.</li></ol><p><br/>Returns without an RMA may not be accepted.<br/><br/>We recommend using an insured express service with signature on delivery, as we cannot accept responsibility for items lost or damaged in transit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_V73ipx": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "I ordered the wrong size or item — what should I do?",
+            "icon": "none",
+            "row_content": "<p>Please contact our Customer Care team within 24 hours of placing your order at <a><strong>hello@silkhour.com</strong></a>, quoting your order number.<br/><br/>Our team will advise on next steps.<br/><br/>Please note that resizing or exchanges for gold and silver pieces may incur a fee.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jXkQV7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "My tracking says “delivered,” but I haven’t received my parcel. What should I do?",
+            "icon": "none",
+            "row_content": "<p>Since all orders require a signature, first check with other household members or neighbours who may have accepted the parcel.<br/><br/>If your parcel is still missing:</p><ul><li>Use your tracking number to lodge an enquiry directly with the courier.<br/></li><li>Contact our Customer Care team at <a><strong>hello@silkhour.com</strong></a> if the issue remains unresolved.<br/></li></ul><p>Our team is available <strong>Monday to Friday, 8:00am–4:00pm AEST.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_T6Mw89": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you deliver to PO boxes?",
+            "icon": "none",
+            "row_content": "<p>Yes, we can deliver to PO boxes within Australia. Please note that a signature on delivery is still required.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dChU8J": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I resize my ring?",
+            "icon": "none",
+            "row_content": "<p>Please refer to <a href=\"/pages/ring-size-guide\" title=\"Ring Size Guide\">our Ring Size Guide</a> </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MTifUj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I do if my solid gold jewellery begins to tarnish?",
+            "icon": "none",
+            "row_content": "<p>Tarnish can naturally occur due to factors such as skin acidity, moisturisers, or exposure to water.<br/><br/>Please contact our Customer Care team at <a><strong>hello@silkhour.com</strong></a> to discuss cleaning or refinishing options.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_gxHyLr",
+        "collapsible_row_t6ChkV",
+        "collapsible_row_V73ipx",
+        "collapsible_row_jXkQV7",
+        "collapsible_row_T6Mw89",
+        "collapsible_row_dChU8J",
+        "collapsible_row_MTifUj"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Repairs & Care",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 48
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collapsible_content_AYBEGf",
+    "collapsible_content_p8eVcn",
+    "collapsible_content_xJ43RM",
+    "collapsible_content_PzAxM4",
+    "collapsible_content_7Krt8D"
   ]
 }

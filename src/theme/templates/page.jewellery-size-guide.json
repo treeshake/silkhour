@@ -1,14 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 28,
-        "padding_bottom": 28
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_jhULRr": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jLdqxn": {
+          "type": "text",
+          "settings": {
+            "text": "<p><span style=\"text-decoration:underline\"><strong>Free resize service terms:</strong></span><br/>Includes free return postage (both ways) for your one-time complimentary resize within 12 months of your ring’s completion.<br/><br/>Once a return label is issued, your ring must be returned within 30 business days.<br/><br/>If the requested resize is beyond the available range, your setting may need to be remade (additional fees apply).<br/><br/>Resizing performed by an external jeweller will void your warranty.<br/><br/>Some designs cannot be resized. This will be stated on the product page or advised during the design process.<br/><br/><span style=\"text-decoration:underline\"><strong>Rings that cannot be resized:</strong></span><br/>- Full pavé bands<br/>- Approximate resizing limits (AU sizes):<br/>Pavé band (⅔ pavé or less): up to 2.5 sizes up or 2 sizes down<br/>- Triple pavé band: up to 1 size up or ½ size down<br/>- Plain band: up to 4 sizes up or down</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_jLdqxn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 24
+      }
+    },
+    "collapsible_content_HdRLx9": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RcRUwh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I resize my ring?",
+            "icon": "none",
+            "row_content": "<p>We offer one complimentary resize for engagement and wedding rings within 12 months of your ring’s completion date.<br/> Eligible resize ranges for each design are listed on the individual product page.<br/>If a resize is requested after 12 months, or after your complimentary resize has been used, a fee will apply.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bn4GXt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I resize ready-to-ship rings?",
+            "icon": "none",
+            "row_content": "<p>All ready-to-ship rings include one free resize within 12 months of completion.<br/> If your ring has already been resized from its original stock size (usually M½) and you’d like to adjust it again, our jewellers will assess whether a further resize is possible.<br/><br/>Please note, once a ring has been resized, its resizing range may become more limited.<br/><br/>We recommend confirming your ring size in one of our showrooms before your first resize.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_W9jJgR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I resize rings with Engraving?",
+            "icon": "none",
+            "row_content": "<p>Whenever possible, engravings are placed to avoid removal during resizing. <br/><br/>If your engraving must be redone, we’ll replace it <strong>at no additional cost.</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PLPVND": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I request a resize?",
+            "icon": "none",
+            "row_content": "<p>You can arrange your complimentary resize in two ways:<br/><br/>Visit our showroom<br/>Book an appointment to have your finger professionally measured and discuss your resizing options.<br/><br/>Resizing typically takes 2–3 business weeks once we receive your ring.<br/><br/>Post your ring to us:<br/>Contact our team to arrange secure return shipping.<br/>Please ensure you provide the accurate ring size when submitting your request.<br/><br/>Only one complimentary resize is included per purchase.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RcRUwh",
+        "collapsible_row_bn4GXt",
+        "collapsible_row_W9jJgR",
+        "collapsible_row_PLPVND"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_jhULRr",
+    "collapsible_content_HdRLx9"
   ]
 }
